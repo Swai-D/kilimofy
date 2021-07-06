@@ -21,7 +21,7 @@ class PembejeoNaViwatilifuController extends Controller
       // $ip = \Request::ip();
 
       // $ip = '41.59.84.238'; //alternative way
-      $ip = \Request::ip();
+    $ip = request()->ip();
       $user_location = \Location::get($ip);
       $user_region = $user_location->regionName;
       $user_country = $user_location->countryName;
@@ -59,7 +59,7 @@ class PembejeoNaViwatilifuController extends Controller
     {
       $user_id = Session::get('user_id');
       // $ip = '41.59.84.238';
-      $ip = \Request::ip();
+      $ip = request()->ip();
       $user_location = \Location::get($ip);
       $user_region = $user_location->regionName;
       $user_country = $user_location->countryName;
