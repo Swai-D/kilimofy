@@ -20,7 +20,8 @@ class PembejeoNaViwatilifuController extends Controller
       //Get User IP
       // $ip = \Request::ip();
 
-      $ip = '41.59.84.238'; //alternative way
+      // $ip = '41.59.84.238'; //alternative way
+      $ip = \Request::ip();
       $user_location = \Location::get($ip);
       $user_region = $user_location->regionName;
       $user_country = $user_location->countryName;
@@ -57,7 +58,8 @@ class PembejeoNaViwatilifuController extends Controller
     public function muuzaji_Wa_pembejeo_na_viwatilifu_account_page()
     {
       $user_id = Session::get('user_id');
-      $ip = '41.59.84.238';
+      // $ip = '41.59.84.238';
+      $ip = \Request::ip();
       $user_location = \Location::get($ip);
       $user_region = $user_location->regionName;
       $user_country = $user_location->countryName;
