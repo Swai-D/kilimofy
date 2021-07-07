@@ -111,19 +111,7 @@
     <!-- /MENU ITEM -->
 
     <hr>
-    <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-')">
-      <!-- MENU ITEM LINK -->
-      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/home/index-page" data-title="Newsfeed">
-        <!-- MENU ITEM LINK ICON -->
-      <img src="/assets/img/user_icon/service.png" alt="" style="width:34; height:34;">
-        <!-- /MENU ITEM LINK ICON -->
-      </a>
-      <!-- /MENU ITEM LINK -->
-    </li>
-    <!-- /MENU ITEM -->
-
-    <br><hr>
+  <br><br>
     <!-- MENU ITEM -->
     <li class="menu-item">
       <!-- MENU ITEM LINK -->
@@ -225,11 +213,11 @@
 <nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
   <!-- MENU -->
   <ul class="menu small">
-      <li class="menu-item @yield('menu-status-')">
+      <li class="menu-item @yield('menu-status-gardener')">
       <!-- MENU ITEM LINK -->
       <a class="menu-item-link popup-manage-group-trigger"  data-title="Newsfeed">
         <!-- MENU ITEM LINK ICON -->
-      <img src="/assets/img/user_icon/updated.png" alt="" >
+      <img src="/assets/img/user_icon/gardener.png" alt="" style="width:34; height:34;">
         <!-- /MENU ITEM LINK ICON -->
       </a>
       <!-- /MENU ITEM LINK -->

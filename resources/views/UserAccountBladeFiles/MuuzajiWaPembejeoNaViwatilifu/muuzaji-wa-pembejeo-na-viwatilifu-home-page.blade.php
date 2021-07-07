@@ -1,6 +1,6 @@
 @extends('LayoutBladeFiles.app-layout')
 @section('title','Nyumbani')
-@section('menu-status-newsfeed','active')
+@section('menu-status-store','active')
 @section('discription-title','Habari Mpya leo')
 @section('discription-details','kilimofy')
 @include('LayoutBladeFiles.content-layout')

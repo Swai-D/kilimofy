@@ -16,7 +16,7 @@
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h5 class="section-title">Jumla ya Bidhaa <span class="highlighted">({{$total_items_in_my_store}})</span>, Zilizouzwa ni,<span class="highlighted">(1)</span>, Zilizobaki <span class="highlighted">(2)</h5>
+      <h5 class="section-title">Jumla ya Bidhaa <span class="highlighted">({{$idadi_ya_bidhaa}})</span>, Zilizouzwa ni,<span class="highlighted">(1)</span>, Zilizobaki <span class="highlighted">(2)</h5>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
@@ -160,7 +160,7 @@
         </div>
         <!-- /CREATE ENTITY BOX -->
 
-       @forelse($my_store as $store_details)
+       @forelse($bidhaa as $store_details)
         <!-- PRODUCT PREVIEW -->
         <div class="product-preview fixed-height">
           <!-- PRODUCT PREVIEW IMAGE -->

@@ -16,7 +16,7 @@ class MkulimaController extends Controller
 
       $ip = '41.59.84.238'; //alternative way
       $user_location = Location::get($ip);
-      dd($user_location);
+      // dd($user_location);
       $user_region = $user_location->regionName;
       $user_country = $user_location->countryName;
 

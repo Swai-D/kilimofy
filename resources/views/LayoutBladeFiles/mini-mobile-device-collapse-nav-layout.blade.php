@@ -170,51 +170,6 @@
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
-
-    <!-- MENU ITEM -->
-    <!-- <li class="menu-item"> -->
-      <!-- MENU ITEM LINK -->
-      <!-- <a class="menu-item-link" href="streams.html"> -->
-        <!-- MENU ITEM LINK ICON -->
-        <!-- <svg class="menu-item-link-icon icon-streams"> -->
-          <!-- <use xlink:href="#svg-streams"></use> -->
-        <!-- </svg> -->
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Streams -->
-      <!-- </a> -->
-      <!-- /MENU ITEM LINK -->
-    <!-- </li> -->
-    <!-- /MENU ITEM -->
-
-    <!-- MENU ITEM -->
-    <!-- <li class="menu-item"> -->
-      <!-- MENU ITEM LINK -->
-      <!-- <a class="menu-item-link" href="events.html"> -->
-        <!-- MENU ITEM LINK ICON -->
-        <!-- <svg class="menu-item-link-icon icon-events"> -->
-          <!-- <use xlink:href="#svg-events"></use> -->
-        <!-- </svg> -->
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Events -->
-      <!-- </a> -->
-      <!-- /MENU ITEM LINK -->
-    <!-- </li> -->
-    <!-- /MENU ITEM -->
-
-    <!-- MENU ITEM -->
-    <!-- <li class="menu-item"> -->
-      <!-- MENU ITEM LINK -->
-      <!-- <a class="menu-item-link" href="forums.html"> -->
-        <!-- MENU ITEM LINK ICON -->
-        <!-- <svg class="menu-item-link-icon icon-forums"> -->
-          <!-- <use xlink:href="#svg-forums"></use> -->
-        <!-- </svg> -->
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Forums -->
-      <!-- </a> -->
-      <!-- /MENU ITEM LINK -->
-    <!-- </li> -->
-    <!-- /MENU ITEM -->
     <br>
     <br>
     <p class="navigation-widget-section-title">logout</p>
@@ -236,132 +191,53 @@
   </ul>
   @elseif(Auth::user()->user_ocupation == 'Muuzaji_Wa_pembejeo_Na_Viwatilifu')
   <ul class="menu">
-    <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-newsfeed')">
-      <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="/kilimofy/home/index-page">
-        <!-- MENU ITEM LINK ICON -->
-        <img src="/assets/img/user_icon/news.png" alt="Habari" style="width:44; height:44;">
-        <!-- /MENU ITEM LINK ICON -->
-        Habari
-      </a>
-      <!-- /MENU ITEM LINK -->
-    </li>
-    <!-- /MENU ITEM -->
     <!-- <br> -->
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-overview')">
+    <li class="menu-item @yield('menu-status-store')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="/kilimofy/AgroInputs/agroinputs-index">
+      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page">
         <!-- MENU ITEM LINK ICON -->
-        <img src="/assets/img/user_icon/growth.png" alt="pembejeo" style="width:44; height:44;">
+        <img src="/assets/img/user_icon/store.png" alt="pembejeo" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
-        Pembejeo
+        Dukani
       </a>
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
-   <br>
+    <br>
+    <br>
+    <p class="navigation-widget-section-title">logout</p>
+    <hr>
+
     <!-- MENU ITEM -->
+
     <li class="menu-item">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="groups.html">
-        <!-- MENU ITEM LINK ICON -->
-        <img src="/assets/img/user_icon/insecticide.png" alt="Viwatilifu" style="width:44; height:44;">
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Groups -->
-        Viwatilifu
-      </a>
+        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+          <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
+        </a>
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+      </form>
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
-  <br>
+  </ul>
+
+  @elseif(Auth::user()->user_ocupation == 'Bwana_Shamba')
+  <ul class="menu">
+    <!-- <br> -->
     <!-- MENU ITEM -->
-    <li class="menu-item">
+    <li class="menu-item @yield('menu-status-gardener')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="members.html">
+      <a class="menu-item-link" href="/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page">
         <!-- MENU ITEM LINK ICON -->
-        <img src="/assets/img/user_icon/gardener.png" alt="Bwana_Shamba" style="width:44; height:44;">
+        <img src="/assets/img/user_icon/gardener.png" alt="pembejeo" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
-        <!-- Members -->
         Bwana Shamba
       </a>
       <!-- /MENU ITEM LINK -->
     </li>
-    <!-- /MENU ITEM -->
-  <br>
-    <!-- MENU ITEM -->
-    <li class="menu-item">
-      <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="badges.html">
-        <!-- MENU ITEM LINK ICON -->
-        <img src="/assets/img/user_icon/shipment.png" alt="" style="width:44; height:44;">
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Badges -->
-        Usafirisaji
-      </a>
-      <!-- /MENU ITEM LINK -->
-    </li>
-    <!-- /MENU ITEM -->
-   <br>
-    <!-- MENU ITEM -->
-    <li class="menu-item">
-      <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="quests.html">
-        <!-- MENU ITEM LINK ICON -->
-        <img src="/assets/img/user_icon/tractor.png" alt="" style="width:44; height:44;">
-
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Quests -->
-        Mashine za Kilimo
-      </a>
-      <!-- /MENU ITEM LINK -->
-    </li>
-    <!-- /MENU ITEM -->
-
-    <!-- MENU ITEM -->
-    <!-- <li class="menu-item"> -->
-      <!-- MENU ITEM LINK -->
-      <!-- <a class="menu-item-link" href="streams.html"> -->
-        <!-- MENU ITEM LINK ICON -->
-        <!-- <svg class="menu-item-link-icon icon-streams"> -->
-          <!-- <use xlink:href="#svg-streams"></use> -->
-        <!-- </svg> -->
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Streams -->
-      <!-- </a> -->
-      <!-- /MENU ITEM LINK -->
-    <!-- </li> -->
-    <!-- /MENU ITEM -->
-
-    <!-- MENU ITEM -->
-    <!-- <li class="menu-item"> -->
-      <!-- MENU ITEM LINK -->
-      <!-- <a class="menu-item-link" href="events.html"> -->
-        <!-- MENU ITEM LINK ICON -->
-        <!-- <svg class="menu-item-link-icon icon-events"> -->
-          <!-- <use xlink:href="#svg-events"></use> -->
-        <!-- </svg> -->
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Events -->
-      <!-- </a> -->
-      <!-- /MENU ITEM LINK -->
-    <!-- </li> -->
-    <!-- /MENU ITEM -->
-
-    <!-- MENU ITEM -->
-    <!-- <li class="menu-item"> -->
-      <!-- MENU ITEM LINK -->
-      <!-- <a class="menu-item-link" href="forums.html"> -->
-        <!-- MENU ITEM LINK ICON -->
-        <!-- <svg class="menu-item-link-icon icon-forums"> -->
-          <!-- <use xlink:href="#svg-forums"></use> -->
-        <!-- </svg> -->
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Forums -->
-      <!-- </a> -->
-      <!-- /MENU ITEM LINK -->
-    <!-- </li> -->
     <!-- /MENU ITEM -->
     <br>
     <br>

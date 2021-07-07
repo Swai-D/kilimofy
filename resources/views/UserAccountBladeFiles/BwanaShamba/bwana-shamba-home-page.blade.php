@@ -1,6 +1,6 @@
 @extends('LayoutBladeFiles.app-layout')
 @section('title','Mashine Za Kilimo')
-@section('menu-status-mashine','active')
+@section('menu-status-gardener','active')
 @section('discription-title','Magari ya Usafirishaji Na Mashine za Kilimo')
 <!-- CONTENT GRID -->
 <div class="content-grid">
