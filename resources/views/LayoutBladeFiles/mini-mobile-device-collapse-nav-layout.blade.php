@@ -178,14 +178,26 @@
     <!-- MENU ITEM -->
 
     <li class="menu-item">
-      <!-- MENU ITEM LINK -->
-        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-          <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
-        </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          @csrf
-      </form>
-      <!-- /MENU ITEM LINK -->
+      <div class="row">
+        <div class="col-9">
+          <!-- MENU ITEM LINK -->
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+              <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
+            </a>
+
+
+          <!-- /MENU ITEM LINK -->
+        </div>
+
+        <div class="col-3">
+          <a class="popup-review-trigger">
+           <img src="/assets/img/user_icon/exchange.png" alt="" style="width:44; height:44;">
+          </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        </div>
+      </div>
     </li>
     <!-- /MENU ITEM -->
   </ul>
@@ -212,14 +224,26 @@
     <!-- MENU ITEM -->
 
     <li class="menu-item">
-      <!-- MENU ITEM LINK -->
-        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-          <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
-        </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          @csrf
-      </form>
-      <!-- /MENU ITEM LINK -->
+      <div class="row">
+        <div class="col-9">
+          <!-- MENU ITEM LINK -->
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+              <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
+            </a>
+
+
+          <!-- /MENU ITEM LINK -->
+        </div>
+
+        <div class="col-3">
+          <a class="popup-review-trigger">
+           <img src="/assets/img/user_icon/exchange.png" alt="" style="width:44; height:44;">
+          </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        </div>
+      </div>
     </li>
     <!-- /MENU ITEM -->
   </ul>
@@ -247,14 +271,26 @@
     <!-- MENU ITEM -->
 
     <li class="menu-item">
-      <!-- MENU ITEM LINK -->
-        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-          <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
-        </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          @csrf
-      </form>
-      <!-- /MENU ITEM LINK -->
+      <div class="row">
+        <div class="col-9">
+          <!-- MENU ITEM LINK -->
+            <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+              <img src="/assets/img/user_icon/power-off.png" alt="logout" style="width:44; height:44;">
+            </a>
+
+
+          <!-- /MENU ITEM LINK -->
+        </div>
+
+        <div class="col-3">
+          <a class="popup-review-trigger">
+           <img src="/assets/img/user_icon/exchange.png" alt="" style="width:44; height:44;">
+          </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+        </div>
+      </div>
     </li>
     <!-- /MENU ITEM -->
   </ul>
@@ -365,3 +401,77 @@
   <!-- <a class="navigation-widget-section-link" href="#">Privacy Policy</a> -->
   <!-- /NAVIGATION WIDGET SECTION LINK -->
 </nav>
+<div class="popup-box small popup-review">
+  <!-- POPUP CLOSE BUTTON -->
+  <div class="popup-close-button popup-review-trigger">
+    <!-- POPUP CLOSE BUTTON ICON -->
+    <svg class="popup-close-button-icon icon-cross">
+      <use xlink:href="#svg-cross"></use>
+    </svg>
+    <!-- /POPUP CLOSE BUTTON ICON -->
+  </div>
+  <!-- /POPUP CLOSE BUTTON -->
+
+  <!-- POPUP BOX TITLE -->
+  <p class="popup-box-title">Badilisha Akaunti ?</p>
+  <!-- /POPUP BOX TITLE -->
+
+  <!-- FORM -->
+  <form class="form" action="/kilimofy/Change-Account/{{Auth::user()->id}}" method="post">
+    @csrf
+    <!-- FORM ROW -->
+    <div class="form-row">
+      <!-- FORM ITEM -->
+      <div class="form-item">
+        <!-- FORM RATING WRAP -->
+        <div class="form-rating-wrap">
+          <label>Kwa sasa Tunakutambua kama: <span style="color:Green;">{{Auth::user()->user_ocupation}}</span> </label>
+        </div>
+        <!-- /FORM RATING WRAP -->
+      </div>
+      <!-- /FORM ITEM -->
+    </div>
+    <!-- /FORM ROW -->
+
+    <!-- FORM ROW -->
+    <div class="form-row">
+      <!-- FORM ITEM -->
+      <div class="form-item">
+        <!-- FORM SELECT -->
+        <div class="form-select">
+          <label for="rating-reason">Akauti Mpya</label>
+          <select class="for" name="user_ocupation">
+            <option  selected disabled>--chagua Kazi--</option>
+            <option value="Mkulima">Mkulima</option>
+            <option value="Muuzaji_Wa_pembejeo_Na_Viwatilifu">Muuzaji wa pembejeo Na Viwatilifu</option>
+            <option value="Bwana_Shamba">Bwana Shamba (Extension Officer)</option>
+            <option value="Muuzaji_wa_Mashine_Za_Kilimo">Muuzaji Wa Mashine Za Kilimo</option>
+            <option value="Msafirishaji">Usafirishaji Wa Bidhaa za Kilimo</option>
+          </select>
+          <!-- FORM SELECT ICON -->
+          <svg class="form-select-icon icon-small-arrow">
+            <use xlink:href="#svg-small-arrow"></use>
+          </svg>
+          <!-- /FORM SELECT ICON -->
+        </div>
+        <!-- /FORM SELECT -->
+      </div>
+      <!-- /FORM ITEM -->
+    </div>
+    <!-- /FORM ROW -->
+
+
+    <!-- POPUP BOX ACTIONS -->
+    <div class="popup-box-actions full void">
+      <!-- POPUP BOX ACTION -->
+      <button type="submit" class="popup-box-action full button secondary popup-review-trigger">Save</button>
+      <!-- /POPUP BOX ACTION -->
+
+      <!-- POPUP BOX ACTION TEXT -->
+      <p class="popup-box-action-text">Taarifa zako zote za Akauti ya awali zitahifadhiwa, unaweza kuzipata wakati wowote utakapo rudia akauti yako ya awali!</p>
+      <!-- /POPUP BOX ACTION TEXT -->
+    </div>
+    <!-- /POPUP BOX ACTIONS -->
+  </form>
+  <!-- /FORM -->
+</div>
