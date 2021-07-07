@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location;
 use Hashids\Hashids;
 use OpenWeather;
 use Image;
@@ -15,14 +16,14 @@ use Session;
 
 class PembejeoNaViwatilifuController extends Controller
 {
-    public function muuzaji_Wa_pembejeo_na_viwatilifu_index_page()
+    public function muuzaji_Wa_pembejeo_na_viwatilifu_index_page(Request $request)
     {
       //Get User IP
       // $ip = \Request::ip();
 
-      // $ip = '41.59.84.238'; //alternative way
-    $ip = request()->ip();
-      $user_location = \Location::get($ip);
+      $ip = '41.59.84.238'; //alternative way
+      // $ip = $request->ip();
+      $user_location = Location::get($ip);
       $user_region = $user_location->regionName;
       $user_country = $user_location->countryName;
 
@@ -55,12 +56,12 @@ class PembejeoNaViwatilifuController extends Controller
     }
 
 
-    public function muuzaji_Wa_pembejeo_na_viwatilifu_account_page()
+    public function muuzaji_Wa_pembejeo_na_viwatilifu_account_page(Request $request)
     {
       $user_id = Session::get('user_id');
-      // $ip = '41.59.84.238';
-      $ip = request()->ip();
-      $user_location = \Location::get($ip);
+      $ip = '41.59.84.238';
+      // $ip = $request->ip();
+      $user_location = Location::get($ip);
       $user_region = $user_location->regionName;
       $user_country = $user_location->countryName;
 

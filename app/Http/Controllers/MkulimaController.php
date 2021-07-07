@@ -3,18 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Stevebauman\Location\Facades\Location;
 use OpenWeather;
 use App\Post;
 use App\Item;
 class MkulimaController extends Controller
 {
-    public function mkulima_index_page()
+    public function mkulima_index_page(Request $request)
     {
       //Get User IP
-      $ip = request()->ip();
+      // $ip = $request->ip();
 
-      // $ip = '41.59.84.238'; //alternative way
-      $user_location = \Location::get($ip);
+      $ip = '41.59.84.238'; //alternative way
+      $user_location = Location::get($ip);
+      dd($user_location);
       $user_region = $user_location->regionName;
       $user_country = $user_location->countryName;
 
@@ -48,10 +50,10 @@ class MkulimaController extends Controller
     }
 
 
-    public function mashine_za_kilimo()
+    public function mashine_za_kilimo(Request $request)
     {
-      // $ip = '41.59.84.238';
-      $ip = request()->ip();
+      $ip = '41.59.84.238';
+      // $ip = $request->ip();
       $user_location = \Location::get($ip);
       return view('UserAccountBladeFiles.Mkulima.mashine-za-kilimo', compact('user_location'));
     }
@@ -59,16 +61,16 @@ class MkulimaController extends Controller
 
     public function mabwana_shamba()
     {
-      // $ip = '41.59.84.238';
-      $ip = request()->ip();
+      $ip = '41.59.84.238';
+      // $ip = request()->ip();
       $user_location = \Location::get($ip);
       return view('UserAccountBladeFiles.Mkulima.bwana-shamba', compact('user_location'));
     }
 
-    public function pembejeo_na_viwatilifu()
+    public function pembejeo_na_viwatilifu(Request $request)
     {
-      // $ip = '41.59.84.238';
-      $ip = request()->ip();
+      $ip = '41.59.84.238';
+      // $ip = $request->ip();
       $user_location = \Location::get($ip);
       $bidhaa = Item::all();
       $idadi_ya_bidhaa = Item::count();
