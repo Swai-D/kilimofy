@@ -70,7 +70,7 @@
       <!-- ACTION ITEM -->
       <div class="action-item dark">
         <!-- ACTION ITEM ICON -->
-        <img class="action-item-icon icon-settings" src="/assets/img/user_icon/user.png">
+        <img class="action-item-icon icon-settings" src="/assets/img/user_icon/user.png" style="height:32px; width:32px; margin-bottom:5px;">
         <!-- /ACTION ITEM ICON -->
       </div>
       <!-- /ACTION ITEM -->
