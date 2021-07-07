@@ -91,7 +91,7 @@
     <!-- MENU ITEM -->
     <li class="menu-item @yield('menu-status-newsfeed')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link" href="/kilimofy/home/index-page">
+      <a class="menu-item-link" href="/kilimofy/Mkulima/home-page">
         <!-- MENU ITEM LINK ICON -->
         <img src="/assets/img/user_icon/news.png" alt="Habari" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
