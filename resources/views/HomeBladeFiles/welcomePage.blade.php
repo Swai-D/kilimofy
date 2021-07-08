@@ -64,7 +64,7 @@
         <!-- /FORM BOX DECORATION -->
 
         <!-- FORM BOX TITLE -->
-        <h2 class="form-box-title">Ingia kwenye Akauti</h2>
+        <h2 class="form-box-title">Ingia kwenye Akaunti</h2>
         <!-- /FORM BOX TITLE -->
 
         <!-- FORM -->
