@@ -1061,8 +1061,8 @@ textarea::placeholder {
 .icon-videos,
 .icon-wallet {
     fill: #fff;
-    width: 20px;
-    height: 20px
+    width: 25px;
+    height: 25px
 }
 
 .icon-grid,
@@ -1075,8 +1075,8 @@ textarea::placeholder {
 .icon-plus,
 .icon-shopping-bag {
     fill: #fff;
-    width: 20px;
-    height: 20px
+    width: 25px;
+    height: 25px
 }
 
 .icon-back-arrow {
