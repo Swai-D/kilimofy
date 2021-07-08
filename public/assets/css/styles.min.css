@@ -2183,7 +2183,7 @@ figure>img {
 }
 
 .action-list.dark .action-list-item .action-list-item-icon {
-    fill: #030303
+    fill: #fff
 }
 
 .action-list .action-list-item {
@@ -2199,7 +2199,7 @@ figure>img {
 .action-list .action-list-item.active .action-list-item-icon,
 .action-list .action-list-item.unread .action-list-item-icon,
 .action-list .action-list-item:hover .action-list-item-icon {
-    fill: #3e3f5e
+    fill: #fff
 }
 
 .action-list .action-list-item.unread {
@@ -2218,7 +2218,7 @@ figure>img {
 }
 
 .action-list .action-list-item .action-list-item-icon {
-    fill: #adafca;
+    fill: #fff;
     transition: fill .3s ease-in-out
 }
 
@@ -2233,7 +2233,7 @@ figure>img {
 }
 
 .action-item .action-item-icon {
-    fill: #adafca
+    fill: #fff
 }
 
 .action-item.dark .action-item-icon {

@@ -37,7 +37,7 @@
       <a class="action-list-item" href="">
         <!-- ACTION LIST ITEM ICON -->
         <svg class="action-list-item-icon icon-friend">
-          <!-- <use xlink:href="#svg-friend"></use> -->
+          <use xlink:href="#svg-friend"></use>
         </svg>
         <!-- /ACTION LIST ITEM ICON -->
       </a>
@@ -46,7 +46,7 @@
       <!-- ACTION LIST ITEM -->
       <a class="action-list-item" href="hub-profile-messages.html">
         <!-- ACTION LIST ITEM ICON -->
-        <svg class="action-list-item-icon icon-messages">
+        <svg class="action-list-item-icon icon-messages" style="fill:white;">
           <use xlink:href="#svg-messages"></use>
         </svg>
         <!-- /ACTION LIST ITEM ICON -->
@@ -57,7 +57,7 @@
       <a class="action-list-item " href="">
         <!-- ACTION LIST ITEM ICON -->
         <svg class="action-list-item-icon icon-notification">
-          <!-- <use xlink:href="#svg-notification"></use> -->
+          <use xlink:href="#svg-notification"></use>
         </svg>
         <!-- /ACTION LIST ITEM ICON -->
       </a>
@@ -66,11 +66,13 @@
     <!-- /ACTION LIST -->
 
     <!-- ACTION ITEM WRAP -->
-    <a class="action-item-wrap" >
+    <a class="action-item-wrap popup-review-trigger" >
       <!-- ACTION ITEM -->
-      <div class="action-item dark">
+      <div class="action-item ">
         <!-- ACTION ITEM ICON -->
-        <img class="action-item-icon icon-settings" src="/assets/img/user_icon/user.png" style="height:32px; width:32px; margin-bottom:5px;">
+        <svg class="action-list-item-icon icon-settings">
+          <use xlink:href="#svg-settings"></use>
+        </svg>
         <!-- /ACTION ITEM ICON -->
       </div>
       <!-- /ACTION ITEM -->
