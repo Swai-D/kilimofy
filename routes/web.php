@@ -98,8 +98,8 @@ Route::get('/kilimofy/UserAccount/user_setting_page', 'UserAccountController@use
 
 
 //**************************PostController*********************************
-Route::get('/kilimofy/Blog/blog-post-index', 'PostController@blog_post_index');
-Route::post('/kilimofy/Blog/poll_option', 'PostController@poll_option');
+Route::post('/kilimofy/User/status-post', 'PostController@create_status');
+Route::post('/kilimofy/Blog/poll_option', 'PostController@poll_option')->middleware('auth');
 Route::post('/kilimofy/Blog/user_quick_post', 'PostController@user_quick_post');
 Route::get('/kilimofy/Post/read_comments/{post_id}', 'PostController@read_comments');
 Route::post('/kilimofy/Blog/send_comments', 'PostController@send_comments');
@@ -161,5 +161,5 @@ Route::get('/kilimofy/AgroInputs/agroinputs-index', 'AgroInputsController@index'
 
 
 Route::get('/kilimofy/test', function(){
-  return view('UserAccountBladeFiles.BwanaShamba.bwana-shamba-home-page');
+  return view('UnknownUserBladeFiles.unknown-user');
 });

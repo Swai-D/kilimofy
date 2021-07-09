@@ -8,9 +8,7 @@
         <!-- LOGO -->
         <div class="logo">
           <!-- ICON LOGO VIKINGER -->
-          <svg class="icon-logo-vikinger small">
-            <use xlink:href="#svg-logo-vikinger"></use>
-          </svg>
+          <img src="/assets/img/logo/logo.png" alt="" class="icon-logo-vikinger small">
           <!-- /ICON LOGO VIKINGER -->
         </div>
         <!-- /LOGO -->

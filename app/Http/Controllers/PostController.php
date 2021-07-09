@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Post;
 use App\User;
@@ -17,21 +18,62 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function create_status(Request $request)
+
+     {
+
+       $post = new Post();
+       $post->Caption = $request->Caption;
+       $post->Tag1 = $request->Tag1;
+       $post->Tag2 = $request->Tag2;
+       $post->Tag3 = $request->Tag3;
+       $post->User_id = $request->User_id;
+
+       //save Photo
+       if($request->hasFile('Photo')){
+         //dd($request->file('Media'));
+
+             $post_image = $request->file('Photo');
+             $filename = time().','.$post_image->getClientOriginalExtension();
+             Image::make($post_image)->resize(528, 280)->save(public_path('/Uploads/PostPhotos/'.$filename));
+             $post->Photo = $filename;
+           }
+
+             //save video
+         if ($request->hasFile('Video')) {
+           $post_video = Input::file('Video');
+           $post_video_name = time().'.'.$post_video->getClientOriginalExtension();
+           $path = public_path().'/Uploads/PostVideos/';
+           $post_video->move($path, $post_video_name);
+           $post->Video = $post_video_name;
+         }
+
+         $post->save();
+
+       return redirect()->back();
+     }
+
+     
     public function blog_post_index()
     {
         return view('PostBladeFiles.blog-post');
     }
 
     public function poll_option(Request $request)
-    {
-       $poll_option = $request->poll_option;
-        dd($poll_option);
+        {
+            if (Auth::check()) {
+              $poll_option = $request->Caption;
+               dd($poll_option);
+            }
+            dd('Hellow');
+
         return view('PostBladeFiles.blog-post');
     }
 
     public function user_quick_post(Request $request)
     {
-       $user_post = $request->user_post;
+        $user_post = $request->user_post;
         dd($user_post);
         // return view('BlogPostBladeFiles.blog-post');
     }
@@ -91,32 +133,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     public function create(Request $request)
 
-     {
-
-       $post = new Post();
-       $post->Heading = $request->Heading;
-       $post->Tag1 = $request->Tag1;
-       $post->Tag2 = $request->Tag2;
-       $post->Tag3 = $request->Tag3;
-       $post->Tag4 = $request->Tag4;
-       $post->User_id = $request->User_id;
-       $post->Description = $request->Description;
-
-       //save Media
-       if($request->hasFile('Media')){
-         //dd($request->file('Media'));
-
-             $post_image = $request->file('Media');
-             $filename = time().','.$post_image->getClientOriginalExtension();
-             Image::make($post_image)->resize(200, 200)->save(public_path('/Uploads/PostMedia/'.$filename));
-             $post->Media = $filename;
-           }
-       $post->save();
-
-       return redirect()->back()->with('post_message','Post sent succesfuly !');
-     }
 
 
 

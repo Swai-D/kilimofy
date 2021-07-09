@@ -105,6 +105,16 @@ input[type=file] {
     padding: 0 18px
 }
 
+.image-upload>input {
+  display: none;
+}
+
+#form_tag {
+
+display:none;
+
+}
+
 input[type=password]::-webkit-input-placeholder,
 input[type=text]::-webkit-input-placeholder,
 input[type=number]::-webkit-input-placeholder {
@@ -632,7 +642,7 @@ textarea::placeholder {
 .interactive-input.dark input {
     border: none;
     background-color: #f2f2f2;
-    color: #fff
+    color: black
 }
 
 .interactive-input.dark input::-webkit-input-placeholder {
@@ -14537,6 +14547,7 @@ figure>img {
         width: 100%
     }
 }
+
 
 
 /*# sourceMappingURL=styles.min.css.map */

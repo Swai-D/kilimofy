@@ -31,3 +31,10 @@
 @yield('content')
 <!-- app -->
 @include('LayoutBladeFiles.footer-scripts-layout')
+
+<script type="text/javascript">
+
+$("#formButton").click(function(){
+        $("#form_tag").toggle();
+    });
+</script>

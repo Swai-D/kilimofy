@@ -16,13 +16,14 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('User_id');
-            $table->string('Heading')->nullable();
-            $table->string('Description');
-            $table->string('Media')->nullable();
+            $table->string('Caption');
+            $table->string('Photo')->nullable();
+            $table->string('Video')->nullable();
             $table->string('Tag1')->nullable();
             $table->string('Tag2')->nullable();
             $table->string('Tag3')->nullable();
-            $table->string('Tag4')->nullable();
+            $table->string('Likes')->default(0);
+            $table->string('Comments')->default(0);
             $table->timestamps();
 
         });
