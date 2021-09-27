@@ -2,12 +2,79 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\User;
+use App\Staff;
 use App\Item;
+use Auth;
 
 class AdminController extends Controller
 {
+
+
+    //Admin login Page
+    Public function admin_login_redirect()
+    {
+      return redirect('/kilimofy/Staff/login');
+    }
+
+
+    
+    //Admin register new staff blade Page
+    Public function admin_register_new_staff()
+    {
+      return view('AdminBladeFiles.admin-register-new-staff-form');
+    }
+
+    //Admin register new staff store method
+    Public function admin_register_new_staff_store(Request $request)
+    {
+      // dd($request->Staff_Name, $request->Staff_Role, $request->Email, $request->Password);
+
+
+      $data = request()->validate([
+        'Staff_Name' => ['required', 'string', 'max:255'],
+        'Staff_Role' => ['required', 'string', 'max:255'],
+        'Email' => ['required', 'string', 'email', 'max:255', 'unique:staff'],
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+      ]);
+
+      if (isset($data)) {
+           // dd('Hellow');
+           Staff::create([
+           'Staff_Name' => $data['Staff_Name'],
+           'Staff_Role' => $data['Staff_Role'],
+           'Email' => $data['Email'],
+           'Password' => Hash::make($data['password']),
+         ]);
+      }
+
+      return redirect()->back()->with('Message', 'New Staff Added Succesfuly !');
+    }
+
+
+    public function staff_login(Request $request)
+    {
+      $this->validate($request, [
+          'Email' => 'required|string',
+          'password' => 'required',
+          ]);
+
+          if (Auth::attempt([
+              'Email' => $request->Email,
+              'password' => $request->password,
+
+            ])
+          )
+          {
+            dd(" \'am In");
+          }
+    }
+
+
+
     //Admin Index Page
     Public function admin_index_page()
     {
@@ -15,11 +82,21 @@ class AdminController extends Controller
     }
 
     //Users list
-    Public function users_profiles()
+    Public function users_list()
     {
-      $users = User::all();
-      return view('AdminBladeFiles.users-profiles', compact('users'));
+      $user_list = User::all();
+      // dd($user_list);
+      return view('AdminBladeFiles.users-list', compact('user_list'));
     }
+
+    //Users list
+    Public function users_action_list()
+    {
+      $user_list = User::all();
+      // dd($user_list);
+      return view('AdminBladeFiles.users-action-list', compact('user_list'));
+    }
+
 
     Public function items_waiting_list()
     {

@@ -29,6 +29,8 @@ class PostController extends Controller
        $post->Tag2 = $request->Tag2;
        $post->Tag3 = $request->Tag3;
        $post->User_id = $request->User_id;
+       $post->User_Name = $request->User_Name;
+       $post->User_Image_Profile = $request->User_Image_Profile;
 
        //save Photo
        if($request->hasFile('Photo')){
@@ -54,7 +56,7 @@ class PostController extends Controller
        return redirect()->back();
      }
 
-     
+
     public function blog_post_index()
     {
         return view('PostBladeFiles.blog-post');
@@ -80,8 +82,9 @@ class PostController extends Controller
 
     public function read_comments(Post $post_id)
     {
-        //dd($post_id);
+        // dd($post_id);
         $post_details = Post::where('id', '=', $post_id->id)->get();
+        //dd($post_details);
         $author =  User::where('id', '=',$post_id->User_id)->get();
         Session::put('post_id', $post_id->id);
         return view('PostBladeFiles.post-comments', compact('post_details', 'author'));
@@ -94,6 +97,13 @@ class PostController extends Controller
        $data = new Comment();
        $data->comment =  $request->comment;
        $data->post_id =  $request->post_id;
+
+       $original_comment = Post::where('id', '=', $request->post_id)->get('Comments');
+       $updated_comment = $original_comment + 1;
+       Post::where('id', '=', $request->post_id)->update([
+         'Comments' => $updated_comment,
+       ]);
+
        $data->save();
 
 

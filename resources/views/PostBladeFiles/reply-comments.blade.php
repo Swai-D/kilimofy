@@ -275,6 +275,19 @@
               <!-- FORM ITEM -->
               <div class="form-item auto-width">
                 <!-- BUTTON -->
+                <button type="submit" class="button danger padded">
+                  <!-- BUTTON ICON -->
+                  <svg class="button-icon no-space icon-delete">
+                    <use xlink:href="#svg-delete"></use>
+                  </svg>
+                  <!-- /BUTTON ICON -->
+                </button>
+                <!-- /BUTTON -->
+              </div>
+              <!-- /FORM ITEM -->
+              <!-- FORM ITEM -->
+              <div class="form-item auto-width">
+                <!-- BUTTON -->
                 <button type="submit" class="button primary padded">
                   <!-- BUTTON ICON -->
                   <svg class="button-icon no-space icon-send-message">

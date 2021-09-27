@@ -12,7 +12,7 @@
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      <p class="section-pretitle" style="color:#f33155">{{$user_location->regionName}}, {{$user_location->countryName}}</p>
+      {{--<p class="section-pretitle" style="color:#f33155">{{$user_location->regionName}}, {{$user_location->countryName}}</p>--}}
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
@@ -100,7 +100,7 @@
       <!-- PRODUCT PREVIEW -->
       <div class="product-preview">
         <!-- PRODUCT PREVIEW IMAGE -->
-        <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Shopping-cart">
+        <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart">
           <figure class="product-preview-image liquid">
             <img src="/Uploads/ItemImages/{{$bidhaa_info->item_image}}" alt="item-01">
           </figure>

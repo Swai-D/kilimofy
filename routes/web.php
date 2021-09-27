@@ -25,10 +25,12 @@ Route::post('/kilimofy/user/logout', 'AuthController@logout')->name('logout');
 //**************************MkulimaController*********************************
 Route::get('/kilimofy/Mkulima/home-page', 'MkulimaController@mkulima_index_page')->middleware('auth');
 Route::get('/kilimofy/Mkulima/Mashine-za-kilimo', 'MkulimaController@mashine_za_kilimo')->middleware('auth');
+Route::get('/kilimofy/Mkulima/Mashine-za-kilimo/shopping-cart', 'MkulimaController@mashine_za_kilimo_shopping_cart')->middleware('auth');
 Route::get('/kilimofy/Mkulima/Bwana-Shamba', 'MkulimaController@mabwana_shamba')->middleware('auth');
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu', 'MkulimaController@pembejeo_na_viwatilifu')->middleware('auth');
-Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Shopping-cart', 'MkulimaController@pembejeo_na_viwatilifu_shopping_cart')->middleware('auth');
+Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart', 'MkulimaController@pembejeo_na_viwatilifu_shopping_cart')->middleware('auth');
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Buy-item', 'MkulimaController@pembejeo_na_viwatilifu_buy_item')->middleware('auth');
+Route::get('/kilimofy/Usafirisaji/Usafiri', 'MkulimaController@usafiri')->middleware('auth');
 
 //**************************end*************************************************
 
@@ -50,16 +52,39 @@ Route::get('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page','MashineController
 Route::get('/kilimofy/Bwana-Shamba/home-page', 'BwanaShambaController@Bwana_Shamba_Index_Page');
 
 
+//******************************Msafirishaji************************************************
+Route::get('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page', 'MsafirishajiController@Msafirishaji_Index_Page');
+
+
 //*****************************End**********************************************************
 
 
+//**************************AdminController*********************************
+Route::get('/kilimofy/Admin', 'AdminController@admin_login_redirect');
+Route::get('/kilimofy/Admin/register-new-staff', 'AdminController@admin_register_new_staff');
+Route::post('/kilimofy/Admin/register-new-staff-store', 'AdminController@admin_register_new_staff_store');
+Route::get('/kilimofy/Admin/admin_index_page', 'AdminController@admin_index_page');
+Route::get('/kilimofy/Admin/users-list', 'AdminController@users_list');
+Route::get('/kilimofy/Admin/users-action-list', 'AdminController@users_action_list');
+
+
+Route::get('/kilimofy/Admin/items-waiting-list', 'AdminController@items_waiting_list');
+Route::get('/kilimofy/Admin/items-details/{item_id}', 'AdminController@items_details');
+Route::get('/kilimofy/Admin/admin-all-forms', 'AdminController@admin_all_forms');
+Route::get('/kilimofy/Admin/items-feedback/{item_id}', 'AdminController@items_feedback_form');
+Route::post('/kilimofy/Admin/items-feedback-update', 'AdminController@items_feedback_update');
+Route::get('/kilimofy/Admin/accept_item_to_market/{item_id}', 'AdminController@accept_item_to_market');
+
+//**************************end*************************************************
+
+//**************************staffController*************************************************
+Route::get('/kilimofy/Staff/login', 'StaffHomeController@index');
+Route::post('/kilimofy/Admin/login_store', 'AdminController@staff_login');
 
 
 
 
-
-
-
+//**************************end*************************************************
 
 
 
@@ -121,17 +146,6 @@ Route::get('/kilimofy/MarketPlace/{item_id}', 'MarketPlaceController@items_detai
 
 
 
-//**************************AdminController*********************************
-Route::get('/kilimofy/Admin/admin_index_page', 'AdminController@admin_index_page');
-Route::get('/kilimofy/Admin/users-profiles', 'AdminController@users_profiles');
-Route::get('/kilimofy/Admin/items-waiting-list', 'AdminController@items_waiting_list');
-Route::get('/kilimofy/Admin/items-details/{item_id}', 'AdminController@items_details');
-Route::get('/kilimofy/Admin/admin-all-forms', 'AdminController@admin_all_forms');
-Route::get('/kilimofy/Admin/items-feedback/{item_id}', 'AdminController@items_feedback_form');
-Route::post('/kilimofy/Admin/items-feedback-update', 'AdminController@items_feedback_update');
-Route::get('/kilimofy/Admin/accept_item_to_market/{item_id}', 'AdminController@accept_item_to_market');
-
-//**************************end*************************************************
 
 
 
@@ -161,5 +175,5 @@ Route::get('/kilimofy/AgroInputs/agroinputs-index', 'AgroInputsController@index'
 
 
 Route::get('/kilimofy/test', function(){
-  return view('UnknownUserBladeFiles.unknown-user');
+  return view('AdminLayoutFiles.admin-layout');
 });

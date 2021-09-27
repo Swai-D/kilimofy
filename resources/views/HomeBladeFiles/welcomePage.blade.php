@@ -209,7 +209,7 @@
     <br>
       <!-- FORM BOX -->
       <div class="form-box login-register-form-element">
-        <h2 class="form-box-title">Tengeneza Akauti!</h2>
+        <h2 class="form-box-title">Tengeneza Akaunti!</h2>
         <!-- /FORM BOX TITLE -->
 
         <!-- FORM -->

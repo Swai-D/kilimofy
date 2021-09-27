@@ -41,9 +41,9 @@
 
 
     <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-overview')">
+    <li class="menu-item @yield('menu-status-shipping')">
       <!-- MENU ITEM LINK -->
-      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Items/items-index" data-title="Usafirisaji">
+      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/Usafirisaji/Usafiri" data-title="Usafirisaji">
         <!-- MENU ITEM LINK ICON -->
       <img src="/assets/img/user_icon/shipment.png" alt="" style="width:44; height:44;">
         <!-- /MENU ITEM LINK ICON -->
@@ -128,87 +128,8 @@
   <!-- /MENU -->
 </nav>
 
-<!-- Check Auth -->
-@elseif(Auth::user()->user_ocupation == 'Mtaalamu_Wa_Wadudu_Na_Magojwa_ya_Mazao')
-<nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
-  <!-- USER AVATAR -->
-  <a class="user-avatar small no-outline online" href="/kilimofy/UserAccount/about_user_page">
-    <!-- USER AVATAR CONTENT -->
-    <div class="user-avatar-content">
-      <!-- HEXAGON -->
-      <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
-      <!-- /HEXAGON -->
-    </div>
-    <!-- /USER AVATAR CONTENT -->
 
-    <!-- USER AVATAR PROGRESS -->
-    <div class="user-avatar-progress">
-      <!-- HEXAGON -->
-      <div class="hexagon-progress-40-44"></div>
-      <!-- /HEXAGON -->
-    </div>
-    <!-- /USER AVATAR PROGRESS -->
-
-    <!-- USER AVATAR PROGRESS BORDER -->
-    <div class="user-avatar-progress-border">
-      <!-- HEXAGON -->
-      <div class="hexagon-border-40-44"></div>
-      <!-- /HEXAGON -->
-    </div>
-    <!-- /USER AVATAR PROGRESS BORDER -->
-  </a>
-  <!-- /USER AVATAR -->
-
-  <!-- MENU -->
-  <ul class="menu small">
-    <!-- MENU ITEM -->
-    <li class="menu-item @yield('menu-status-newsfeed')">
-      <!-- MENU ITEM LINK -->
-      <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/home/index-page" data-title="Newsfeed">
-        <!-- MENU ITEM LINK ICON -->
-        <svg class="menu-item-link-icon icon-newsfeed">
-          <use xlink:href="#svg-newsfeed"></use>
-        </svg>
-        <!-- /MENU ITEM LINK ICON -->
-      </a>
-      <!-- /MENU ITEM LINK -->
-    </li>
-    <!-- /MENU ITEM -->
-
-    <!-- MENU -->
-    <ul class="menu small">
-      <!-- MENU ITEM -->
-      <li class="menu-item @yield('menu-status-newsfeed')">
-        <!-- MENU ITEM LINK -->
-        <a class="menu-item-link text-tooltip-tfr" href="/kilimofy/home/index-page" data-title="Newsfeed">
-          <!-- MENU ITEM LINK ICON -->
-          <svg class="menu-item-link-icon icon-newsfeed">
-            <use xlink:href="#svg-newsfeed"></use>
-          </svg>
-          <!-- /MENU ITEM LINK ICON -->
-        </a>
-        <!-- /MENU ITEM LINK -->
-      </li>
-      <!-- /MENU ITEM -->
-
-
-    <!-- MENU ITEM -->
-    <li class="menu-item">
-      <!-- MENU ITEM LINK -->
-      <button class="button secondary" data-title="logout">
-        <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><img src="/assets/img/landing/power.png" alt="logout" ></a>
-      </button>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-          @csrf
-      </form>
-      <!-- /MENU ITEM LINK -->
-    </li>
-    <!-- /MENU ITEM -->
-  </ul>
-  <!-- /MENU -->
-</nav>
-
-<!-- Check Auth -->
+<!-- Check if Auth -->
 @elseif(Auth::user()->user_ocupation == 'Bwana_Shamba')
 <nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
   <!-- MENU -->
@@ -321,7 +242,7 @@
   <!-- /MENU -->
 </nav>
 <!-- Check Auth -->
-@elseif(Auth::user()->user_ocupation == 'Mtoaji_Huduma_za_Mashine_Na_Vifaa_Vya_Kilimo')
+@elseif(Auth::user()->user_ocupation == 'Muuzaji_wa_Mashine_Za_Kilimo')
 <nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
   <!-- USER AVATAR -->
   <a class="user-avatar small no-outline online" href="/kilimofy/UserAccount/about_user_page">

@@ -10807,7 +10807,10 @@ figure>img {
     width: 100%;
     height: auto;
     border-top-left-radius: 12px;
-    border-top-right-radius: 12px
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
 }
 
 .video-status .video-status-image.mobile {
@@ -10858,7 +10861,7 @@ figure>img {
     .video-status.small .video-status-image {
         display: none;
         width: 100%;
-        height: auto;
+        height: 30%;
         border-top-right-radius: 12px;
         border-bottom-left-radius: 0;
         position: static

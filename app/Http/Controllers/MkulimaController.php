@@ -17,8 +17,11 @@ class MkulimaController extends Controller
       $ip = '41.59.84.238'; //alternative way
       $user_location = Location::get($ip);
       // dd($user_location);
-      $user_region = $user_location->regionName;
-      $user_country = $user_location->countryName;
+      // $user_region = $user_location->regionName;
+      // $user_country = $user_location->countryName;
+
+      $user_region = 'Dar-es-salaam';
+      $user_country = 'Tanzania';
 
       //Weather API call for current forecast
       $weather = new OpenWeather();
@@ -85,6 +88,22 @@ class MkulimaController extends Controller
     public function pembejeo_na_viwatilifu_buy_item()
     {
       return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-buy-item');
+    }
+
+    public function usafiri()
+    {
+      $ip = '41.59.84.238';
+      // $ip = $request->ip();
+      $user_location = \Location::get($ip);
+      $bidhaa = Item::all();
+      $idadi_ya_bidhaa = Item::count();
+      return view('UserAccountBladeFiles.Mkulima.usafirishaji-home-page', compact('user_location', 'bidhaa', 'idadi_ya_bidhaa'));
+    }
+
+
+    public function mashine_za_kilimo_shopping_cart()
+    {
+      return view('UserAccountBladeFiles.Mkulima.mashine-za-kilimo-shopping-cart');
     }
 
 }

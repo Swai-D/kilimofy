@@ -17,18 +17,18 @@
       <!-- SECTION TITLE -->
       <h2 class="section-title">Mashine za kilimo</h2>
       <!-- /SECTION TITLE -->
-      <p class="section-pretitle" style="color:#f33155">{{$user_location->regionName}}, {{$user_location->countryName}}</p>
+      {{--<p class="section-pretitle" style="color:#f33155">{{$user_location->regionName}}, {{$user_location->countryName}}</p>--}}
     </div>
     <!-- /SECTION HEADER INFO -->
 
     <!-- SECTION HEADER ACTIONS -->
     <div class="section-header-actions">
       <!-- SECTION HEADER ACTION -->
-      <!-- <p class="section-header-action popup-album-creation-trigger">Create Album +</p> -->
+      <p class="section-header-action popup-album-creation-trigger">Create Album +</p>
       <!-- /SECTION HEADER ACTION -->
 
       <!-- SECTION HEADER ACTION -->
-      <!-- <a class="section-header-action" href="profile-photos-inside.html">See All</a> -->
+      <a class="section-header-action" href="profile-photos-inside.html">See All</a>
       <!-- /SECTION HEADER ACTION -->
     </div>
     <!-- /SECTION HEADER ACTIONS -->
@@ -38,7 +38,7 @@
   <!-- GRID -->
   <div class="grid grid-3-3-3-3 centered">
     <!-- ALBUM PREVIEW -->
-    <a class="album-preview" href="profile-photos-inside.html">
+    <a class="album-preview" href="/kilimofy/Mkulima/Mashine-za-kilimo/shopping-cart">
       <!-- ALBUM PREVIEW IMAGE -->
       <figure class="album-preview-image liquid">
         <img src="/assets/img/cover/01.jpg" alt="album-image-01">
@@ -46,13 +46,13 @@
       <!-- /ALBUM PREVIEW IMAGE -->
 
       <!-- TEXT STICKER -->
-      <p class="text-sticker small negative">7</p>
+      <p class="text-sticker small negative">7,000,000</p>
       <!-- /TEXT STICKER -->
 
       <!-- ALBUM PREVIEW INFO -->
       <div class="album-preview-info">
         <!-- ALBUM PREVIEW TITLE -->
-        <p class="album-preview-title">Profile Photos</p>
+        <p class="album-preview-title">Jonh Deer</p>
         <!-- /ALBUM PREVIEW TITLE -->
 
         <!-- ALBUM PREVIEW TEXT -->
@@ -61,137 +61,7 @@
       </div>
       <!-- /ALBUM PREVIEW INFO -->
     </a>
-    <!-- /ALBUM PREVIEW -->
 
-    <!-- ALBUM PREVIEW -->
-    <a class="album-preview" href="profile-photos-inside.html">
-      <!-- ALBUM PREVIEW IMAGE -->
-      <figure class="album-preview-image liquid">
-        <img src="/assets/img/cover/10.jpg" alt="album-image-10">
-      </figure>
-      <!-- /ALBUM PREVIEW IMAGE -->
-
-      <!-- TEXT STICKER -->
-      <p class="text-sticker small negative">28</p>
-      <!-- /TEXT STICKER -->
-
-      <!-- ALBUM PREVIEW INFO -->
-      <div class="album-preview-info">
-        <!-- ALBUM PREVIEW TITLE -->
-        <p class="album-preview-title">Timeline Photos</p>
-        <!-- /ALBUM PREVIEW TITLE -->
-
-        <!-- ALBUM PREVIEW TEXT -->
-        <p class="album-preview-text">Updated 3 days ago</p>
-        <!-- /ALBUM PREVIEW TEXT -->
-      </div>
-      <!-- /ALBUM PREVIEW INFO -->
-    </a>
-    <!-- /ALBUM PREVIEW -->
-
-    <!-- ALBUM PREVIEW -->
-    <a class="album-preview" href="profile-photos-inside.html">
-      <!-- ALBUM PREVIEW IMAGE -->
-      <figure class="album-preview-image liquid">
-        <img src="/assets/img/cover/41.jpg" alt="album-image-41">
-      </figure>
-      <!-- /ALBUM PREVIEW IMAGE -->
-
-      <!-- TEXT STICKER -->
-      <p class="text-sticker small negative">36</p>
-      <!-- /TEXT STICKER -->
-
-      <!-- ALBUM PREVIEW INFO -->
-      <div class="album-preview-info">
-        <!-- ALBUM PREVIEW TITLE -->
-        <p class="album-preview-title">StreamCon 2019</p>
-        <!-- /ALBUM PREVIEW TITLE -->
-
-        <!-- ALBUM PREVIEW TEXT -->
-        <p class="album-preview-text">Updated 1 month ago</p>
-        <!-- /ALBUM PREVIEW TEXT -->
-      </div>
-      <!-- /ALBUM PREVIEW INFO -->
-    </a>
-    <!-- /ALBUM PREVIEW -->
-
-    <!-- ALBUM PREVIEW -->
-    <a class="album-preview" href="profile-photos-inside.html">
-      <!-- ALBUM PREVIEW IMAGE -->
-      <figure class="album-preview-image liquid">
-        <img src="/assets/img/cover/10.jpg" alt="album-image-10">
-      </figure>
-      <!-- /ALBUM PREVIEW IMAGE -->
-
-      <!-- TEXT STICKER -->
-      <p class="text-sticker small negative">28</p>
-      <!-- /TEXT STICKER -->
-
-      <!-- ALBUM PREVIEW INFO -->
-      <div class="album-preview-info">
-        <!-- ALBUM PREVIEW TITLE -->
-        <p class="album-preview-title">Timeline Photos</p>
-        <!-- /ALBUM PREVIEW TITLE -->
-
-        <!-- ALBUM PREVIEW TEXT -->
-        <p class="album-preview-text">Updated 3 days ago</p>
-        <!-- /ALBUM PREVIEW TEXT -->
-      </div>
-      <!-- /ALBUM PREVIEW INFO -->
-    </a>
-    <!-- /ALBUM PREVIEW -->
-
-    <!-- ALBUM PREVIEW -->
-    <a class="album-preview" href="profile-photos-inside.html">
-      <!-- ALBUM PREVIEW IMAGE -->
-      <figure class="album-preview-image liquid">
-        <img src="/assets/img/cover/06.jpg" alt="album-image-06">
-      </figure>
-      <!-- /ALBUM PREVIEW IMAGE -->
-
-      <!-- TEXT STICKER -->
-      <p class="text-sticker small negative">14</p>
-      <!-- /TEXT STICKER -->
-
-      <!-- ALBUM PREVIEW INFO -->
-      <div class="album-preview-info">
-        <!-- ALBUM PREVIEW TITLE -->
-        <p class="album-preview-title">Gaming Cover Arts</p>
-        <!-- /ALBUM PREVIEW TITLE -->
-
-        <!-- ALBUM PREVIEW TEXT -->
-        <p class="album-preview-text">Updated 1 day ago</p>
-        <!-- /ALBUM PREVIEW TEXT -->
-      </div>
-      <!-- /ALBUM PREVIEW INFO -->
-    </a>
-    <!-- /ALBUM PREVIEW -->
-
-    <!-- ALBUM PREVIEW -->
-    <a class="album-preview" href="profile-photos-inside.html">
-      <!-- ALBUM PREVIEW IMAGE -->
-      <figure class="album-preview-image liquid">
-        <img src="/assets/img/cover/01.jpg" alt="album-image-01">
-      </figure>
-      <!-- /ALBUM PREVIEW IMAGE -->
-
-      <!-- TEXT STICKER -->
-      <p class="text-sticker small negative">7</p>
-      <!-- /TEXT STICKER -->
-
-      <!-- ALBUM PREVIEW INFO -->
-      <div class="album-preview-info">
-        <!-- ALBUM PREVIEW TITLE -->
-        <p class="album-preview-title">Profile Photos</p>
-        <!-- /ALBUM PREVIEW TITLE -->
-
-        <!-- ALBUM PREVIEW TEXT -->
-        <p class="album-preview-text">Updated 12 days ago</p>
-        <!-- /ALBUM PREVIEW TEXT -->
-      </div>
-      <!-- /ALBUM PREVIEW INFO -->
-    </a>
-    <!-- /ALBUM PREVIEW -->
 
   </div>
   <!-- /GRID -->

@@ -35,6 +35,7 @@ class HomeBladeController extends Controller
 
     public function switch_account(User $user_id)
     {
+        // dd(request()->user_ocupation);
         User::where('id', '=', $user_id->id)->update([
           'user_ocupation' => request()->user_ocupation,
         ]);

@@ -135,8 +135,8 @@ class AuthController extends Controller
             }
 
 
-            elseif (Auth::user()->user_ocupation == 'Msafirishaji') {
-              // code...
+            elseif (Auth::user()->user_ocupation == 'Watoaji_Huduma_Za_Usafiri') {
+              return redirect('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page');
             }
 
             elseif (Auth::user()->user_ocupation == 'Muuzaji_wa_Mashine_Za_Kilimo') {
@@ -147,8 +147,7 @@ class AuthController extends Controller
 
        return redirect()->back()->withErrors('Taarifa ulizoingiza sio sahihi, Jaribu Tena !');
     }
-    /* GET
-    */
+
     public function logout(Request $request)
     {
         if(\Auth::check())

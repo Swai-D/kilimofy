@@ -24,8 +24,8 @@ class PembejeoNaViwatilifuController extends Controller
       $ip = '41.59.84.238'; //alternative way
       // $ip = $request->ip();
       $user_location = Location::get($ip);
-      $user_region = $user_location->regionName;
-      $user_country = $user_location->countryName;
+      // $user_region = $user_location->regionName;
+      // $user_country = $user_location->countryName;
 
       //Weather API call for current forecast
       $weather = new OpenWeather();
@@ -62,8 +62,8 @@ class PembejeoNaViwatilifuController extends Controller
       $ip = '41.59.84.238';
       // $ip = $request->ip();
       $user_location = Location::get($ip);
-      $user_region = $user_location->regionName;
-      $user_country = $user_location->countryName;
+      // $user_region = $user_location->regionName;
+      // $user_country = $user_location->countryName;
 
       //get what is inside my store
       $total_items_in_my_store = Item::where('seller_id', '=', $user_id)->count();
