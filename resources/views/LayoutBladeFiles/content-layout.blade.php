@@ -344,7 +344,7 @@
                 </svg>
               </label>
                 <!-- /QUICK POST FOOTER ACTION ICON -->
-              <input name="Photo" id="file-input" type="file" />
+              <input name="File" id="file-input" type="file" />
               </div>
               <!-- /QUICK POST FOOTER ACTION -->
 
@@ -367,6 +367,8 @@
         </form>
         </div>
         <!-- /QUICK POST -->
+
+
 
 
 
@@ -533,7 +535,7 @@
                 </div>
                 <!-- /USER STATUS -->
 
-                @if($post->Photo == NULL)
+                @if($post->Photo == NULL && $post->Video == NULL)
                 <!-- QUOTE BOX -->
                 <blockquote class="quote-box">
                   <!-- QUOTE BOX ICON -->
@@ -548,15 +550,8 @@
                 </blockquote>
                 <!-- /QUOTE BOX -->
 
-                  @else
-                    <!-- WIDGET BOX STATUS TEXT -->
-                    <p class="widget-box-status-text">{{$post->Caption}}</p>
-                    <!-- /WIDGET BOX STATUS TEXT -->
-                @endif
 
-
-
-                 @if($post->Photo != NULL)
+                 @elseif($post->Photo != NULL && $post->Video == NULL)
                  <!-- VIDEO STATUS -->
                  <a class="video-status" href="/Uploads/PostPhotos/{{$post->Photo}}" target="_blank">
                    <!-- VIDEO STATUS IMAGE -->
@@ -564,6 +559,43 @@
                    <!-- /VIDEO STATUS IMAGE -->
                  </a>
                  <!-- /VIDEO STATUS -->
+                 <br>
+                 <!-- WIDGET BOX STATUS TEXT -->
+                 <p class="widget-box-status-text">{{$post->Caption}}<a href="#">http://lyt.ly/snej25</a>. What does this mean? I'll be uploading new content every day, improving the quality and I'm gonna have access to games a month before the official release.</p>
+                 <!-- /WIDGET BOX STATUS TEXT -->
+                 @elseif($post->Video != Null && $post->Photo == Null)
+                 <!-- VIDEO BOX -->
+                 <br>
+                 <div class="video-box ">
+                   <!-- VIDEO BOX COVER -->
+                   <div class="video-box">
+                     <!-- VIDEO BOX COVER IMAGE -->
+                     <video  style="width:100%;" height="" autoplay muted loop controls>
+                           <source src="/Uploads/PostVideos/{{$post->Video}}" type="video/mp4" >
+                    </video>
+                     <!-- /VIDEO BOX COVER IMAGE -->
+
+
+                     <!-- VIDEO BOX INFO -->
+                     <div class="video-box-info">
+                       <!-- WIDGET BOX STATUS TEXT -->
+                       <p class="widget-box-status-text">{{$post->Caption}}<a href="#">http://lyt.ly/snej25</a>. What does this mean? I'll be uploading new content every day, improving the quality and I'm gonna have access to games a month before the official release.</p>
+                       <!-- /WIDGET BOX STATUS TEXT -->
+
+                       <!-- VIDEO BOX TEXT -->
+                       <p class="video-box-text">{{$post->created_at->diffForHumans()}}</p>
+                       <!-- /VIDEO BOX TEXT -->
+                      </div>
+                     <!-- /VIDEO BOX INFO -->
+
+                   </div>
+                   <!-- /VIDEO BOX COVER -->
+
+                 </div>
+                 <!-- /VIDEO BOX -->
+
+                 <br>
+
 
                  @endif
                 <!-- CONTENT ACTIONS -->
