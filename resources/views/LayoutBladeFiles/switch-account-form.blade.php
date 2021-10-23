@@ -38,7 +38,7 @@
         <div class="form-select">
           <label for="rating-reason">Akauti Mpya</label>
           <select class="for" name="user_ocupation">
-            <option  selected disabled>--chagua Kazi--</option>
+            <option value="" selected disabled>--chagua Kazi--</option>
             <option value="Mkulima">Mkulima</option>
             <option value="Muuzaji_Wa_pembejeo_Na_Viwatilifu">Muuzaji wa pembejeo Na Viwatilifu</option>
             <option value="Bwana_Shamba">Bwana Shamba (Extension Officer)</option>
@@ -61,11 +61,11 @@
     <!-- POPUP BOX ACTIONS -->
     <div class="popup-box-actions full void">
       <!-- POPUP BOX ACTION -->
-      <button type="submit" class="popup-box-action full button secondary popup-review-trigger">Save</button>
+      <button type="submit" class="popup-box-action full button secondary">Save</button>
       <!-- /POPUP BOX ACTION -->
 
       <!-- POPUP BOX ACTION TEXT -->
-      <p class="popup-box-action-text">Taarifa zako zote za Akauti ya awali zitahifadhiwa, unaweza kuzipata wakati wowote utakapo rudia akauti yako ya awali!</p>
+      <p class="popup-box-action-text">Taarifa zako zote za Akaunti ya awali zitahifadhiwa, unaweza kuzipata wakati wowote utakapo rudia akaunti yako ya awali!</p>
       <!-- /POPUP BOX ACTION TEXT -->
     </div>
     <!-- /POPUP BOX ACTIONS -->

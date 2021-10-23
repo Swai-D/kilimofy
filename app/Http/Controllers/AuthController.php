@@ -27,6 +27,7 @@ class AuthController extends Controller
           'user_name' => ['required', 'string', 'max:255'],
           'user_phone_number' => ['required', 'string', 'max:13','unique:users'],
           'user_ocupation' => ['string', 'max:255'],
+          'user_location' => ['string', 'max:255'],
           'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
@@ -49,6 +50,7 @@ class AuthController extends Controller
             'user_name' => $data['user_name'],
             'user_phone_number' => $std_user_phone_number,
             'user_ocupation' => $data['user_ocupation'],
+            'user_location' => $data['user_location'],
             'password' => Hash::make($data['password']),
           ]);
 
@@ -125,7 +127,7 @@ class AuthController extends Controller
             elseif (Auth::user()->user_ocupation == 'Muuzaji_Wa_pembejeo_Na_Viwatilifu')
             {
               Session::put('user_id',$user_id);
-              return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/account-store-page');
+              return redirect('/kilimofy/Muuzaji-Wa-Pembejeo-Na-Viwatilifu/home-page');
             }
 
 
@@ -139,7 +141,7 @@ class AuthController extends Controller
               return redirect('/kilimofy/Msafirishaji-Wa-Bidhaa-Za-Shambani/home-page');
             }
 
-            elseif (Auth::user()->user_ocupation == 'Muuzaji_wa_Mashine_Za_Kilimo') {
+            elseif (Auth::user()->user_ocupation == 'Fundi_Na_Mashine_Za_Kilimo') {
               return redirect('/kilimofy/Muuzaji-Wa-Mashine-Za-Kilimo/home-page');
             }
 

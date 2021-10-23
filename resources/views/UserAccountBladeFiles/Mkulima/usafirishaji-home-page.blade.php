@@ -5,298 +5,180 @@
 @section('discription-details','Chagua Usafiri')
 <!-- CONTENT GRID -->
 <div class="content-grid">
+
+  <!-- SECTION BANNER -->
   @include('LayoutBladeFiles.title-layout')
-  <!-- SECTION HEADER -->
-  <div class="section-header">
-    <!-- SECTION HEADER INFO -->
-    <div class="section-header-info">
-      <!-- SECTION PRETITLE -->
-      <p class="section-pretitle">Chosen by the Community</p>
-      <!-- /SECTION PRETITLE -->
+  <!-- /SECTION BANNER -->
 
-      <!-- SECTION TITLE -->
-      <h2 class="section-title">Featured Streamers</h2>
-      <!-- /SECTION TITLE -->
-    </div>
-    <!-- /SECTION HEADER INFO -->
+  <!-- GRID -->
+  <div class="grid grid-3-3-3-3 top-space centered">
 
-    <!-- SECTION HEADER ACTIONS -->
-    <div class="section-header-actions">
-      <!-- SLIDER CONTROLS -->
-      <div id="stream-slider-controls" class="slider-controls">
-        <!-- SLIDER CONTROL -->
-        <div class="slider-control left">
-            <!-- SLIDER CONTROL ICON -->
-            <svg class="slider-control-icon icon-big-arrow">
-              <use xlink:href="#svg-big-arrow"></use>
-            </svg>
-            <!-- /SLIDER CONTROL ICON -->
-          </div>
-          <!-- /SLIDER CONTROL -->
+    <!-- BADGE ITEM STAT -->
+    <div class="badge-item-stat">
+      <!-- TEXT STICKER -->
+      <p class="text-sticker">
+        <!-- TEXT STICKER ICON -->
+        <svg class="text-sticker-icon icon-plus-small">
+          <use xlink:href="#svg-plus-small"></use>
+        </svg>
+        <!-- TEXT STICKER ICON -->
+        Tan 13
+      </p>
+      <!-- /TEXT STICKER -->
 
-          <!-- SLIDER CONTROL -->
-          <div class="slider-control right">
-            <!-- SLIDER CONTROL ICON -->
-            <svg class="slider-control-icon icon-big-arrow">
-              <use xlink:href="#svg-big-arrow"></use>
-            </svg>
-            <!-- /SLIDER CONTROL ICON -->
-          </div>
-          <!-- /SLIDER CONTROL -->
+      <!-- BADGE ITEM STAT IMAGE PREVIEW -->
+      <img class="badge-item-stat-image-preview" src="/assets/img/user_icon/shipment.png" alt="badge-bronze-s" style="width:32px; height:32px;">
+      <!-- /BADGE ITEM STAT IMAGE PREVIEW -->
+
+      <!-- BADGE ITEM STAT IMAGE -->
+      <img class="badge-item-stat-image" src="/assets/img/user_icon/shipment.png" alt="badge-bronze-b">
+      <!-- /BADGE ITEM STAT IMAGE -->
+
+      <!-- BADGE ITEM STAT TITLE -->
+      <p class="badge-item-stat-title">Guta</p>
+      <!-- /BADGE ITEM STAT TITLE -->
+
+      <!-- BADGE ITEM STAT TEXT -->
+      <p class="badge-item-stat-text">Has posted more than 1 post on their profile</p>
+      <!-- /BADGE ITEM STAT TEXT -->
+
+      <!-- PROGRESS STAT -->
+      <div class="badge-item-stat">
+        <!-- BUTTON -->
+        <button class="button secondary popup-call-guta-trigger">Agiza Usafiri</button>
+        <!-- /BUTTON -->
+
       </div>
-      <!-- /SLIDER CONTROLS -->
+      <!-- /PROGRESS STAT -->
     </div>
-    <!-- /SECTION HEADER ACTIONS -->
+    <!-- /BADGE ITEM STAT -->
+
+    <!-- BADGE ITEM STAT -->
+    <div class="badge-item-stat">
+      <!-- TEXT STICKER -->
+      <p class="text-sticker">
+        <!-- TEXT STICKER ICON -->
+        <svg class="text-sticker-icon icon-plus-small">
+          <use xlink:href="#svg-plus-small"></use>
+        </svg>
+        <!-- TEXT STICKER ICON -->
+        20 Exp
+      </p>
+      <!-- /TEXT STICKER -->
+
+      <!-- BADGE ITEM STAT IMAGE PREVIEW -->
+      <img class="badge-item-stat-image-preview" src="/assets/img/user_icon/shipment.png" alt="badge-bronze-s" style="width:32px; height:32px;">
+      <!-- /BADGE ITEM STAT IMAGE PREVIEW -->
+
+      <!-- BADGE ITEM STAT IMAGE -->
+      <img class="badge-item-stat-image" src="/assets/img/user_icon/shipment.png" alt="badge-bronze-b">
+      <!-- /BADGE ITEM STAT IMAGE -->
+
+      <!-- BADGE ITEM STAT TITLE -->
+      <p class="badge-item-stat-title">Kirikuu</p>
+      <!-- /BADGE ITEM STAT TITLE -->
+
+      <!-- BADGE ITEM STAT TEXT -->
+      <p class="badge-item-stat-text">Has posted more than 1 post on their profile</p>
+      <!-- /BADGE ITEM STAT TEXT -->
+
+      <!-- PROGRESS STAT -->
+      <div class="badge-item-stat">
+        <!-- BUTTON -->
+        <button class="button secondary popup-call-kirikuu-trigger">Agiza Usafiri</button>
+        <!-- /BUTTON -->
+
+      </div>
+      <!-- /PROGRESS STAT -->
+    </div>
+    <!-- /BADGE ITEM STAT -->
+
+    <!-- BADGE ITEM STAT -->
+    <div class="badge-item-stat">
+      <!-- TEXT STICKER -->
+      <p class="text-sticker">
+        <!-- TEXT STICKER ICON -->
+        <svg class="text-sticker-icon icon-plus-small">
+          <use xlink:href="#svg-plus-small"></use>
+        </svg>
+        <!-- TEXT STICKER ICON -->
+        20 Exp
+      </p>
+      <!-- /TEXT STICKER -->
+
+      <!-- BADGE ITEM STAT IMAGE PREVIEW -->
+      <img class="badge-item-stat-image-preview" src="/assets/img/user_icon/shipment.png" alt="badge-bronze-s" style="width:32px; height:32px;">
+      <!-- /BADGE ITEM STAT IMAGE PREVIEW -->
+
+      <!-- BADGE ITEM STAT IMAGE -->
+      <img class="badge-item-stat-image" src="/assets/img/user_icon/shipment.png" alt="badge-bronze-b">
+      <!-- /BADGE ITEM STAT IMAGE -->
+
+      <!-- BADGE ITEM STAT TITLE -->
+      <p class="badge-item-stat-title">Kenta</p>
+      <!-- /BADGE ITEM STAT TITLE -->
+
+      <!-- BADGE ITEM STAT TEXT -->
+      <p class="badge-item-stat-text">Has posted more than 1 post on their profile</p>
+      <!-- /BADGE ITEM STAT TEXT -->
+
+      <!-- PROGRESS STAT -->
+      <div class="badge-item-stat">
+        <!-- BUTTON -->
+        <button class="button secondary popup-call-kenta-trigger">Agiza Usafiri</button>
+        <!-- /BUTTON -->
+
+      </div>
+      <!-- /PROGRESS STAT -->
+    </div>
+    <!-- /BADGE ITEM STAT -->
+
+    <!-- BADGE ITEM STAT -->
+    <div class="badge-item-stat">
+      <!-- TEXT STICKER -->
+      <p class="text-sticker">
+        <!-- TEXT STICKER ICON -->
+        <svg class="text-sticker-icon icon-plus-small">
+          <use xlink:href="#svg-plus-small"></use>
+        </svg>
+        <!-- TEXT STICKER ICON -->
+        Tan 13
+      </p>
+      <!-- /TEXT STICKER -->
+
+      <!-- BADGE ITEM STAT IMAGE PREVIEW -->
+      <img class="badge-item-stat-image-preview" src="/assets/img/user_icon/shipment.png" alt="badge-bronze-s" style="width:32px; height:32px;">
+      <!-- /BADGE ITEM STAT IMAGE PREVIEW -->
+
+      <!-- BADGE ITEM STAT IMAGE -->
+      <img class="badge-item-stat-image" src="/assets/img/user_icon/shipment.png" alt="badge-bronze-b">
+      <!-- /BADGE ITEM STAT IMAGE -->
+
+      <!-- BADGE ITEM STAT TITLE -->
+      <p class="badge-item-stat-title">Fuso</p>
+      <!-- /BADGE ITEM STAT TITLE -->
+
+      <!-- BADGE ITEM STAT TEXT -->
+      <p class="badge-item-stat-text">Has posted more than 1 post on their profile</p>
+      <!-- /BADGE ITEM STAT TEXT -->
+
+      <!-- PROGRESS STAT -->
+      <div class="badge-item-stat">
+        <!-- BUTTON -->
+        <button class="button secondary popup-call-fuso-trigger">Agiza Usafiri</button>
+        <!-- /BUTTON -->
+
+      </div>
+      <!-- /PROGRESS STAT -->
+    </div>
+    <!-- /BADGE ITEM STAT -->
+
   </div>
-  <!-- /SECTION HEADER -->
-
-  <!-- SECTION SLIDER -->
-  <div id="stream-slider" class="section-slider">
-    <!-- SECTION SLIDER ITEM -->
-    <div class="sections-slider-item">
-      <!-- STREAMER BOX -->
-      <div class="streamer-box small">
-        <!-- STREAMER BOX COVER -->
-        <figure class="streamer-box-cover liquid">
-          <img src="/assets/img/cover/01.jpg" alt="cover-01">
-        </figure>
-        <!-- /STREAMER BOX COVER -->
-
-        <!-- STREAMER BOX INFO -->
-        <div class="streamer-box-info">
-          <!-- STREAMER BOX IMAGE -->
-          <div class="streamer-box-image">
-            <!-- PICTURE -->
-            <figure class="picture medium circle liquid">
-              <img src="/assets/img/avatar/01-social.png" alt="avatar-01-social">
-            </figure>
-            <!-- /PICTURE -->
-          </div>
-          <!-- /STREAMER BOX IMAGE -->
-
-          <!-- STREAMER BOX TITLE -->
-          <p class="streamer-box-title">GameHuntress</p>
-          <!-- /STREAMER BOX TITLE -->
-
-          <!-- STREAMER BOX TEXT -->
-          <p class="streamer-box-text">Marina Valentine</p>
-          <!-- /STREAMER BOX TEXT -->
-
-          <!-- STREAMER BOX STATUS -->
-          <p class="streamer-box-status">Offline</p>
-          <!-- /STREAMER BOX STATUS -->
-
-          <!-- BUTTON -->
-          <a class="button small white" href="profile-timeline.html">View Profile</a>
-          <!-- /BUTTON -->
-
-          <!-- BUTTON -->
-          <a class="button small twitch" href="https://www.twitch.tv/" target="_blank">Visit Channel</a>
-          <!-- /BUTTON -->
-        </div>
-        <!-- /STREAMER BOX INFO -->
-      </div>
-      <!-- /STREAMER BOX -->
-    </div>
-    <!-- /SECTION SLIDER ITEM -->
-
-    <!-- SECTION SLIDER ITEM -->
-    <div class="sections-slider-item">
-      <!-- STREAMER BOX -->
-      <div class="streamer-box small">
-        <!-- STREAMER BOX COVER -->
-        <figure class="streamer-box-cover liquid">
-          <img src="/assets/img/cover/04.jpg" alt="cover-04">
-        </figure>
-        <!-- /STREAMER BOX COVER -->
-
-        <!-- STREAMER BOX INFO -->
-        <div class="streamer-box-info">
-          <!-- STREAMER BOX IMAGE -->
-          <div class="streamer-box-image">
-            <!-- PICTURE -->
-            <figure class="picture medium circle liquid">
-              <img src="/assets/img/avatar/31.jpg" alt="avatar-31">
-            </figure>
-            <!-- /PICTURE -->
-          </div>
-          <!-- /STREAMER BOX IMAGE -->
-
-          <!-- STREAMER BOX TITLE -->
-          <p class="streamer-box-title">NekoStreamz</p>
-          <!-- /STREAMER BOX TITLE -->
-
-          <!-- STREAMER BOX TEXT -->
-          <p class="streamer-box-text">Neko Bebop</p>
-          <!-- /STREAMER BOX TEXT -->
-
-          <!-- STREAMER BOX STATUS -->
-          <p class="streamer-box-status active">Live</p>
-          <!-- /STREAMER BOX STATUS -->
-
-          <!-- BUTTON -->
-          <a class="button small white" href="profile-timeline.html">View Profile</a>
-          <!-- /BUTTON -->
-
-          <!-- BUTTON -->
-          <a class="button small twitch" href="https://www.twitch.tv/" target="_blank">Visit Channel</a>
-          <!-- /BUTTON -->
-        </div>
-        <!-- /STREAMER BOX INFO -->
-      </div>
-      <!-- /STREAMER BOX -->
-    </div>
-    <!-- /SECTION SLIDER ITEM -->
-
-    <!-- SECTION SLIDER ITEM -->
-    <div class="sections-slider-item">
-      <!-- STREAMER BOX -->
-      <div class="streamer-box small">
-        <!-- STREAMER BOX COVER -->
-        <figure class="streamer-box-cover liquid">
-          <img src="/assets/img/cover/06.jpg" alt="cover-06">
-        </figure>
-        <!-- /STREAMER BOX COVER -->
-
-        <!-- STREAMER BOX INFO -->
-        <div class="streamer-box-info">
-          <!-- STREAMER BOX IMAGE -->
-          <div class="streamer-box-image">
-            <!-- PICTURE -->
-            <figure class="picture medium circle liquid">
-              <img src="/assets/img/avatar/04.jpg" alt="avatar-04">
-            </figure>
-            <!-- /PICTURE -->
-          </div>
-          <!-- /STREAMER BOX IMAGE -->
-
-          <!-- STREAMER BOX TITLE -->
-          <p class="streamer-box-title">BeardedWonder66</p>
-          <!-- /STREAMER BOX TITLE -->
-
-          <!-- STREAMER BOX TEXT -->
-          <p class="streamer-box-text">Bearded Wonder</p>
-          <!-- /STREAMER BOX TEXT -->
-
-          <!-- STREAMER BOX STATUS -->
-          <p class="streamer-box-status active">Live</p>
-          <!-- /STREAMER BOX STATUS -->
-
-          <!-- BUTTON -->
-          <a class="button small white" href="profile-timeline.html">View Profile</a>
-          <!-- /BUTTON -->
-
-          <!-- BUTTON -->
-          <a class="button small twitch" href="https://www.twitch.tv/" target="_blank">Visit Channel</a>
-          <!-- /BUTTON -->
-        </div>
-        <!-- /STREAMER BOX INFO -->
-      </div>
-      <!-- /STREAMER BOX -->
-    </div>
-    <!-- /SECTION SLIDER ITEM -->
-
-    <!-- SECTION SLIDER ITEM -->
-    <div class="sections-slider-item">
-      <!-- STREAMER BOX -->
-      <div class="streamer-box small">
-        <!-- STREAMER BOX COVER -->
-        <figure class="streamer-box-cover liquid">
-          <img src="/assets/img/cover/05.jpg" alt="cover-05">
-        </figure>
-        <!-- /STREAMER BOX COVER -->
-
-        <!-- STREAMER BOX INFO -->
-        <div class="streamer-box-info">
-          <!-- STREAMER BOX IMAGE -->
-          <div class="streamer-box-image">
-            <!-- PICTURE -->
-            <figure class="picture medium circle liquid">
-              <img src="/assets/img/avatar/32.jpg" alt="avatar-32">
-            </figure>
-            <!-- /PICTURE -->
-          </div>
-          <!-- /STREAMER BOX IMAGE -->
-
-          <!-- STREAMER BOX TITLE -->
-          <p class="streamer-box-title">Diamondette</p>
-          <!-- /STREAMER BOX TITLE -->
-
-          <!-- STREAMER BOX TEXT -->
-          <p class="streamer-box-text">Sarah Diamond</p>
-          <!-- /STREAMER BOX TEXT -->
-
-          <!-- STREAMER BOX STATUS -->
-          <p class="streamer-box-status active">Live</p>
-          <!-- /STREAMER BOX STATUS -->
-
-          <!-- BUTTON -->
-          <a class="button small white" href="profile-timeline.html">View Profile</a>
-          <!-- /BUTTON -->
-
-          <!-- BUTTON -->
-          <a class="button small twitch" href="https://www.twitch.tv/" target="_blank">Visit Channel</a>
-          <!-- /BUTTON -->
-        </div>
-        <!-- /STREAMER BOX INFO -->
-      </div>
-      <!-- /STREAMER BOX -->
-    </div>
-    <!-- /SECTION SLIDER ITEM -->
-
-    <!-- SECTION SLIDER ITEM -->
-    <div class="sections-slider-item">
-      <!-- STREAMER BOX -->
-      <div class="streamer-box small">
-        <!-- STREAMER BOX COVER -->
-        <figure class="streamer-box-cover liquid">
-          <img src="/assets/img/cover/23.jpg" alt="cover-23">
-        </figure>
-        <!-- /STREAMER BOX COVER -->
-
-        <!-- STREAMER BOX INFO -->
-        <div class="streamer-box-info">
-          <!-- STREAMER BOX IMAGE -->
-          <div class="streamer-box-image">
-            <!-- PICTURE -->
-            <figure class="picture medium circle liquid">
-              <img src="/assets/img/avatar/03.jpg" alt="avatar-03">
-            </figure>
-            <!-- /PICTURE -->
-          </div>
-          <!-- /STREAMER BOX IMAGE -->
-
-          <!-- STREAMER BOX TITLE -->
-          <p class="streamer-box-title">Nick'sArcade</p>
-          <!-- /STREAMER BOX TITLE -->
-
-          <!-- STREAMER BOX TEXT -->
-          <p class="streamer-box-text">Nick Grissom</p>
-          <!-- /STREAMER BOX TEXT -->
-
-          <!-- STREAMER BOX STATUS -->
-          <p class="streamer-box-status">Offline</p>
-          <!-- /STREAMER BOX STATUS -->
-
-          <!-- BUTTON -->
-          <a class="button small white" href="profile-timeline.html">View Profile</a>
-          <!-- /BUTTON -->
-
-          <!-- BUTTON -->
-          <a class="button small twitch" href="https://www.twitch.tv/" target="_blank">Visit Channel</a>
-          <!-- /BUTTON -->
-        </div>
-        <!-- /STREAMER BOX INFO -->
-      </div>
-      <!-- /STREAMER BOX -->
-    </div>
-    <!-- /SECTION SLIDER ITEM -->
-
-    </div>
-  <!-- /SECTION SLIDER -->
-
-  <!-- SECTION RESULTS TEXT -->
-  <p class="section-results-text">Showing 12 out of 98 streams</p>
-  <!-- /SECTION RESULTS TEXT -->
+  <!-- /GRID -->
 </div>
 <!-- /CONTENT GRID -->
+
+@include('LayoutBladeFiles.call-guta-form')
+@include('LayoutBladeFiles.call-kirikuu-form')
+@include('LayoutBladeFiles.call-kenta-form')
+@include('LayoutBladeFiles.call-fuso-form')

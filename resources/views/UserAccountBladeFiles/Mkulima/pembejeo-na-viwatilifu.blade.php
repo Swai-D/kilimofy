@@ -1,5 +1,6 @@
 @extends('LayoutBladeFiles.app-layout')
 @section('title','Pembejeo Na Viwatilifu')
+@section('mini-user-shop-active','unread')
 @section('menu-status-growth','active')
 @section('discription-title','Pata Pembejeo Hapo Hapo Ulipo')
 @section('discription-details','kilimofy')
@@ -12,95 +13,94 @@
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      {{--<p class="section-pretitle" style="color:#f33155">{{$user_location->regionName}}, {{$user_location->countryName}}</p>--}}
+      <p class="section-pretitle" style="color:#f33155">{{$user_location}}</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h2 class="section-title">Wauzaji wa Viwatilifu na Pembejeo <span class="highlighted">({{$idadi_ya_bidhaa}})</span></h2>
+      <h2 class="section-title">Wauzaji wa Viwatilifu na Pembejeo <span class="highlighted">({{$pembejeo_na_viwatilifu_count}})</span></h2>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
   </div>
   <!-- /SECTION HEADER -->
 
+
   <!-- SECTION FILTERS BAR -->
-  <div class="section-filters-bar centered v3">
-    <!-- FILTER TABS -->
-    <div class="filter-tabs">
-      <!-- FILTER TAB -->
-      <div class="filter-tab">
-        <!-- FILTER TAB TEXT -->
-        <p class="filter-tab-text">Best Sellers</p>
-        <!-- /FILTER TAB TEXT -->
-      </div>
-      <!-- /FILTER TAB -->
+  <div class="section-filters-bar v1">
+    <!-- SECTION FILTERS BAR ACTIONS -->
+    <div class="section-filters-bar-actions">
+      <!-- FORM ROW -->
+      <div class="form-row">
+        <!-- FORM ITEM -->
+        <div class="form-item">
+          <!-- FORM SELECT -->
+          <div class="form-select">
+            <label for="rating-reason">Tafuta ?</label>
+            <select class="for" name="user_location">
+              <option value="" selected disabled>Mkoa &amp; Wilaya Nyingine? </option>
 
-      <!-- FILTER TAB -->
-      <div class="filter-tab active">
-        <!-- FILTER TAB TEXT -->
-        <p class="filter-tab-text">Recently Added</p>
-        <!-- /FILTER TAB TEXT -->
-      </div>
-      <!-- /FILTER TAB -->
+              @foreach($places as $place)
+                <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
+              @endforeach
 
-      <!-- FILTER TAB -->
-      <div class="filter-tab">
-        <!-- FILTER TAB TEXT -->
-        <p class="filter-tab-text">Best Rated</p>
-        <!-- /FILTER TAB TEXT -->
-      </div>
-      <!-- /FILTER TAB -->
+            </select>
+            <!-- FORM SELECT ICON -->
+            <svg class="form-select-icon icon-small-arrow">
+              <use xlink:href="#svg-small-arrow"></use>
+            </svg>
+            <!-- /FORM SELECT ICON -->
 
-      <!-- FILTER TAB -->
-      <div class="filter-tab">
-        <!-- FILTER TAB TEXT -->
-        <p class="filter-tab-text">Lowest Price</p>
-        <!-- /FILTER TAB TEXT -->
+          </div>
+          <!-- /FORM SELECT -->
+        </div>
+        <!-- /FORM ITEM -->
       </div>
-      <!-- /FILTER TAB -->
+      <!-- /FORM ROW -->
 
-      <!-- FILTER TAB -->
-      <div class="filter-tab">
-        <!-- FILTER TAB TEXT -->
-        <p class="filter-tab-text">Highest Price</p>
-        <!-- /FILTER TAB TEXT -->
+      <!-- FILTER TABS -->
+      <div class="filter-tabs">
+        <!-- FILTER TAB -->
+        <div class="filter-tab active">
+          <!-- FILTER TAB TEXT -->
+          <p class="filter-tab-text">Recently Active</p>
+          <!-- /FILTER TAB TEXT -->
+        </div>
+        <!-- /FILTER TAB -->
+
+        <!-- FILTER TAB -->
+        <div class="filter-tab">
+          <!-- FILTER TAB TEXT -->
+          <p class="filter-tab-text">Newest Seller</p>
+          <!-- /FILTER TAB TEXT -->
+        </div>
+        <!-- /FILTER TAB -->
+
+        <!-- FILTER TAB -->
+        <div class="filter-tab">
+          <!-- FILTER TAB TEXT -->
+          <p class="filter-tab-text">Alphabetical</p>
+          <!-- /FILTER TAB TEXT -->
+        </div>
+        <!-- /FILTER TAB -->
       </div>
-      <!-- /FILTER TAB -->
+      <!-- /FILTER TABS -->
     </div>
-    <!-- /FILTER TABS -->
+    <!-- /SECTION FILTERS BAR ACTIONS -->
 
-    <!-- FORM -->
-    <form class="form">
-      <!-- FORM SELECT -->
-      <div class="form-select">
-        <label for="store-filter-category">Filter By</label>
-        <select id="store-filter-category" name="store_filter_category">
-          <option value="0">Best Sellers</option>
-          <option value="1">Recently Added</option>
-          <option value="2">Best Rated</option>
-          <option value="3">Lowest Price</option>
-          <option value="4">Highest Price</option>
-        </select>
-        <!-- FORM SELECT ICON -->
-        <svg class="form-select-icon icon-small-arrow">
-          <use xlink:href="#svg-small-arrow"></use>
-        </svg>
-        <!-- /FORM SELECT ICON -->
-      </div>
-      <!-- /FORM SELECT -->
-    </form>
-    <!-- /FORM -->
+    <!-- SECTION FILTERS BAR ACTIONS -->
+
+    <!-- /SECTION FILTERS BAR ACTIONS -->
   </div>
   <!-- /SECTION FILTERS BAR -->
 
   <!-- GRID -->
   <div class="grid grid-3-3-3-3 centered">
 
-    @forelse($bidhaa as $bidhaa_info)
+    @forelse($pembejeo_na_viwatilifu_list as $bidhaa_info)
       <!-- PRODUCT PREVIEW -->
       <div class="product-preview">
         <!-- PRODUCT PREVIEW IMAGE -->
-        <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart">
+        <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart/{{$bidhaa_info->id}}">
           <figure class="product-preview-image liquid">
             <img src="/Uploads/ItemImages/{{$bidhaa_info->item_image}}" alt="item-01">
           </figure>
@@ -114,11 +114,11 @@
           <!-- /TEXT STICKER -->
 
           <!-- PRODUCT PREVIEW TITLE -->
-          <p class="product-preview-title"><a href="marketplace-product.html">{{$bidhaa_info->item_name}}</a></p>
+          <p class="product-preview-title"><a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart/{{$bidhaa_info->id}}">{{$bidhaa_info->item_name}}</a></p>
           <!-- /PRODUCT PREVIEW TITLE -->
 
           <!-- PRODUCT PREVIEW CATEGORY -->
-          <p class="product-preview-category digital"><a href="marketplace-category.html">{{$bidhaa_info->item_category}}</a></p>
+          <p class="product-preview-category digital"><a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart/{{$bidhaa_info->id}}">{{$bidhaa_info->item_category}}</a></p>
           <!-- /PRODUCT PREVIEW CATEGORY -->
 
           <!-- PRODUCT PREVIEW TEXT -->
@@ -211,10 +211,12 @@
       </div>
       <!-- /PRODUCT PREVIEW -->
       @empty
-      <p class="text-danger"> Hakuna bidhaa sokoni kwa sasa !</p>
+      <p class="lead text-center text-danger"> Hatuna Muuzaji wa pembejeo na Viwatilifu kutoka {{$user_location}} ndani ya mfumo wetu kwa sasa !</p>
     @endforelse
   </div>
   <!-- /GRID -->
+
+  @if($pembejeo_na_viwatilifu_count != 0)
   <!-- SECTION PAGER BAR -->
   <div class="section-pager-bar">
     <!-- SECTION PAGER -->
@@ -294,6 +296,8 @@
     <!-- /SECTION PAGER CONTROLS -->
   </div>
   <!-- /SECTION PAGER BAR -->
+  @endif
+
 </section>
 <!-- /SECTION -->
 

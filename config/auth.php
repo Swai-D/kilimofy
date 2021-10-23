@@ -41,10 +41,10 @@ return [
             'provider' => 'users',
         ],
 
-        'staff' => [
-            'driver' => 'session',
-            'provider' => 'staff',
-        ],
+        // 'staff' => [
+        //     'driver' => 'session',
+        //     'provider' => 'staff',
+        // ],
 
 
         'api' => [
@@ -77,10 +77,10 @@ return [
             'model' => App\User::class,
         ],
 
-        'staff' => [
-            'driver' => 'eloquent',
-            'model' => App\Staff::class,
-        ],
+        // 'staff' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Staff::class,
+        // ],
 
         // 'users' => [
         //     'driver' => 'database',

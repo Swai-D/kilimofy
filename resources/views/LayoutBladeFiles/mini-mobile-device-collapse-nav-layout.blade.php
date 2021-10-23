@@ -14,7 +14,7 @@
     <!-- NAVIGATION WIDGET INFO -->
     <div class="navigation-widget-info">
       <!-- USER AVATAR -->
-      <a class="user-avatar small no-outline" href="profile-timeline.html">
+      <a class="user-avatar small no-outline" href="/kilimofy/UserAccount/about_user_page">
         <!-- USER AVATAR CONTENT -->
         <div class="user-avatar-content">
           <!-- HEXAGON -->
@@ -39,34 +39,12 @@
         </div>
         <!-- /USER AVATAR PROGRESS BORDER -->
 
-        <!-- USER AVATAR BADGE -->
-        <div class="user-avatar-badge">
-          <!-- USER AVATAR BADGE BORDER -->
-          <div class="user-avatar-badge-border">
-            <!-- HEXAGON -->
-            <div class="hexagon-22-24"></div>
-            <!-- /HEXAGON -->
-          </div>
-          <!-- /USER AVATAR BADGE BORDER -->
-
-          <!-- USER AVATAR BADGE CONTENT -->
-          <div class="user-avatar-badge-content">
-            <!-- HEXAGON -->
-            <div class="hexagon-dark-16-18"></div>
-            <!-- /HEXAGON -->
-          </div>
-          <!-- /USER AVATAR BADGE CONTENT -->
-
-          <!-- USER AVATAR BADGE TEXT -->
-          <p class="user-avatar-badge-text">24</p>
-          <!-- /USER AVATAR BADGE TEXT -->
-        </div>
-        <!-- /USER AVATAR BADGE -->
+      
       </a>
       <!-- /USER AVATAR -->
 
       <!-- NAVIGATION WIDGET INFO TITLE -->
-      <p class="navigation-widget-info-title"><a href="profile-timeline.html">{{Auth::user()->user_name}}</a></p>
+      <p class="navigation-widget-info-title"><a href="/kilimofy/UserAccount/about_user_page">{{Auth::user()->user_name}}</a></p>
       <!-- /NAVIGATION WIDGET INFO TITLE -->
 
       <!-- NAVIGATION WIDGET INFO TEXT -->
@@ -100,7 +78,21 @@
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
-    <!-- <br> -->
+    <br>
+
+    <!-- MENU ITEM -->
+    <li class="menu-item @yield('menu-status-chat')">
+      <!-- MENU ITEM LINK -->
+      <a class="menu-item-link" href="/kilimofy/Forum/Forum-Category-List">
+        <!-- MENU ITEM LINK ICON -->
+        <img src="/assets/img/user_icon/chat.png" alt="pembejeo" style="width:44; height:44;">
+        <!-- /MENU ITEM LINK ICON -->
+        Chat
+      </a>
+      <!-- /MENU ITEM LINK -->
+    </li>
+    <!-- /MENU ITEM -->
+   <br>
     <!-- MENU ITEM -->
     <li class="menu-item @yield('menu-status-growth')">
       <!-- MENU ITEM LINK -->
@@ -113,20 +105,7 @@
       <!-- /MENU ITEM LINK -->
     </li>
     <!-- /MENU ITEM -->
-   <!-- <br> -->
-    <!-- MENU ITEM -->
-    <!-- <li class="menu-item"> -->
-      <!-- MENU ITEM LINK -->
-      <!-- <a class="menu-item-link" href="groups.html"> -->
-        <!-- MENU ITEM LINK ICON -->
-        <!-- <img src="/assets/img/user_icon/insecticide.png" alt="Viwatilifu" style="width:44; height:44;"> -->
-        <!-- /MENU ITEM LINK ICON -->
-        <!-- Groups -->
-        <!-- Viwatilifu -->
-      </a>
-      <!-- /MENU ITEM LINK -->
-    </li>
-    <!-- /MENU ITEM -->
+
   <br>
     <!-- MENU ITEM -->
     <li class="menu-item @yield('menu-status-gardener')">

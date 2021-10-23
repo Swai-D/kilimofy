@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('user_phone_number')->unique();
             $table->boolean('isVerified')->default(false);
             $table->string('user_ocupation')->default('Mkulima');
+            $table->string('user_location');
             $table->string('avatar')->default('default.jpg');
             $table->string('password');
             $table->rememberToken();

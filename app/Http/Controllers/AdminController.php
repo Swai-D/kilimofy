@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use App\Forum;
 use App\User;
 use App\Staff;
 use App\Item;
 use Auth;
+use Image;
 
 class AdminController extends Controller
 {
@@ -21,7 +23,7 @@ class AdminController extends Controller
     }
 
 
-    
+
     //Admin register new staff blade Page
     Public function admin_register_new_staff()
     {
@@ -96,6 +98,49 @@ class AdminController extends Controller
       // dd($user_list);
       return view('AdminBladeFiles.users-action-list', compact('user_list'));
     }
+
+
+    public function forum_category_form()
+    {
+      return view('AdminBladeFiles.New-Forum-Category-Form');
+    }
+
+
+    public function create_forum_category(Request $request)
+    {
+       $data = request()->validate([
+         'Category' => ['required','string'],
+         'Category_Description' => ['required','string'],
+         'Category_Image' => ['required'],
+       ]);
+
+       if (isset($data)) {
+
+         $forum_category = new Forum();
+         $forum_category->Category = $request->Category;
+         $forum_category->Category_Description = $request->Category_Description;
+         $mime = $request->file('Category_Image')->getMimeType();
+
+         if(strstr($mime, "image/")){
+           $forum_category_image = $request->file('Category_Image');
+           $filename = time().','.$forum_category_image->getClientOriginalExtension();
+           Image::make($forum_category_image)->resize(64, 64)->save(public_path('/Uploads/ForumCategoryImage/'.$filename));
+           $forum_category->Category_Image = $filename;
+         }
+
+         $forum_category->save();
+
+       }
+
+       return redirect()->back()->with('Message', 'Forum Category was Created Succesfuly !');
+    }
+
+
+
+
+
+
+
 
 
     Public function items_waiting_list()

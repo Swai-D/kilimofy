@@ -64,7 +64,7 @@
         <!-- /FORM BOX DECORATION -->
 
         <!-- FORM BOX TITLE -->
-        <h2 class="form-box-title">Ingia kwenye Akaunti</h2>
+        <h2 class="form-box-title">Account Login</h2>
         <!-- /FORM BOX TITLE -->
 
         <!-- FORM -->
@@ -158,7 +158,7 @@
         <!-- /FORM -->
 
         <!-- LINED TEXT -->
-        <p class="lined-text">Jiunge kupitia akauti ya kijamii !</p>
+        <p class="lined-text">Login with your Social Account</p>
         <!-- /LINED TEXT -->
 
         <!-- SOCIAL LINKS -->
@@ -209,7 +209,9 @@
     <br>
       <!-- FORM BOX -->
       <div class="form-box login-register-form-element">
-        <h2 class="form-box-title">Tengeneza Akaunti!</h2>
+
+        <!-- FORM BOX TITLE -->
+        <h2 class="form-box-title">Create your Account!</h2>
         <!-- /FORM BOX TITLE -->
 
         <!-- FORM -->
@@ -221,7 +223,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="register-email">Jina kamili</label>
+                <label for="register-email">Jina kamili <span style="font-size:16px; color:red;">*</span> </label>
                 <input type="text" id="register-email" name="user_name" value="{{old('user_name')}}">
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('user_name')}}
@@ -240,13 +242,13 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-select">
-                <label for="register-username">Unajishuulisaha na?</label>
+                <label for="register-username">Unajishuhulisha na? <span style="font-size:16px; color:red;">*</span></label>
                 <select class="for" name="user_ocupation">
-                  <option  selected disabled>--chagua Kazi--</option>
+                  <option  selected disabled>Kazi ?</option>
                   <option value="Mkulima">Mkulima</option>
                   <option value="Muuzaji_Wa_pembejeo_Na_Viwatilifu">Muuzaji wa pembejeo Na Viwatilifu</option>
-                  <option value="Bwana_Shamba">Bwana Shamba (Extension Officer)</option>
-                  <option value="Muuzaji_wa_Mashine_Za_Kilimo">Muuzaji Wa Mashine Za Kilimo</option>
+                  <option value="Bwana_Shamba">Bwana Shamba (Afisa Ugavi)</option>
+                  <option value="Fundi_Na_Mashine_Za_Kilimo">Fundi &amp; Mashine Za Kilimo</option>
                   <option value="Msafirishaji">Usafirishaji Wa Bidhaa za Kilimo</option>
                 </select>
                 <p class="lead" style="color: #f33155">
@@ -262,9 +264,39 @@
           <div class="form-row">
             <!-- FORM ITEM -->
             <div class="form-item">
+              <!-- FORM SELECT -->
+              <div class="form-select">
+                <label for="rating-reason">Kutokea ?<span style="font-size:16px; color:red;">*</span></label>
+                <select class="for" name="user_location">
+                  <option value="" selected disabled>Mkoa &amp; Wilaya ? </option>
+
+                  @foreach($places as $place)
+                    <option value="{{$place->Region}}, {{$place->District}}">{{$place->Region}} ({{$place->District}}) </option>
+                  @endforeach
+
+                </select>
+                <!-- FORM SELECT ICON -->
+                <svg class="form-select-icon icon-small-arrow">
+                  <use xlink:href="#svg-small-arrow"></use>
+                </svg>
+                <!-- /FORM SELECT ICON -->
+                <p class="lead" style="color: #f33155">
+                  {{$errors->first('user_location')}}
+                </p>
+              </div>
+              <!-- /FORM SELECT -->
+            </div>
+            <!-- /FORM ITEM -->
+          </div>
+          <!-- /FORM ROW -->
+
+          <!-- FORM ROW -->
+          <div class="form-row">
+            <!-- FORM ITEM -->
+            <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="register-username">Nambari ya Simu</label>
+                <label for="register-username">Nambari ya Simu <span style="font-size:16px; color:red;">*</span></label>
                 <input type="number" id="register-username" name="user_phone_number"  value="{{old('user_phone_number')}}"/>
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('user_phone_number')}}
@@ -282,7 +314,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="register-username">Neno la siri</label>
+                <label for="register-username">Neno la siri <span style="font-size:16px; color:red;">*</span></label>
                 <input type="password" id="register-username" name="password">
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('password')}}
@@ -300,7 +332,7 @@
             <div class="form-item">
               <!-- FORM INPUT -->
               <div class="form-input">
-                <label for="register-username">Rudia tena Neno la siri</label>
+                <label for="register-username">Rudia tena Neno la siri <span style="font-size:16px; color:red;">*</span></label>
                 <input type="password" id="register-username" name="password_confirmation">
                 <p class="lead" style="color: #f33155">
                   {{$errors->first('password_confirmation')}}
@@ -311,6 +343,8 @@
             <!-- /FORM ITEM -->
           </div>
           <!-- FORM ROW -->
+
+        
           <div class="form-row">
             <!-- FORM ITEM -->
             <div class="form-item">
@@ -332,39 +366,6 @@
 
 <!-- app -->
 <script src="/assets/js/app.bundle.min.js"></script>
-<script type="text/javascript">
-  //page Hii ikiwa tayari kufunguka kisha run hii function
-  $(document).ready(function(){
-    console.log('day');
-    //page hii ikibadilika katika class ya chagua_mkoa basi run hii function
-    $(document).on('change','.chagua_mkoa',function(){
-      //Mkoa itakua ni sawa na hiyo value iliyo badilika
-      var Mkoa = $(this).val();
-      var dynamic = $(this).parent();
-      var op = "";
-      //console.log(Mkoa);
-      //function ya ajax
-      $.ajax({
-        type:'get',
-        url:'{!!URL::to('tafuta_wilaya_kwa_mkoa_husika')!!}',
-        data:{'Mkoa':Mkoa},
-        success:function(data){
-          // //tume pass data kutokea kwenye function tafuta_wilaya_kwa_mkoa_husika ktk mfumo wa $data
-          //console.log(data);
-          //loop ya kuchukua wilaya moja moja katika mkoa kutoka kwenye variable $data
-          for (var i = 0; i < data.length; i++) {
-            op+= '<option value=" '+data[i].District+' ">'+data[i].District+'</option>';
-          }
-          //tafuata class ya dynamic kwenye hii page ya html kisha append $data kwenye class ya dependent
-          dynamic.find('.dependent').html("");
-          dynamic.find('.dependent').append(op);
-        },
-        error:function(){
 
-        }
-      });
-    });
-  });
-</script>
 </body>
 </html>

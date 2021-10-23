@@ -11,16 +11,17 @@
   @include('LayoutBladeFiles.title-layout')
   <!-- /SECTION BANNER -->
 
+@foreach($bidhaa_info as $bidhaa)
   <!-- SECTION HEADER -->
   <div class="section-header">
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      <p class="section-pretitle">HTML Templates</p>
+      <p class="section-pretitle">{{$bidhaa->item_category}}</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h2 class="section-title">Pixel Diamond Gaming Magazine</h2>
+      <h2 class="section-title">{{$bidhaa->item_name}}</h2>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
@@ -28,15 +29,15 @@
     <!-- SECTION HEADER ACTIONS -->
     <div class="section-header-actions">
       <!-- SECTION HEADER SUBSECTION -->
-      <a class="section-header-subsection" href="marketplace.html">Marketplace</a>
+      <a class="section-header-subsection" href="#">Sokoni</a>
       <!-- /SECTION HEADER SUBSECTION -->
 
       <!-- SECTION HEADER SUBSECTION -->
-      <a class="section-header-subsection" href="marketplace-category.html">Digital Items</a>
+      <a class="section-header-subsection" href="#">Bidhaa Mtandaoni</a>
       <!-- /SECTION HEADER SUBSECTION -->
 
       <!-- SECTION HEADER SUBSECTION -->
-      <p class="section-header-subsection">Pixel Diamond Gaming Magazine</p>
+      <p class="section-header-subsection">{{$bidhaa->item_name}}</p>
       <!-- /SECTION HEADER SUBSECTION -->
     </div>
     <!-- /SECTION HEADER ACTIONS -->
@@ -55,71 +56,12 @@
           <div class="slider-panel-slide">
             <!-- SLIDER PANEL SLIDE IMAGE -->
             <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/10.jpg" alt="item-10">
+              <img src="/Uploads/ItemImages/{{$bidhaa->item_image}}" alt="item-10">
             </figure>
             <!-- /SLIDER PANEL SLIDE IMAGE -->
           </div>
           <!-- /SLIDER PANEL SLIDE -->
 
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/15.jpg" alt="item-15">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/16.jpg" alt="item-16">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/17.jpg" alt="item-17">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/18.jpg" alt="item-18">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/19.jpg" alt="item-19">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
-
-          <!-- SLIDER PANEL SLIDE -->
-          <div class="slider-panel-slide">
-            <!-- SLIDER PANEL SLIDE IMAGE -->
-            <figure class="slider-panel-slide-image liquid">
-              <img src="img/marketplace/items/20.jpg" alt="item-20">
-            </figure>
-            <!-- /SLIDER PANEL SLIDE IMAGE -->
-          </div>
-          <!-- /SLIDER PANEL SLIDE -->
         </div>
         <!-- /SLIDER PANEL SLIDES -->
 
@@ -268,27 +210,15 @@
             <!-- TAB BOX ITEM CONTENT -->
             <div class="tab-box-item-content">
               <!-- TAB BOX ITEM TITLE -->
-              <p class="tab-box-item-title">The Best eSports and Gaming Magazine Template!</p>
+              <p class="tab-box-item-title">{{$bidhaa->item_name}}</p>
               <!-- /TAB BOX ITEM TITLE -->
 
               <!-- TAB BOX ITEM PARAGRAPH -->
-              <p class="tab-box-item-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in henderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa.</p>
-              <!-- /TAB BOX ITEM PARAGRAPH -->
-
-              <!-- TAB BOX ITEM PARAGRAPH -->
-              <p class="tab-box-item-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="tab-box-item-paragraph">{{$bidhaa->item_description}}</p>
               <!-- /TAB BOX ITEM PARAGRAPH -->
 
               <!-- TAB BOX ITEM TITLE -->
-              <p class="tab-box-item-title">356+ HTML Elements Library included</p>
-              <!-- /TAB BOX ITEM TITLE -->
-
-              <!-- TAB BOX ITEM PARAGRAPH -->
-              <p class="tab-box-item-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in henderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <!-- /TAB BOX ITEM PARAGRAPH -->
-
-              <!-- TAB BOX ITEM TITLE -->
-              <p class="tab-box-item-title">Included in the Pack:</p>
+              <p class="tab-box-item-title">Garama ya {{$bidhaa->item_name}} Inahusisha:</p>
               <!-- /TAB BOX ITEM TITLE -->
 
               <!-- BULLET ITEM LIST -->
@@ -302,7 +232,7 @@
                   <!-- /BULLET ITEM ICON -->
 
                   <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">64 HTML Files</p>
+                  <p class="bullet-item-text">Usafirishaji wa Bidhaa</p>
                   <!-- /BULLET ITEM TEXT -->
                 </li>
                 <!-- /BULLET ITEM -->
@@ -316,7 +246,7 @@
                   <!-- /BULLET ITEM ICON -->
 
                   <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">CSS and JS Elements Library with 365+ Items!</p>
+                  <p class="bullet-item-text">Maelezo ya Kitaalamu Kuhusu Bidhaa</p>
                   <!-- /BULLET ITEM TEXT -->
                 </li>
                 <!-- /BULLET ITEM -->
@@ -330,94 +260,11 @@
                   <!-- /BULLET ITEM ICON -->
 
                   <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">63 PSD Files Included SAVE $12</p>
+                  <p class="bullet-item-text">Bwana Shamba</p>
                   <!-- /BULLET ITEM TEXT -->
                 </li>
                 <!-- /BULLET ITEM -->
 
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Easy template customization using npm & grunt (optional)</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Vector Illustrations Included</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">84+ eSports Widgets</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Custom Plugins</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Fully Responsive</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
-
-                <!-- BULLET ITEM -->
-                <li class="bullet-item">
-                  <!-- BULLET ITEM ICON -->
-                  <svg class="bullet-item-icon icon-check">
-                    <use xlink:href="#svg-check"></use>
-                  </svg>
-                  <!-- /BULLET ITEM ICON -->
-
-                  <!-- BULLET ITEM TEXT -->
-                  <p class="bullet-item-text">Google Fonts</p>
-                  <!-- /BULLET ITEM TEXT -->
-                </li>
-                <!-- /BULLET ITEM -->
               </ul>
               <!-- /BULLET ITEM LIST -->
             </div>
@@ -436,7 +283,7 @@
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="img/avatar/04.jpg"></div>
+                    <div class="hexagon-image-30-32" data-src="/assets/img/avatar/04.jpg"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -1976,7 +1823,7 @@
         <!-- SIDEBAR BOX ITEMS -->
         <div class="sidebar-box-items">
           <!-- PRICE TITLE -->
-          <p class="price-title big"><span class="currency">$</span> 26.00</p>
+          <p class="price-title big"><span class="currency">Tsh</span> {{number_format($bidhaa->item_price)}} /=</p>
           <!-- /PRICE TITLE -->
 
           <!-- FORM -->
@@ -2032,7 +1879,7 @@
           <!-- /FORM -->
 
           <!-- BUTTON -->
-          <p class="button primary">Add to Your Cart!</p>
+          <p class="button primary">Nunua!</p>
           <!-- /BUTTON -->
 
           <!-- USER STATS -->
@@ -2116,7 +1963,7 @@
         <!-- /SIDEBAR BOX ITEMS -->
 
         <!-- SIDEBAR BOX TITLE -->
-        <p class="sidebar-box-title medium-space">Item Author</p>
+        <p class="sidebar-box-title medium-space">Muuzaji</p>
         <!-- /SIDEBAR BOX TITLE -->
 
         <!-- SIDEBAR BOX ITEMS -->
@@ -2130,7 +1977,7 @@
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="img/avatar/01.jpg"></div>
+                  <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$bidhaa->seller_image_location}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -2170,7 +2017,7 @@
                   <!-- /USER AVATAR BADGE CONTENT -->
 
                   <!-- USER AVATAR BADGE TEXT -->
-                  <p class="user-avatar-badge-text">24</p>
+                  <p class="user-avatar-badge-text">{{$total_user_item_list}}</p>
                   <!-- /USER AVATAR BADGE TEXT -->
                 </div>
                 <!-- /USER AVATAR BADGE -->
@@ -2180,60 +2027,40 @@
             <!-- /USER STATUS AVATAR -->
 
             <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><a class="bold" href="profile-timeline.html">Marina Valentine</a></p>
+            <p class="user-status-title"><a class="bold" href="profile-timeline.html">{{$bidhaa->seller_name}}</a></p>
             <!-- /USER STATUS TITLE -->
 
             <!-- USER STATUS TEXT -->
-            <p class="user-status-text small">5 items published</p>
+            <p class="user-status-text small">Bidhaa {{$total_user_item_list}} Sokoni</p>
             <!-- /USER STATUS TEXT -->
           </div>
           <!-- /USER STATUS -->
 
           <!-- BADGE LIST -->
           <div class="badge-list small align-left">
-            <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="Gold User">
-              <img src="img/badge/gold-s.png" alt="badge-gold-s">
-            </div>
-            <!-- /BADGE ITEM -->
 
+            @foreach($user_item_list as $item)
             <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="Profile Age">
-              <img src="img/badge/age-s.png" alt="badge-age-s">
-            </div>
-            <!-- /BADGE ITEM -->
-
-            <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="Caffeinated">
-              <img src="img/badge/caffeinated-s.png" alt="badge-caffeinated-s">
-            </div>
-            <!-- /BADGE ITEM -->
-
-            <!-- BADGE ITEM -->
-            <div class="badge-item text-tooltip-tft" data-title="The Warrior">
-              <img src="img/badge/warrior-s.png" alt="badge-warrior-s">
-            </div>
-            <!-- /BADGE ITEM -->
-
-            <!-- BADGE ITEM -->
-            <a class="badge-item" href="profile-badges.html">
-              <img src="img/badge/blank-s.png" alt="badge-blank-s">
-              <!-- BADGE ITEM TEXT -->
-              <p class="badge-item-text">+9</p>
-              <!-- /BADGE ITEM TEXT -->
+            <a href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart/{{$item->id}}">
+              <div class="badge-item text-tooltip-tft" data-title="{{$item->item_name}}">
+                <img src="/Uploads/ItemImages/{{$item->item_image}}" alt="{{$item->item_name}}" style="width:120%; height:120%; border-radius:70%;">
+              </div>
             </a>
+
             <!-- /BADGE ITEM -->
+            @endforeach
+
           </div>
           <!-- /BADGE LIST -->
 
           <!-- BUTTON -->
-          <a class="button small white" href="profile-store.html">View Author's Store</a>
+          <a class="button small white" href="profile-store.html">Tazama Bidhaa</a>
           <!-- /BUTTON -->
         </div>
         <!-- /SIDEBAR BOX ITEMS -->
 
         <!-- SIDEBAR BOX TITLE -->
-        <p class="sidebar-box-title medium-space">Item Details</p>
+        <p class="sidebar-box-title medium-space">Taarifa ya Bidhaa</p>
         <!-- /SIDEBAR BOX TITLE -->
 
         <!-- SIDEBAR BOX ITEMS -->
@@ -2243,11 +2070,11 @@
             <!-- INFORMATION LINE -->
             <div class="information-line">
               <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Updated</p>
+              <p class="information-line-title">Jina</p>
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">October 13rd, 2019</span></p>
+              <p class="information-line-text"><span class="bold">{{$bidhaa->item_name}}</span></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
@@ -2255,11 +2082,11 @@
             <!-- INFORMATION LINE -->
             <div class="information-line">
               <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Created</p>
+              <p class="information-line-title">Aina</p>
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">August 17th, 2019</span></p>
+              <p class="information-line-text"><span class="bold">{{$bidhaa->item_category}}</span></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
@@ -2267,50 +2094,16 @@
             <!-- INFORMATION LINE -->
             <div class="information-line">
               <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Category</p>
+              <p class="information-line-title">Garama</p>
               <!-- /INFORMATION LINE TITLE -->
 
               <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><a href="marketplace-category.html">HTML Templates</a></p>
+              <p class="information-line-text"><a href="">Tsh {{number_format($bidhaa->item_price)}} /=</a></p>
               <!-- /INFORMATION LINE TEXT -->
             </div>
             <!-- /INFORMATION LINE -->
 
-            <!-- INFORMATION LINE -->
-            <div class="information-line">
-              <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Files<br>Included</p>
-              <!-- /INFORMATION LINE TITLE -->
-
-              <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">HTML Files, CSS Files, JS Files, Layered PSD</span></p>
-              <!-- /INFORMATION LINE TEXT -->
-            </div>
-            <!-- /INFORMATION LINE -->
-
-            <!-- INFORMATION LINE -->
-            <div class="information-line">
-              <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Layout</p>
-              <!-- /INFORMATION LINE TITLE -->
-
-              <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold">Responsive</span></p>
-              <!-- /INFORMATION LINE TEXT -->
-            </div>
-            <!-- /INFORMATION LINE -->
-
-            <!-- INFORMATION LINE -->
-            <div class="information-line">
-              <!-- INFORMATION LINE TITLE -->
-              <p class="information-line-title">Tags</p>
-              <!-- /INFORMATION LINE TITLE -->
-
-              <!-- INFORMATION LINE TEXT -->
-              <p class="information-line-text"><span class="bold"><a href="marketplace-category.html">Gaming</a>, <a href="marketplace-category.html">Magazine</a>, <a href="marketplace-category.html">Web</a>, <a href="marketplace-category.html">eSports</a>, <a href="marketplace-category.html">Template</a></span></p>
-              <!-- /INFORMATION LINE TEXT -->
-            </div>
-            <!-- /INFORMATION LINE -->
+          
           </div>
           <!-- /INFORMATION LINE LIST -->
         </div>
@@ -2353,5 +2146,6 @@
     <!-- /MARKETPLACE SIDEBAR -->
   </div>
   <!-- /GRID -->
+  @endforeach
 </div>
 <!-- /CONTENT GRID -->

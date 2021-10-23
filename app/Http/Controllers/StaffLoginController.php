@@ -8,22 +8,9 @@ use App\Http\Controllers\Auth\LoginController as DefaultLoginController;
 
 class StaffLoginController extends DefaultLoginController
 {
-
-    protected $redirectTo = '/kilimofy/Staff/login';
-
-    public function __construct()
-    {
-      $this->middleware('guest:staff')->except('logout');
-    }
-
-    public function showLoginForm()
-    {
-      return view('AdminBladeFiles.staff-login-form');
-    }
-
-    public function guard()
-    {
-      return Auth::guard('staff');
-    }
+  public function showLoginForm()
+  {
+    return view('StaffBladeFiles.staff-login-form');
+  }
 
 }

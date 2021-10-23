@@ -67,6 +67,7 @@ button,
 input[type=password],
 input[type=text],
 input[type=number],
+input[type=date],
 input[type=file],
 select,
 textarea {
@@ -79,6 +80,7 @@ textarea {
 input[type=password],
 input[type=text],
 input[type=number],
+input[type=date],
 input[type=file],
 select,
 textarea {
@@ -91,6 +93,7 @@ textarea {
 input[type=password]:focus,
 input[type=text]:focus,
 input[type=number]:focus,
+input[type=date],
 input[type=file]:focus,
 select:focus,
 textarea:focus {
@@ -100,6 +103,7 @@ textarea:focus {
 input[type=password],
 input[type=text],
 input[type=number],
+input[type=date],
 input[type=file] {
     height: 54px;
     padding: 0 18px
@@ -698,6 +702,11 @@ textarea::placeholder {
 .interactive-input input {
     height: 100%;
     padding-right: 60px
+}
+
+.interactive-input textarea {
+    height: 60px;
+    padding-right: 50px
 }
 
 .interactive-input .interactive-input-icon-wrap {
@@ -2185,6 +2194,7 @@ figure>img {
 .action-list.dark:before {
     background-color: #7a77fd
 }
+
 
 .action-list.dark .action-list-item.active .action-list-item-icon,
 .action-list.dark .action-list-item.unread .action-list-item-icon,
@@ -8559,7 +8569,7 @@ figure>img {
 }
 
 .form-box .form {
-    margin-top: 76px
+    margin-top: 66px
 }
 
 .form-box .lined-text {
@@ -10775,7 +10785,7 @@ figure>img {
 
 .video-status.small .video-status-image {
     width: 180px;
-    height: 180px;
+    height: 280px;
     border-top-right-radius: 0;
     border-bottom-left-radius: 12px;
     position: absolute;
@@ -13684,12 +13694,12 @@ figure>img {
 
 .menu .menu-item .menu-item-link {
     display: block;
-    height: 48px;
+    height: 38px;
     padding-left: 62px;
     border-radius: 12px;
     font-size: .875rem;
     font-weight: 700;
-    line-height: 48px;
+    line-height: 38px;
     position: relative;
     transition: all .2s ease-in-out
 }

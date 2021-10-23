@@ -16,7 +16,7 @@
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h5 class="section-title">Jumla ya Bidhaa <span class="highlighted">({{$total_items_in_my_store}})</span>, Zilizouzwa ni,<span class="highlighted">(1)</span>, Zilizobaki <span class="highlighted">(2)</h5>
+      <h5 class="section-title">Jumla ya Bidhaa <span class="highlighted">({{$total_items_in_my_store}})</span>, </h5>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
@@ -144,14 +144,6 @@
 
           <!-- CREATE ENTITY BOX INFO -->
           <div class="create-entity-box-info">
-            <!-- CREATE ENTITY BOX TITLE -->
-            <p class="create-entity-box-title">Jina la Bidhaa Yako</p>
-            <!-- /CREATE ENTITY BOX TITLE -->
-
-            <!-- CREATE ENTITY BOX CATEGORY -->
-            <p class="create-entity-box-category">Kundi la Bidhaa</p>
-            <!-- /CREATE ENTITY BOX CATEGORY -->
-
             <!-- BUTTON -->
             <p class="button primary full popup-manage-item-trigger">Weka Bidhaa Mpya Sokoni!</p>
             <!-- /BUTTON -->
@@ -317,11 +309,11 @@
           <!-- /TEXT STICKER -->
 
           <!-- PRODUCT PREVIEW TITLE -->
-          <p class="product-preview-title"><a href="marketplace-product.html">Duka Langu la,</a></p>
+          <p class="product-preview-title"><a href="">Duka Langu la,</a></p>
           <!-- /PRODUCT PREVIEW TITLE -->
 
           <!-- PRODUCT PREVIEW CATEGORY -->
-          <p class="product-preview-category digital"><a href="marketplace-category.html">Pembejeo na Viwatilifu</a></p>
+          <p class="product-preview-category digital"><a href="">Pembejeo na Viwatilifu</a></p>
           <!-- /PRODUCT PREVIEW CATEGORY -->
         </div>
         <!-- /PRODUCT PREVIEW INFO -->
@@ -399,6 +391,7 @@
                     <option selected disabled>--Chagua--</option>
                     <option value="Pembejeo">Pembejeo</option>
                     <option value="Kiwatilifu">Kiwatilifu</option>
+                    <option value="Mashine">Mashine</option>
                   </select>
                   <!-- FORM SELECT ICON -->
                   <svg class="form-select-icon icon-small-arrow">

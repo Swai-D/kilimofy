@@ -19,14 +19,14 @@
     <!-- /.login-logo -->
     <div class="card card-outline card-primary">
       <div class="card-header text-center">
-        <a href="../../index2.html" class="h1"><b>Kilimo</b>fy</a>
+        <a href="" class="h1"><b>Kilimo</b>fy</a>
       </div>
       <div class="card-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
         <form action="/kilimofy/Admin/login_store" method="post">
           @csrf
-          <div class="input-group mb-3">
+          <div class="input-group mb-4">
             <input type="email" class="form-control" name="Email" placeholder="Email" value="{{old('Email')}}">
             <div class="input-group-append">
               <div class="input-group-text">
@@ -38,7 +38,7 @@
           <p class="lead" style="color: #f33155">
             {{$errors->first('Email')}}
           </p>
-          <div class="input-group mb-3">
+          <div class="input-group mb-4">
             <input type="password" class="form-control" name="password" placeholder="Password">
             <div class="input-group-append">
               <div class="input-group-text">

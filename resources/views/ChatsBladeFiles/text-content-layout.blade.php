@@ -118,7 +118,7 @@
       <!-- /CHAT WIDGET SPEAKER MESSAGE -->
 
       <!-- CHAT WIDGET SPEAKER MESSAGE -->
-      <p class="chat-widget-speaker-message">You're right, it's been a really long time! I think the last time we saw was at Neko's party</p>
+      <p class="chat-widget-speaker-message">You're right, it's been a really long time! I think the last time we saw was at Neko's party You're right, it's been a really long time! I think the last time we saw was at Neko's party</p>
       <!-- /CHAT WIDGET SPEAKER MESSAGE -->
 
       <!-- CHAT WIDGET SPEAKER TIMESTAMP -->
@@ -162,7 +162,8 @@
   <!-- /CHAT WIDGET CONVERSATION -->
 
   <!-- CHAT WIDGET FORM -->
-  <form class="chat-widget-form">
+  <form class="chat-widget-form" action="/kilimofy/test-message" method="post">
+    @csrf
     <!-- INTERACTIVE INPUT -->
     <div class="interactive-input small">
       <input type="text" id="chat-widget-message-text" name="chat_widget_message_text" placeholder="Write a message...">

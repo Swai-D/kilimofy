@@ -1,7 +1,7 @@
 @extends('LayoutBladeFiles.app-layout')
 @section('title','Mashine Za Kilimo')
 @section('menu-status-mashine','active')
-@section('discription-title','Magari ya Usafirishaji Na Mashine za Kilimo')
+@section('discription-title','Mashine za Kilimo')
 @section('discription-details','Pata Mashine Aina zote za kilimo popote ulipo')
 <div class="content-grid">
 @include('LayoutBladeFiles.title-layout')
@@ -10,14 +10,17 @@
   <div class="section-header">
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
+
       <!-- SECTION PRETITLE -->
-      <!-- <p class="section-pretitle">User Location</p> -->
+      <p class="section-pretitle" style="color:#f33155">{{$user_location}}</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
       <h2 class="section-title">Mashine za kilimo</h2>
-      <!-- /SECTION TITLE -->
-      {{--<p class="section-pretitle" style="color:#f33155">{{$user_location->regionName}}, {{$user_location->countryName}}</p>--}}
+      
+      <!-- SECTION PRETITLE -->
+      <p class="section-pretitle" style="color:#f33155">{{$user_location}}</p>
+      <!-- /SECTION PRETITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
 

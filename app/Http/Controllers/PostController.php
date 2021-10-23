@@ -24,37 +24,47 @@ class PostController extends Controller
 
      {
 
-       $post = new Post();
-       $post->Caption = $request->Caption;
-       $post->Tag1 = $request->Tag1;
-       $post->Tag2 = $request->Tag2;
-       $post->Tag3 = $request->Tag3;
-       $post->User_id = $request->User_id;
-       $post->User_Name = $request->User_Name;
-       $post->User_Image_Profile = $request->User_Image_Profile;
+       $data = $request->Caption;
 
-       if (isset($request->File)) {
 
-       $mime = $request->file('File')->getMimeType();
 
-        if(strstr($mime, "video/")){
-          $post_video = Input::file('File');
-          $post_video_name = time().'.'.$post_video->getClientOriginalExtension();
-          $path = public_path().'/Uploads/PostVideos/';
-          $post_video->move($path, $post_video_name);
-          $post->Video = $post_video_name;
-          //dd("It Works");
+       if (isset($data)) {
+         $post = new Post();
+         $post->Caption = $request->Caption;
+         $post->Tag1 = $request->Tag1;
+         $post->Tag2 = $request->Tag2;
+         $post->Tag3 = $request->Tag3;
+         $post->User_id = $request->User_id;
+         $post->User_Name = $request->User_Name;
+         $post->User_Image_Profile = $request->User_Image_Profile;
+
+         if (isset($request->File)) {
+
+         $mime = $request->file('File')->getMimeType();
+
+          if(strstr($mime, "video/")){
+            $post_video = Input::file('File');
+            $post_video_name = time().'.'.$post_video->getClientOriginalExtension();
+            $path = public_path().'/Uploads/PostVideos/';
+            $post_video->move($path, $post_video_name);
+            $post->Video = $post_video_name;
+            //dd("It Works");
+          }
+
+          else if(strstr($mime, "image/")){
+            $post_image = $request->file('File');
+            $filename = time().','.$post_image->getClientOriginalExtension();
+            Image::make($post_image)->resize(528, 280)->save(public_path('/Uploads/PostPhotos/'.$filename));
+            $post->Photo = $filename;
+          }
+
         }
-
-        else if(strstr($mime, "image/")){
-          $post_image = $request->file('File');
-          $filename = time().','.$post_image->getClientOriginalExtension();
-          Image::make($post_image)->resize(528, 280)->save(public_path('/Uploads/PostPhotos/'.$filename));
-          $post->Photo = $filename;
-        }
-
-      }
          $post->save();
+
+   }
+
+
+
 
        return redirect()->back();
      }

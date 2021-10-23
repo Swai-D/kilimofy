@@ -11,18 +11,20 @@
   <div class="section-header">
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
+
       <!-- SECTION PRETITLE -->
-      {{--<p class="section-pretitle" style="color:#f33155">{{$user_location->regionName}}, {{$user_location->countryName}}</p>--}}
+      <p class="section-pretitle" style="color:#f33155">{{$user_location}}</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h2 class="section-title">Mabwana Shamba <span class="highlighted">(3)</span></h2>
+      <h2 class="section-title">Bwana Shamba <span class="highlighted">({{$total_bwana_shamba_list}})</span></h2>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
   </div>
   <!-- /SECTION HEADER -->
 
+@if($total_bwana_shamba_list != 0)
   <!-- SECTION FILTERS BAR -->
   <div class="section-filters-bar v1">
     <!-- SECTION FILTERS BAR ACTIONS -->
@@ -98,14 +100,15 @@
     <!-- /SECTION FILTERS BAR ACTIONS -->
   </div>
   <!-- /SECTION FILTERS BAR -->
-
+@endif
   <!-- GRID -->
   <div class="grid grid-3-3-3-3 centered">
+    @forelse($bwana_shamba_list as $bwana_shamba)
     <!-- USER PREVIEW -->
     <div class="user-preview small">
       <!-- USER PREVIEW COVER -->
       <figure class="user-preview-cover liquid">
-        <img src="/assets/img/cover/04.jpg" alt="cover-04">
+        <img src="/assets/img/landing/landing-background.jpg" alt="cover-04">
       </figure>
       <!-- /USER PREVIEW COVER -->
 
@@ -114,7 +117,7 @@
         <!-- USER SHORT DESCRIPTION -->
         <div class="user-short-description small">
           <!-- USER SHORT DESCRIPTION AVATAR -->
-          <a class="user-short-description-avatar user-avatar" href="profile-timeline.html">
+          <a class="user-short-description-avatar user-avatar" href="">
             <!-- USER AVATAR BORDER -->
             <div class="user-avatar-border">
               <!-- HEXAGON -->
@@ -126,7 +129,7 @@
             <!-- USER AVATAR CONTENT -->
             <div class="user-avatar-content">
               <!-- HEXAGON -->
-              <div class="hexagon-image-68-74" data-src="/assets/img/avatar/05.jpg"></div>
+              <div class="hexagon-image-68-74" data-src="/Uploads/avatars/{{$bwana_shamba->avatar}}"></div>
               <!-- /HEXAGON -->
             </div>
             <!-- /USER AVATAR CONTENT -->
@@ -146,113 +149,21 @@
               <!-- /HEXAGON -->
             </div>
             <!-- /USER AVATAR PROGRESS BORDER -->
-
-            <!-- USER AVATAR BADGE -->
-            <div class="user-avatar-badge">
-              <!-- USER AVATAR BADGE BORDER -->
-              <div class="user-avatar-badge-border">
-                <!-- HEXAGON -->
-                <div class="hexagon-28-32"></div>
-                <!-- /HEXAGON -->
-              </div>
-              <!-- /USER AVATAR BADGE BORDER -->
-
-              <!-- USER AVATAR BADGE CONTENT -->
-              <div class="user-avatar-badge-content">
-                <!-- HEXAGON -->
-                <div class="hexagon-dark-22-24"></div>
-                <!-- /HEXAGON -->
-              </div>
-              <!-- /USER AVATAR BADGE CONTENT -->
-
-              <!-- USER AVATAR BADGE TEXT -->
-              <p class="user-avatar-badge-text">12</p>
-              <!-- /USER AVATAR BADGE TEXT -->
-            </div>
-            <!-- /USER AVATAR BADGE -->
           </a>
           <!-- /USER SHORT DESCRIPTION AVATAR -->
 
           <!-- USER SHORT DESCRIPTION TITLE -->
-          <p class="user-short-description-title"><a href="profile-timeline.html">Davy swai</a></p>
+          <p class="user-short-description-title"><a href="profile-timeline.html">{{$bwana_shamba->user_name}}</a></p>
           <!-- /USER SHORT DESCRIPTION TITLE -->
 
           <!-- USER SHORT DESCRIPTION TEXT -->
-          <p class="user-short-description-text"><a href="#">www.kilimofy.com/davyswai</a></p>
+          <p class="user-short-description-text"><a href="#">@ {{strtolower($bwana_shamba->user_name)}}</a></p>
           <!-- /USER SHORT DESCRIPTION TEXT -->
         </div>
         <!-- /USER SHORT DESCRIPTION -->
 
-        <!-- BADGE LIST -->
-        <div class="badge-list small">
-          <!-- BADGE ITEM -->
-          <div class="badge-item">
-            <img src="/assets/img/badge/silver-s.png" alt="badge-silver-s">
-          </div>
-          <!-- /BADGE ITEM -->
 
-          <!-- BADGE ITEM -->
-          <div class="badge-item">
-            <img src="/assets/img/badge/fcultivator-s.png" alt="badge-fcultivator-s">
-          </div>
-          <!-- /BADGE ITEM -->
 
-          <!-- BADGE ITEM -->
-          <div class="badge-item">
-            <img src="/assets/img/badge/scientist-s.png" alt="badge-scientist-s">
-          </div>
-          <!-- /BADGE ITEM -->
-
-          <!-- BADGE ITEM -->
-          <a class="badge-item" href="profile-badges.html">
-            <img src="/assets/img/badge/blank-s.png" alt="badge-blank-s">
-            <!-- BADGE ITEM TEXT -->
-            <p class="badge-item-text">+29</p>
-            <!-- /BADGE ITEM TEXT -->
-          </a>
-          <!-- /BADGE ITEM -->
-        </div>
-        <!-- /BADGE LIST -->
-
-        <!-- USER STATS -->
-        <div class="user-stats">
-          <!-- USER STAT -->
-          <div class="user-stat">
-            <!-- USER STAT TITLE -->
-            <p class="user-stat-title">874</p>
-            <!-- /USER STAT TITLE -->
-
-            <!-- USER STAT TEXT -->
-            <p class="user-stat-text">posts</p>
-            <!-- /USER STAT TEXT -->
-          </div>
-          <!-- /USER STAT -->
-
-          <!-- USER STAT -->
-          <div class="user-stat">
-            <!-- USER STAT TITLE -->
-            <p class="user-stat-title">60</p>
-            <!-- /USER STAT TITLE -->
-
-            <!-- USER STAT TEXT -->
-            <p class="user-stat-text">friends</p>
-            <!-- /USER STAT TEXT -->
-          </div>
-          <!-- /USER STAT -->
-
-          <!-- USER STAT -->
-          <div class="user-stat">
-            <!-- USER STAT TITLE -->
-            <p class="user-stat-title">3.9k</p>
-            <!-- /USER STAT TITLE -->
-
-            <!-- USER STAT TEXT -->
-            <p class="user-stat-text">visits</p>
-            <!-- /USER STAT TEXT -->
-          </div>
-          <!-- /USER STAT -->
-        </div>
-        <!-- /USER STATS -->
 
         <!-- SOCIAL LINKS -->
         <div class="social-links small">
@@ -277,24 +188,35 @@
           <!-- /SOCIAL LINK -->
 
           <!-- SOCIAL LINK -->
-          <a class="social-link small twitch" href="#">
+          <a class="social-link small youtube" href="#">
             <!-- SOCIAL LINK ICON -->
-            <svg class="social-link-icon icon-twitch">
-              <use xlink:href="#svg-twitch"></use>
+            <svg class="social-link-icon icon-youtube">
+              <use xlink:href="#svg-youtube"></use>
             </svg>
             <!-- /SOCIAL LINK ICON -->
           </a>
           <!-- /SOCIAL LINK -->
 
           <!-- SOCIAL LINK -->
-          <a class="social-link small discord" href="#">
+          <a class="social-link small facebook" href="#">
             <!-- SOCIAL LINK ICON -->
-            <svg class="social-link-icon icon-discord">
-              <use xlink:href="#svg-discord"></use>
+            <svg class="social-link-icon icon-facebook">
+              <use xlink:href="#svg-facebook"></use>
             </svg>
             <!-- /SOCIAL LINK ICON -->
           </a>
           <!-- /SOCIAL LINK -->
+        </div>
+        <!-- /SOCIAL LINKS -->
+        <!-- SOCIAL LINKS -->
+        <div class="social-links small">
+          <!-- SOCIAL LINK -->
+          <p style="font-size:16px;">
+            <!-- SOCIAL LINK ICON -->
+             {{$bwana_shamba->user_phone_number}}
+            <!-- /SOCIAL LINK ICON -->
+          </p>
+
         </div>
         <!-- /SOCIAL LINKS -->
       </div>
@@ -333,10 +255,13 @@
       <!-- /USER PREVIEW FOOTER -->
     </div>
     <!-- /USER PREVIEW -->
-
+    @empty
+    <p class="progress-arc-summary-subtitle text-center text-danger"> Hatuna Bwana Shamba kutoka {{$user_location}} kwa sasa !</p>
+  @endforelse
     </div>
   <!-- /GRID -->
 
+@if($total_bwana_shamba_list != 0)
   <!-- SECTION PAGER BAR -->
   <div class="section-pager-bar">
     <!-- SECTION PAGER -->
@@ -416,6 +341,7 @@
     <!-- /SECTION PAGER CONTROLS -->
   </div>
   <!-- /SECTION PAGER BAR -->
+  @endif
 </section>
 <!-- /SECTION -->
 
