@@ -18,8 +18,8 @@ class CreateForumsTable extends Migration
             $table->string('Category');
             $table->string('Category_Description');
             $table->string('Category_Image');
-            $table->string('Topics')->default(0);
-            $table->string('Posts')->default(0);
+            $table->integer('Topics')->default(0);
+            $table->integer('Posts')->default(0);
             $table->timestamps();
         });
     }
