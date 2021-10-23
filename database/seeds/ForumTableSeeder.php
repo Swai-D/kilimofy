@@ -12,7 +12,7 @@ class ForumTableSeeder extends Seeder
     public function run()
     {
       //1
-      App\Post::create([
+      App\Forum::create([
           'Category' => 'Kilimo',
           'Category_Description' => 'A place for the community to talk and chat about agriculture! ',
           'Category_Image' => '1633429307.png',
@@ -23,7 +23,7 @@ class ForumTableSeeder extends Seeder
       ]);
 
       //2
-      App\Post::create([
+      App\Forum::create([
           'Category' => 'Usafirishaji',
           'Category_Description' => 'Everything about the transportation of agriculture products',
           'Category_Image' => '1633814279.png',
