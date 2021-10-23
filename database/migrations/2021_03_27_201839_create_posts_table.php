@@ -24,8 +24,8 @@ class CreatePostsTable extends Migration
             $table->string('Tag1')->nullable();
             $table->string('Tag2')->nullable();
             $table->string('Tag3')->nullable();
-            $table->string('Likes')->default(0);
-            $table->string('Comments')->default(0);
+            $table->integer('Likes')->default(0);
+            $table->integer('Comments')->default(0);
             $table->timestamps();
 
         });
