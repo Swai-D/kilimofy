@@ -152,7 +152,7 @@
                   <!-- QUEST PREVIEW INFO -->
                   <div class="quest-preview-info">
                     <!-- QUEST PREVIEW IMAGE -->
-                    <img class="quest-preview-image" src="/assets/img/user_icon/agriculture.png" alt="openq-s">
+                    <img class="quest-preview-image" src="/assets/img/user_icon/agriculture.png" alt="openq-s" style="width:32px; height:32px;">
                     <!-- /QUEST PREVIEW IMAGE -->
 
                     <!-- QUEST PREVIEW TITLE -->
@@ -183,7 +183,7 @@
                   <!-- QUEST PREVIEW INFO -->
                   <div class="quest-preview-info">
                     <!-- QUEST PREVIEW IMAGE -->
-                    <img class="quest-preview-image" src="/assets/img/user_icon/cow.png" alt="openq-s">
+                    <img class="quest-preview-image" src="/assets/img/user_icon/cow.png" alt="openq-s" style="width:32px; height:32px;">
                     <!-- /QUEST PREVIEW IMAGE -->
 
                     <!-- QUEST PREVIEW TITLE -->
@@ -243,7 +243,7 @@
                   <!-- QUEST PREVIEW INFO -->
                   <div class="quest-preview-info">
                     <!-- QUEST PREVIEW IMAGE -->
-                    <img class="quest-preview-image" src="/assets/img/user_icon/fishing.png" alt="openq-s">
+                    <img class="quest-preview-image" src="/assets/img/user_icon/shipment.png" alt="openq-s"style="width:32px; height:32px;">
                     <!-- /QUEST PREVIEW IMAGE -->
 
                     <!-- QUEST PREVIEW TITLE -->

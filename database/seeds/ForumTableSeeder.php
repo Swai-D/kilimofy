@@ -33,5 +33,18 @@ class ForumTableSeeder extends Seeder
           'updated_at' => '2021-10-12 02:24:30',
       ]);
 
+      //3
+      App\Forum::create([
+          'Category' => 'Ufugaji',
+          'Category_Description' => 'Everything about the transportation of agriculture products',
+          'Category_Image' => '1635001944.png',
+          'Topics' => 0,
+          'Posts' => 0,
+          'created_at' => '2021-09-27 08:30:18',
+          'updated_at' => '2021-10-12 02:24:30',
+      ]);
+
+
+
     }
 }

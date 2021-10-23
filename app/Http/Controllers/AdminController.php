@@ -123,7 +123,7 @@ class AdminController extends Controller
 
          if(strstr($mime, "image/")){
            $forum_category_image = $request->file('Category_Image');
-           $filename = time().','.$forum_category_image->getClientOriginalExtension();
+           $filename = time().'.'.$forum_category_image->getClientOriginalExtension();
            Image::make($forum_category_image)->resize(64, 64)->save(public_path('/Uploads/ForumCategoryImage/'.$filename));
            $forum_category->Category_Image = $filename;
          }
