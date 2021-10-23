@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
           'user_name' => 'Kelvin Swai',
           'user_phone_number' => '+255755415312',
           'isVerified' => 1,
-          'user_ocupation' => 'Msafirishaji',
+          'user_ocupation' => 'Mkulima',
           'user_location' => 'Arusha, Arusha Mjini',
           'avatar' => 'default.jpg',
           'password' => '$2y$10$UQbrlKklZlI6KrbeP3CdMumDQmWWmZnrHjV22Mz5QMTiCBKX6Hrb6',

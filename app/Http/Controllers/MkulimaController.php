@@ -164,9 +164,9 @@ class MkulimaController extends Controller
       }
 
       //Get $ufugaji_topics_count out of an array
-      foreach ($ufugaji_topics_count_collection as $ufugaji_topics_count_collection) {
-        $ufugaji_topics_count = $ufugaji_topics_count_collection['Topics'];
-      }
+      // foreach ($ufugaji_topics_count_collection as $ufugaji_topics_count_collection) {
+      //   $ufugaji_topics_count = $ufugaji_topics_count_collection['Topics'];
+      // }
 
       return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'kilimo_topics_count', 'ufugaji_topics_count'));
 
