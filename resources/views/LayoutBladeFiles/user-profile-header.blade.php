@@ -10,7 +10,7 @@
     <!-- USER SHORT DESCRIPTION -->
     <div class="user-short-description big">
       <!-- USER SHORT DESCRIPTION AVATAR -->
-      <a class="user-short-description-avatar user-avatar big" href="profile-timeline.html">
+      <a class="user-short-description-avatar user-avatar big popup-change-profile-trigger" >
         <!-- USER AVATAR BORDER -->
         <div class="user-avatar-border">
           <!-- HEXAGON -->
@@ -22,7 +22,7 @@
         <!-- USER AVATAR CONTENT -->
         <div class="user-avatar-content">
           <!-- HEXAGON -->
-          <div class="hexagon-image-100-110" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
+          <div class="hexagon-image-100-110" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
           <!-- /HEXAGON -->
         </div>
         <!-- /USER AVATAR CONTENT -->
@@ -48,7 +48,7 @@
       <!-- /USER SHORT DESCRIPTION AVATAR -->
 
       <!-- USER SHORT DESCRIPTION AVATAR -->
-      <a class="user-short-description-avatar user-short-description-avatar-mobile user-avatar medium" href="profile-timeline.html">
+      <a class="user-short-description-avatar user-short-description-avatar-mobile user-avatar medium" >
         <!-- USER AVATAR BORDER -->
         <div class="user-avatar-border">
           <!-- HEXAGON -->
@@ -60,7 +60,7 @@
         <!-- USER AVATAR CONTENT -->
         <div class="user-avatar-content">
           <!-- HEXAGON -->
-          <div class="hexagon-image-82-90" data-src="/Uploads/avatars/{{Auth::user()->avatar}}"></div>
+          <div class="hexagon-image-82-90" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
           <!-- /HEXAGON -->
         </div>
         <!-- /USER AVATAR CONTENT -->
@@ -108,11 +108,11 @@
       <!-- /USER SHORT DESCRIPTION AVATAR -->
 
       <!-- USER SHORT DESCRIPTION TITLE -->
-      <p class="user-short-description-title"><a href="profile-timeline.html">{{Auth::user()->user_name}}</a></p>
+      <p class="user-short-description-title"><a href="profile-timeline.html">{{$user->user_name}}</a></p>
       <!-- /USER SHORT DESCRIPTION TITLE -->
 
       <!-- USER SHORT DESCRIPTION TEXT -->
-      <p class="user-short-description-text"><a href="#">www.kilimofy.com</a></p>
+      <p class="user-short-description-text"><a href="#">@kilimofy member</a></p>
       <!-- /USER SHORT DESCRIPTION TEXT -->
     </div>
     <!-- /USER SHORT DESCRIPTION -->
@@ -253,6 +253,7 @@
     </div>
     <!-- /USER STATS -->
 
+    @if(Auth::user()->id != $user->id)
     <!-- PROFILE HEADER INFO ACTIONS -->
     <div class="profile-header-info-actions">
       <!-- PROFILE HEADER INFO ACTION -->
@@ -263,6 +264,7 @@
       <p class="profile-header-info-action button primary"><span class="hide-text-mobile">Send</span> Message</p>
       <!-- /PROFILE HEADER INFO ACTION -->
     </div>
+    @endif
     <!-- /PROFILE HEADER INFO ACTIONS -->
   </div>
   <!-- /PROFILE HEADER INFO -->

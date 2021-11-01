@@ -3,378 +3,250 @@
 @section('menu-status-growth','active')
 @section('discription-title','Pata Pembejeo Hapo Hapo Ulipo')
 @section('discription-details','kilimofy')
+<!-- CONTENT GRID -->
 <div class="content-grid">
-@include('LayoutBladeFiles.title-layout')
-<!-- SECTION HEADER -->
-<div class="section-header">
-  <!-- SECTION HEADER INFO -->
-  <div class="section-header-info">
-    <!-- SECTION PRETITLE -->
-    <p class="section-pretitle">Your Order</p>
-    <!-- /SECTION PRETITLE -->
+  <!-- SECTION BANNER -->
+  @include('LayoutBladeFiles.title-layout')
+  <!-- /SECTION BANNER -->
 
-    <!-- SECTION TITLE -->
-    <h2 class="section-title">Checkout</h2>
-    <!-- /SECTION TITLE -->
-  </div>
-  <!-- /SECTION HEADER INFO -->
-</div>
-<!-- /SECTION HEADER -->
+  <!-- SECTION HEADER -->
+  <div class="section-header">
+    <!-- SECTION HEADER INFO -->
+    <div class="section-header-info">
+      <!-- SECTION PRETITLE -->
+      <p class="section-pretitle">Browse Your</p>
+      <!-- /SECTION PRETITLE -->
 
-<!-- GRID -->
-<div class="grid grid-8-4 small-space">
-  <!-- GRID COLUMN -->
-  <div class="grid-column">
-    <!-- WIDGET BOX -->
-    <div class="widget-box">
-      <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">Billing Details</p>
-      <!-- /WIDGET BOX TITLE -->
-
-      <!-- WIDGET BOX CONTENT -->
-      <div class="widget-box-content">
-        <!-- FORM -->
-        <form class="form">
-          <!-- FORM ROW -->
-          <div class="form-row split">
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM INPUT -->
-              <div class="form-input small">
-                <label for="billing-first-name">First Name</label>
-                <input type="text" id="billing-first-name" name="billing_first_name">
-              </div>
-              <!-- /FORM INPUT -->
-            </div>
-            <!-- /FORM ITEM -->
-
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM INPUT -->
-              <div class="form-input small">
-                <label for="billing-last-name">Last Name</label>
-                <input type="text" id="billing-last-name" name="billing_last_name">
-              </div>
-              <!-- /FORM INPUT -->
-            </div>
-            <!-- /FORM ITEM -->
-          </div>
-          <!-- /FORM ROW -->
-
-          <!-- FORM ROW -->
-          <div class="form-row split">
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM INPUT -->
-              <div class="form-input small">
-                <label for="billing-email">Email</label>
-                <input type="text" id="billing-email" name="billing_email">
-              </div>
-              <!-- /FORM INPUT -->
-            </div>
-            <!-- /FORM ITEM -->
-
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM INPUT -->
-              <div class="form-input small">
-                <label for="billing-phone-number">Phone Number</label>
-                <input type="text" id="billing-phone-number" name="billing_phone_number">
-              </div>
-              <!-- /FORM INPUT -->
-            </div>
-            <!-- /FORM ITEM -->
-          </div>
-          <!-- /FORM ROW -->
-
-          <!-- FORM ROW -->
-          <div class="form-row">
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM INPUT -->
-              <div class="form-input small">
-                <label for="billing-address">Full Address</label>
-                <input type="text" id="billing-address" name="billing_address">
-              </div>
-              <!-- /FORM INPUT -->
-            </div>
-            <!-- /FORM ITEM -->
-          </div>
-          <!-- /FORM ROW -->
-
-          <!-- FORM ROW -->
-          <div class="form-row split">
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM SELECT -->
-              <div class="form-select">
-                <label for="billing-country">Country</label>
-                <select id="billing-country" name="billing_country">
-                  <option value="0">Select your Country</option>
-                  <option value="1">United States</option>
-                </select>
-                <!-- FORM SELECT ICON -->
-                <svg class="form-select-icon icon-small-arrow">
-                  <use xlink:href="#svg-small-arrow"></use>
-                </svg>
-                <!-- /FORM SELECT ICON -->
-              </div>
-              <!-- /FORM SELECT -->
-            </div>
-            <!-- /FORM ITEM -->
-
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM SELECT -->
-              <div class="form-select">
-                <label for="billing-state">State</label>
-                <select id="billing-state" name="billing_state">
-                  <option value="0">Select your State</option>
-                  <option value="1">New York</option>
-                </select>
-                <!-- FORM SELECT ICON -->
-                <svg class="form-select-icon icon-small-arrow">
-                  <use xlink:href="#svg-small-arrow"></use>
-                </svg>
-                <!-- /FORM SELECT ICON -->
-              </div>
-              <!-- /FORM SELECT -->
-            </div>
-            <!-- /FORM ITEM -->
-          </div>
-          <!-- /FORM ROW -->
-
-          <!-- FORM ROW -->
-          <div class="form-row split">
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM SELECT -->
-              <div class="form-select">
-                <label for="billing-city">City</label>
-                <select id="billing-city" name="billing_city">
-                  <option value="0">Select your City</option>
-                  <option value="1">New York</option>
-                </select>
-                <!-- FORM SELECT ICON -->
-                <svg class="form-select-icon icon-small-arrow">
-                  <use xlink:href="#svg-small-arrow"></use>
-                </svg>
-                <!-- /FORM SELECT ICON -->
-              </div>
-              <!-- /FORM SELECT -->
-            </div>
-            <!-- /FORM ITEM -->
-
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM INPUT -->
-              <div class="form-input small">
-                <label for="billing-zip-code">ZIP Code</label>
-                <input type="text" id="billing-zip-code" name="billing_zip_code">
-              </div>
-              <!-- /FORM INPUT -->
-            </div>
-            <!-- /FORM ITEM -->
-          </div>
-          <!-- /FORM ROW -->
-
-          <!-- FORM ROW -->
-          <div class="form-row">
-            <!-- FORM ITEM -->
-            <div class="form-item">
-              <!-- FORM INPUT -->
-              <div class="form-input small medium-textarea">
-                <textarea id="billing-details" name="billing_details" placeholder="Write any additional details here..."></textarea>
-              </div>
-              <!-- /FORM INPUT -->
-            </div>
-            <!-- /FORM ITEM -->
-          </div>
-          <!-- /FORM ROW -->
-        </form>
-        <!-- /FORM -->
-      </div>
-      <!-- WIDGET BOX CONTENT -->
+      <!-- SECTION TITLE -->
+      <h2 class="section-title">Shopping Cart <span class="highlighted">3</span></h2>
+      <!-- /SECTION TITLE -->
     </div>
-    <!-- /WIDGET BOX -->
+    <!-- /SECTION HEADER INFO -->
   </div>
-  <!-- /GRID COLUMN -->
+  <!-- /SECTION HEADER -->
 
-  <!-- GRID COLUMN -->
-  <div class="grid-column">
-    <!-- SIDEBAR BOX -->
-    <div class="sidebar-box">
-      <!-- SIDEBAR BOX TITLE -->
-      <p class="sidebar-box-title">Order Summary</p>
-      <!-- /SIDEBAR BOX TITLE -->
-
-      <!-- SIDEBAR BOX ITEMS -->
-      <div class="sidebar-box-items">
-        <!-- TOTALS LINE LIST -->
-        <div class="totals-line-list separator-bottom">
-          <!-- TOTALS LINE -->
-          <div class="totals-line">
-            <!-- TOTALS LINE INFO -->
-            <div class="totals-line-info">
-              <!-- TOTALS LINE TITLE -->
-              <p class="totals-line-title"><span class="bold">Twitch Stream UI Pack</span></p>
-              <!-- /TOTALS LINE TITLE -->
-
-              <!-- TOTALS LINE TEXT -->
-              <p class="totals-line-text">Regular License</p>
-              <!-- /TOTALS LINE TEXT -->
+  <!-- GRID -->
+  <div class="grid grid-9-3 small-space">
+    <!-- GRID COLUMN -->
+    <div class="grid-column">
+      <!-- TABLE WRAP -->
+      <div class="table-wrap" data-simplebar>
+        <!-- TABLE -->
+        <div class="table table-cart split-rows">
+          <!-- TABLE HEADER -->
+          <div class="table-header">
+            <!-- TABLE HEADER COLUMN -->
+            <div class="table-header-column">
+              <!-- TABLE HEADER TITLE -->
+              <p class="table-header-title">Item</p>
+              <!-- /TABLE HEADER TITLE -->
             </div>
-            <!-- /TOTALS LINE INFO -->
+            <!-- /TABLE HEADER COLUMN -->
 
-            <!-- PRICE TITLE -->
-            <p class="price-title"><span class="currency">$</span> 12.00 x 1</p>
-            <!-- /PRICE TITLE -->
-          </div>
-          <!-- /TOTALS LINE -->
 
-          <!-- TOTALS LINE -->
-          <div class="totals-line">
-            <!-- TOTALS LINE INFO -->
-            <div class="totals-line-info">
-              <!-- TOTALS LINE TITLE -->
-              <p class="totals-line-title"><span class="bold">Gaming Coin Badges Pack</span></p>
-              <!-- /TOTALS LINE TITLE -->
-
-              <!-- TOTALS LINE TEXT -->
-              <p class="totals-line-text">Regular License</p>
-              <!-- /TOTALS LINE TEXT -->
+            <!-- TABLE HEADER COLUMN -->
+            <div class="table-header-column padded-left">
+              <!-- TABLE HEADER TITLE -->
+              <p class="table-header-title">Quantity</p>
+              <!-- /TABLE HEADER TITLE -->
             </div>
-            <!-- /TOTALS LINE INFO -->
+            <!-- /TABLE HEADER COLUMN -->
 
-            <!-- PRICE TITLE -->
-            <p class="price-title"><span class="currency">$</span> 6.00 x 1</p>
-            <!-- /PRICE TITLE -->
-          </div>
-          <!-- /TOTALS LINE -->
-
-          <!-- TOTALS LINE -->
-          <div class="totals-line">
-            <!-- TOTALS LINE INFO -->
-            <div class="totals-line-info">
-              <!-- TOTALS LINE TITLE -->
-              <p class="totals-line-title"><span class="bold">Pixel Diamond Gaming Magazine</span></p>
-              <!-- /TOTALS LINE TITLE -->
-
-              <!-- TOTALS LINE TEXT -->
-              <p class="totals-line-text">Regular License</p>
-              <!-- /TOTALS LINE TEXT -->
+            <!-- TABLE HEADER COLUMN -->
+            <div class="table-header-column centered padded-left">
+              <!-- TABLE HEADER TITLE -->
+              <p class="table-header-title">Price</p>
+              <!-- /TABLE HEADER TITLE -->
             </div>
-            <!-- /TOTALS LINE INFO -->
+            <!-- /TABLE HEADER COLUMN -->
 
-            <!-- PRICE TITLE -->
-            <p class="price-title"><span class="currency">$</span> 26.00 x 1</p>
-            <!-- /PRICE TITLE -->
+            <!-- TABLE HEADER COLUMN -->
+            <div class="table-header-column padded-big-left"></div>
+            <!-- /TABLE HEADER COLUMN -->
           </div>
-          <!-- /TOTALS LINE -->
+          <!-- /TABLE HEADER -->
+
+          <!-- TABLE BODY -->
+          <div class="table-body same-color-rows">
+            @foreach($item_bought as $item_info)
+            <!-- TABLE ROW -->
+            <div class="table-row medium">
+              <!-- TABLE COLUMN -->
+              <div class="table-column">
+                <!-- PRODUCT PREVIEW -->
+                <div class="product-preview tiny">
+                  <!-- PRODUCT PREVIEW IMAGE -->
+                  <a href="marketplace-product.html">
+                    <figure class="product-preview-image liquid">
+                      <img src="/Uploads/ItemImages/{{$item_info->item_image}}" alt="item-01">
+                    </figure>
+                  </a>
+                  <!-- /PRODUCT PREVIEW IMAGE -->
+
+                  <!-- PRODUCT PREVIEW INFO -->
+                  <div class="product-preview-info">
+                    <!-- PRODUCT PREVIEW TITLE -->
+                    <p class="product-preview-title"><a href="marketplace-product.html">{{$item_info->item_name}}</a></p>
+                    <!-- /PRODUCT PREVIEW TITLE -->
+
+                    <!-- PRODUCT PREVIEW CATEGORY -->
+                    <p class="product-preview-category digital"><a href="marketplace-category.html">{{$item_info->item_category}}</a></p>
+                    <!-- /PRODUCT PREVIEW CATEGORY -->
+
+                    <!-- PRODUCT PREVIEW CREATOR -->
+                    <p class="product-preview-creator"><a href="profile-timeline.html">{{$item_info->seller_name}}</a></p>
+                    <!-- /PRODUCT PREVIEW CREATOR -->
+                  </div>
+                  <!-- /PRODUCT PREVIEW INFO -->
+                </div>
+                <!-- /PRODUCT PREVIEW -->
+              </div>
+              <!-- /TABLE COLUMN -->
+
+
+
+              <!-- TABLE COLUMN -->
+              <div class="table-column padded-left">
+                <!-- FORM COUNTER -->
+                <div class="form-counter">
+                  <!-- FORM COUNTER VALUE -->
+                  <p class="form-counter-value">1</p>
+                  <!-- /FORM COUNTER VALUE -->
+
+                  <!-- FORM COUNTER CONTROLS -->
+                  <div class="form-counter-controls">
+                    <!-- FORM COUNTER CONTROL -->
+                    <div class="form-counter-control form-counter-control-increase">
+                      <!-- FORM COUNTER ICON -->
+                      <svg class="form-counter-icon icon-small-arrow">
+                        <use xlink:href="#svg-small-arrow"></use>
+                      </svg>
+                      <!-- /FORM COUNTER ICON -->
+                    </div>
+                    <!-- /FORM COUNTER CONTROL -->
+
+                    <!-- FORM COUNTER CONTROL -->
+                    <div class="form-counter-control form-counter-control-decrease">
+                      <!-- FORM COUNTER ICON -->
+                      <svg class="form-counter-icon icon-small-arrow">
+                        <use xlink:href="#svg-small-arrow"></use>
+                      </svg>
+                      <!-- /FORM COUNTER ICON -->
+                    </div>
+                    <!-- /FORM COUNTER CONTROL -->
+                  </div>
+                  <!-- /FORM COUNTER CONTROLS -->
+                </div>
+                <!-- /FORM COUNTER -->
+              </div>
+              <!-- /TABLE COLUMN -->
+
+              <!-- TABLE COLUMN -->
+              <div class="table-column centered padded-left">
+                <!-- PRICE TITLE -->
+                <p class="price-title small"><span class="currency">Tsh</span> {{number_format($item_info->item_price)}} /=</p>
+                <!-- /PRICE TITLE -->
+              </div>
+              <!-- /TABLE COLUMN -->
+
+              <!-- TABLE COLUMN -->
+              <div class="table-column padded-big-left">
+                <!-- TABLE ACTION -->
+                <div class="table-action">
+                  <!-- ICON DELETE -->
+                  <svg class="icon-delete">
+                    <use xlink:href="#svg-delete"></use>
+                  </svg>
+                  <!-- /ICON DELETE -->
+                </div>
+                <!-- /TABLE ACTION -->
+              </div>
+              <!-- /TABLE COLUMN -->
+            </div>
+            <!-- /TABLE ROW -->
+           @endforeach
+          </div>
+          <!-- /TABLE BODY -->
         </div>
-        <!-- /TOTALS LINE LIST -->
-
-        <!-- TOTALS LINE LIST -->
-        <div class="totals-line-list separator-bottom">
-          <!-- TOTALS LINE -->
-          <div class="totals-line">
-            <!-- TOTALS LINE TITLE -->
-            <p class="totals-line-title">Cart Total (3)</p>
-            <!-- /TOTALS LINE TITLE -->
-
-            <!-- PRICE TITLE -->
-            <p class="price-title"><span class="currency">$</span> 44.00</p>
-            <!-- /PRICE TITLE -->
-          </div>
-          <!-- /TOTALS LINE -->
-
-          <!-- TOTALS LINE -->
-          <div class="totals-line">
-            <!-- TOTALS LINE TITLE -->
-            <p class="totals-line-title">Code</p>
-            <!-- /TOTALS LINE TITLE -->
-
-            <!-- PRICE TITLE -->
-            <p class="price-title">-<span class="currency">$</span> 5.00</p>
-            <!-- /PRICE TITLE -->
-          </div>
-          <!-- /TOTALS LINE -->
-
-          <!-- TOTALS LINE -->
-          <div class="totals-line">
-            <!-- TOTALS LINE TITLE -->
-            <p class="totals-line-title">Total</p>
-            <!-- /TOTALS LINE TITLE -->
-
-            <!-- PRICE TITLE -->
-            <p class="price-title"><span class="currency">$</span> 39.00</p>
-            <!-- /PRICE TITLE -->
-          </div>
-          <!-- /TOTALS LINE -->
-        </div>
-        <!-- /TOTALS LINE LIST -->
-
-        <!-- PRICE TITLE -->
-        <p class="price-title big separator-bottom"><span class="currency">$</span> 39.00</p>
-        <!-- /PRICE TITLE -->
+        <!-- /TABLE -->
       </div>
-      <!-- /SIDEBAR BOX ITEMS -->
+      <!-- /TABLE WRAP -->
 
-      <!-- SIDEBAR BOX TITLE -->
-      <p class="sidebar-box-title">Njia za Malipo</p>
-      <!-- /SIDEBAR BOX TITLE -->
 
-      <!-- SIDEBAR BOX ITEMS -->
-      <div class="sidebar-box-items">
-        <!-- FORM -->
-        <form class="form">
-          <!-- CHECKBOX WRAP -->
-          <div class="checkbox-wrap">
-            <input type="radio" id="payment-paypal" name="payment_type" value="payment-paypal" checked>
-            <!-- CHECKBOX BOX -->
-            <div class="checkbox-box round"></div>
-            <!-- /CHECKBOX BOX -->
-            <label class="accordion-trigger-linked" for="payment-paypal">Cash</label>
-
-            <!-- CHECKBOX INFO -->
-            <div class="checkbox-info accordion-content-linked accordion-open">
-              <!-- CHECKBOX INFO TEXT -->
-              <p class="checkbox-info-text">Utalipia cash garama za mzigo punde tu unapopokea mzigo wako, ofisini au mahali ulipo </p>
-              <!-- /CHECKBOX INFO TEXT -->
-            </div>
-            <!-- /CHECKBOX INFO -->
-          </div>
-          <!-- /CHECKBOX WRAP -->
-
-          <!-- CHECKBOX WRAP -->
-          <div class="checkbox-wrap">
-            <input type="radio" id="payment-debit-credit" name="payment_type" value="payment-debit-credit">
-            <!-- CHECKBOX BOX -->
-            <div class="checkbox-box round"></div>
-            <!-- /CHECKBOX BOX -->
-            <label class="accordion-trigger-linked" for="payment-debit-credit">Simu Benki</label>
-
-            <!-- CHECKBOX INFO -->
-            <div class="checkbox-info accordion-content-linked">
-              <!-- CHECKBOX INFO TEXT -->
-              <p class="checkbox-info-text">Unaweza lipia bidhaa zetu kwa njia zote za kimtandao kama vile M-pesa, Airtel-money, Tigo-pesa, T-pesa pamoja na NALA money Transfer</p>
-              <!-- /CHECKBOX INFO TEXT -->
-            </div>
-            <!-- /CHECKBOX INFO -->
-          </div>
-          <!-- /CHECKBOX WRAP -->
-        </form>
-        <!-- /FORM -->
-
-        <!-- BUTTON -->
-        <p class="button primary">Complete Order!</p>
-        <!-- /BUTTON -->
-      </div>
-      <!-- /SIDEBAR BOX ITEMS -->
     </div>
-    <!-- /SIDEBAR BOX -->
+    <!-- /GRID COLUMN -->
+
+    <!-- GRID COLUMN -->
+    <div class="grid-column">
+      <!-- SIDEBAR BOX -->
+      <div class="sidebar-box margin-top">
+        <!-- SIDEBAR BOX TITLE -->
+        <p class="sidebar-box-title">Mchanganuo </p>
+        <!-- /SIDEBAR BOX TITLE -->
+
+        <!-- SIDEBAR BOX ITEMS -->
+        <div class="sidebar-box-items">
+          <!-- PRICE TITLE -->
+          <p class="price-title big"><span class="currency">Tsh</span> {{number_format($item_info->item_price)}} /=</p>
+          <!-- /PRICE TITLE -->
+
+          <!-- TOTALS LINE LIST -->
+          <div class="totals-line-list">
+            <!-- TOTALS LINE -->
+            <div class="totals-line">
+              <!-- TOTALS LINE TITLE -->
+              <p class="totals-line-title">Garama </p>
+              <!-- /TOTALS LINE TITLE -->
+
+              <!-- PRICE TITLE -->
+              <p class="price-title"><span class="currency">Tsh</span> {{number_format($item_net_price)}} /=</p>
+              <!-- /PRICE TITLE -->
+            </div>
+            <!-- /TOTALS LINE -->
+
+            <!-- TOTALS LINE -->
+            <div class="totals-line">
+              <!-- TOTALS LINE TITLE -->
+              <p class="totals-line-title">VAT 18%</p>
+              <!-- /TOTALS LINE TITLE -->
+
+              <!-- PRICE TITLE -->
+              <p class="price-title"><span class="currency">Tsh</span> {{number_format($item_vat_amount)}} /=</p>
+              <!-- /PRICE TITLE -->
+            </div>
+            <!-- /TOTALS LINE -->
+
+            <!-- TOTALS LINE -->
+
+            <hr>
+            <div class="totals-line">
+              <!-- TOTALS LINE TITLE -->
+              <p class="totals-line-title"><b>Jumla</b></p>
+              <!-- /TOTALS LINE TITLE -->
+
+              <!-- PRICE TITLE -->
+              <p class="price-title"><span class="currency">Tsh</span> {{number_format($item_total_price)}} /=</p>
+              <!-- /PRICE TITLE -->
+            </div>
+            <!-- /TOTALS LINE -->
+            <hr>
+          </div>
+          <!-- /TOTALS LINE LIST -->
+
+          <!-- BUTTON -->
+          <a class="button primary" href="/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Checkout-item/{{$item_info->id}}">Kamilisha Malipo</a>
+          <!-- /BUTTON -->
+
+          <!-- BUTTON -->
+          <p class="button white small-space">Update Cart</p>
+          <!-- /BUTTON -->
+        </div>
+        <!-- /SIDEBAR BOX ITEMS -->
+      </div>
+      <!-- /SIDEBAR BOX -->
+    </div>
+    <!-- /GRID COLUMN -->
   </div>
-  <!-- /GRID COLUMN -->
+  <!-- /GRID -->
 </div>
-<!-- /GRID -->
-</div>
+<!-- /CONTENT GRID -->

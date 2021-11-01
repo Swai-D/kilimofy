@@ -292,9 +292,31 @@
                       <!-- USER AVATAR CONTENT -->
                       <div class="user-avatar-content">
                         <!-- HEXAGON -->
-                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/02.jpg"></div>
+                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/13.jpg"></div>
                         <!-- /HEXAGON -->
                       </div>
+                      <!-- /USER AVATAR CONTENT -->
+                    </div>
+                    <!-- /USER AVATAR -->
+
+                    <!-- USER AVATAR -->
+                    <div class="user-avatar micro no-stats">
+                      <!-- USER AVATAR BORDER -->
+                      <div class="user-avatar-border">
+                        <!-- HEXAGON -->
+                        <div class="hexagon-22-24"></div>
+                        <!-- /HEXAGON -->
+                      </div>
+                      <!-- /USER AVATAR BORDER -->
+
+                      <!-- USER AVATAR CONTENT -->
+                    @foreach($post_detail->comments as $post_comment)
+                    <div class="user-avatar-content">
+                      <!-- HEXAGON -->
+                      <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{$post_comment->user_avatar}}"></div>
+                      <!-- /HEXAGON -->
+                    </div>
+                    @endforeach
                       <!-- /USER AVATAR CONTENT -->
                     </div>
                     <!-- /USER AVATAR -->
@@ -332,27 +354,7 @@
                       <!-- USER AVATAR CONTENT -->
                       <div class="user-avatar-content">
                         <!-- HEXAGON -->
-                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/05.jpg"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR CONTENT -->
-                    </div>
-                    <!-- /USER AVATAR -->
-
-                    <!-- USER AVATAR -->
-                    <div class="user-avatar micro no-stats">
-                      <!-- USER AVATAR BORDER -->
-                      <div class="user-avatar-border">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-22-24"></div>
-                        <!-- /HEXAGON -->
-                      </div>
-                      <!-- /USER AVATAR BORDER -->
-
-                      <!-- USER AVATAR CONTENT -->
-                      <div class="user-avatar-content">
-                        <!-- HEXAGON -->
-                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/03.jpg"></div>
+                        <div class="hexagon-image-18-20" data-src="/assets/img/avatar/08.jpg"></div>
                         <!-- /HEXAGON -->
                       </div>
                       <!-- /USER AVATAR CONTENT -->
@@ -362,7 +364,7 @@
                   <!-- /META LINE LIST -->
 
                   <!-- META LINE TEXT -->
-                  <p class="meta-line-text">{{$post_detail->comments->count() + $post_detail->reply->count()}} Participants</p>
+                  <p class="meta-line-text">19 Participants</p>
                   <!-- /META LINE TEXT -->
                 </div>
                 <!-- /META LINE -->
@@ -515,12 +517,13 @@
 
               @foreach($post_detail->comments as $post_comment)
               <div class="post-comment">
+
                 <!-- USER AVATAR -->
                 <a class="user-avatar small no-outline" href="profile-timeline.html">
                   <!-- USER AVATAR CONTENT -->
                   <div class="user-avatar-content">
                     <!-- HEXAGON -->
-                    <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$author->avatar}}"></div>
+                    <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$post_comment->user_avatar}}"></div>
                     <!-- /HEXAGON -->
                   </div>
                   <!-- /USER AVATAR CONTENT -->
@@ -545,7 +548,7 @@
                 <!-- /USER AVATAR -->
 
                 <!-- POST COMMENT TEXT -->
-                <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">{{$author->user_name}}</a>{{$post_comment->comment}}</p>
+                <p class="post-comment-text"><a class="post-comment-text-author" href="profile-timeline.html">{{$post_comment->user_name}}</a>{{$post_comment->comment}}</p>
                 <!-- /POST COMMENT TEXT -->
 
                 <!-- CONTENT ACTIONS -->
@@ -945,6 +948,7 @@
              @endforeach
 
           <!-- POST COMMENT FORM -->
+          <br>
           <div class="post-comment-form">
             <!-- USER AVATAR -->
             <div class="user-avatar small no-outline">
@@ -985,6 +989,9 @@
                   <div class="interactive-input small">
                     <input type="text" id="chat-widget-message-text-2" name="comment" placeholder="Write a message...">
                     <input type="hidden" id="chat-widget-message-text-2" name="post_id" value="{{$post_detail->id}}">
+                    <input type="hidden" id="chat-widget-message-text-2" name="user_name" value="{{Auth::user()->user_name}}">
+                    <input type="hidden" id="chat-widget-message-text-2" name="user_id" value="{{Auth::user()->id}}">
+                    <input type="hidden" id="chat-widget-message-text-2" name="user_avatar" value="{{Auth::user()->avatar}}">
                     <!-- INTERACTIVE INPUT ICON WRAP -->
                     <div class="interactive-input-icon-wrap actionable">
                       <!-- TOOLTIP WRAP -->

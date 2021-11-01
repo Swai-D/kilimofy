@@ -65,7 +65,7 @@
       <!-- /ACTION LIST ITEM -->
 
       <!-- ACTION LIST ITEM -->
-      <a class="action-list-item @yield('mini-user-profile-active')" href="/kilimofy/UserAccount-Profile-Settings/{{Auth::user()->id}}">
+      <a class="action-list-item @yield('mini-user-profile-active')" href="/kilimofy/UserAccount/about_user_page/{{Auth::user()->id}}-about-{{Auth::user()->user_name}}-of-kilimofy">
         <!-- ACTION LIST ITEM ICON -->
         <svg class="action-list-item-icon icon-profile">
           <use xlink:href="#svg-profile"></use>

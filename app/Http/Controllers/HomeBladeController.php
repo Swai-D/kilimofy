@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Paticipant;
 use App\Discussion;
+use App\Comment;
+use App\Reply;
 use App\User;
 use App\Post;
 use App\Place;
@@ -91,6 +93,8 @@ class HomeBladeController extends Controller
              Discussion::where('Author_ID', '=', $user_id->id)->update(['Author_Image_Name' => $filename]);
              Paticipant::where('Author_ID', '=', $user_id->id)->update(['Author_Image_Name' => $filename]);
              Group::where('Creator_Id', '=', $user_id->id)->update(['Creator_Image_Path' => $filename]);
+             Comment::where('user_id', '=', $user_id->id)->update(['user_avatar' => $filename]);
+             Reply::where('user_id', '=', $user_id->id)->update(['user_avatar' => $filename]);
 
              //Delete the Old IMAGE from Public Folder (Save Space)
              File::delete([public_path('/Uploads/avatars/'.$user_id->avatar),]);

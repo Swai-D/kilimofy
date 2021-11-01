@@ -1,8 +1,13 @@
 @extends('LayoutBladeFiles.user-account-layout')
+
+@foreach($user as $user)
+
 @section('title')
-@section('blog-menu-active', 'active')
-{{Auth::user()->user_name}}'s Blog
+{{$user->user_name}}'s Blog
 @endsection
+
+@section('blog-menu-active', 'active')
+
 @section('user-data')
 <!-- SECTION -->
 <section class="section">
@@ -11,7 +16,7 @@
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      <p class="section-pretitle">Browse Marina's</p>
+      <p class="section-pretitle">{{$user->user_name}}'s</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
@@ -19,6 +24,20 @@
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
+    <!-- SECTION HEADER ACTIONS -->
+  @if(Auth::user()->id == $user->id)
+  <div class="section-header-actions">
+    <!-- SECTION HEADER ACTION -->
+
+    <p class="section-header-action  popup-album-creation-trigger"><span style="color:green;">Create Blog Post +</span> </p>
+    <!-- /SECTION HEADER ACTION -->
+
+    <!-- SECTION HEADER ACTION -->
+    <!-- <a class="section-header-action" href="profile-photos-inside.html">See All</a> -->
+    <!-- /SECTION HEADER ACTION -->
+  </div>
+  @endif
+    <!-- /SECTION HEADER ACTIONS -->
   </div>
   <!-- /SECTION HEADER -->
 
@@ -115,7 +134,7 @@
           <!-- /POST PREVIEW TEXT -->
 
           <!-- POST PREVIEW LINK -->
-          <a class="post-preview-link" href="profile-post.html">Read more...</a>
+          <a class="post-preview-link" href="/kilimofy/UserAccount/user_blog_post_page/{{$user->id}}-test">Read more...</a>
           <!-- /POST PREVIEW LINK -->
         </div>
         <!-- /POST PREVIEW INFO BOTTOM -->
@@ -607,3 +626,63 @@
 </section>
 <!-- /SECTION -->
 @endsection
+@endforeach
+
+<!-- POPUP BOX -->
+<div class="popup-box popup-album-creation">
+  <!-- POPUP CLOSE BUTTON -->
+  <div class="popup-close-button popup-album-creation-trigger">
+    <!-- POPUP CLOSE BUTTON ICON -->
+    <svg class="popup-close-button-icon icon-cross">
+      <use xlink:href="#svg-cross"></use>
+    </svg>
+    <!-- /POPUP CLOSE BUTTON ICON -->
+  </div>
+  <!-- /POPUP CLOSE BUTTON -->
+
+  <!-- POPUP BOX TITLE -->
+  <p class="popup-box-title">Create Album +</p>
+  <!-- /POPUP BOX TITLE -->
+
+  <!-- FORM -->
+  <form class="form">
+  <!-- FORM UPLOADABLES -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-outline card-info">
+          <div class="card-header">
+            <h3 class="card-title">
+              Summernote
+            </h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <textarea id="summernote">
+              Place <em>some</em> <u>text</u> <strong>here</strong>
+            </textarea>
+          </div>
+          <div class="card-footer">
+            Visit <a href="https://github.com/summernote/summernote/">Summernote</a> documentation for more examples and information about the plugin.
+          </div>
+        </div>
+      </div>
+      <!-- /.col-->
+    </div>
+    <!-- ./row -->
+    <!-- /FORM UPLOADABLES -->
+
+    <!-- POPUP BOX ACTIONS -->
+    <div class="popup-box-actions">
+      <!-- POPUP BOX ACTION -->
+      <p class="popup-box-action button white popup-album-creation-trigger">Discard All</p>
+      <!-- /POPUP BOX ACTION -->
+
+      <!-- POPUP BOX ACTION -->
+      <button class="popup-box-action button secondary">Post Album!</button>
+      <!-- /POPUP BOX ACTION -->
+    </div>
+    <!-- /POPUP BOX ACTIONS -->
+  </form>
+  <!-- /FORM -->
+</div>
+<!-- /POPUP BOX -->

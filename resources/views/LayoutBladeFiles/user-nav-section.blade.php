@@ -2,7 +2,7 @@
   <!-- SECTION MENU -->
   <div id="section-navigation-slider" class="section-menu">
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('about-menu-active')" href="/kilimofy/UserAccount/about_user_page">
+    <a class="section-menu-item @yield('about-menu-active')" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-About-{{$user->user_name}}-in-Kilimofy-Platform">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-profile">
         <use xlink:href="#svg-profile"></use>
@@ -16,7 +16,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('timeline-menu-active')" href="/kilimofy/UserAccount/user_timeline_page">
+    <a class="section-menu-item @yield('timeline-menu-active')" href="/kilimofy/UserAccount/user_timeline_page/{{$user->id}}-{{$user->user_name}}'s-Timeline-in-Kilimofy-Platform">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-timeline">
         <use xlink:href="#svg-timeline"></use>
@@ -30,7 +30,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('friends-menu-active')" href="/kilimofy/UserAccount/user_friends_page">
+    <a class="section-menu-item @yield('friends-menu-active')" href="/kilimofy/UserAccount/user_friends_page/{{$user->id}}-{{$user->user_name}}'s-Friends-in-Kilimofy-Platform">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-friend">
         <use xlink:href="#svg-friend"></use>
@@ -44,7 +44,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('group-menu-active')" href="/kilimofy/UserAccount/user_groups_page">
+    <a class="section-menu-item @yield('group-menu-active')" href="/kilimofy/UserAccount/user_groups_page/{{$user->id}}-{{$user->user_name}}'s-Groups-in-Kilimofy-Platform">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-group">
         <use xlink:href="#svg-group"></use>
@@ -58,7 +58,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('photos-menu-active')" href="/kilimofy/UserAccount/user_photos_page">
+    <a class="section-menu-item @yield('photos-menu-active')" href="/kilimofy/UserAccount/user_photos_page/{{$user->id}}-{{$user->user_name}}'s-Photos-in-Kilimofy-Platform">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-photos">
         <use xlink:href="#svg-photos"></use>
@@ -72,7 +72,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('videos-menu-active')" href="/kilimofy/UserAccount/user_videos_page">
+    <a class="section-menu-item @yield('videos-menu-active')" href="/kilimofy/UserAccount/user_videos_page/{{$user->id}}-{{$user->user_name}}'s-Videos-in-Kilimofy-Platform">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-videos">
         <use xlink:href="#svg-videos"></use>
@@ -87,7 +87,7 @@
 
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('blog-menu-active')" href="/kilimofy/UserAccount/user_blog_page">
+    <a class="section-menu-item @yield('blog-menu-active')" href="/kilimofy/UserAccount/user_blog_page/{{$user->id}}-{{$user->user_name}}'s-Blog-in-Kilimofy-Platform">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-blog-posts">
         <use xlink:href="#svg-blog-posts"></use>
@@ -101,7 +101,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('forum-menu-active')" href="/kilimofy/UserAccount/user_forum_page">
+    <a class="section-menu-item @yield('forum-menu-active')" href="/kilimofy/UserAccount/user_forum_page/{{$user->id}}-{{$user->user_name}}'s-Forum-in-Kilimofy-Platform">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-forum">
         <use xlink:href="#svg-forum"></use>
@@ -115,7 +115,7 @@
     <!-- /SECTION MENU ITEM -->
 
     <!-- SECTION MENU ITEM -->
-    <a class="section-menu-item @yield('store-menu-active')" href="/kilimofy/UserAccount/user_store_page">
+    <a class="section-menu-item @yield('store-menu-active')" href="/kilimofy/UserAccount/user_store_page/{{$user->id}}-{{$user->user_name}}'s-Store-in-Kilimofy-Platform">
       <!-- SECTION MENU ITEM ICON -->
       <svg class="section-menu-item-icon icon-store">
         <use xlink:href="#svg-store"></use>
@@ -126,7 +126,7 @@
       <p class="section-menu-item-text">Store</p>
       <!-- /SECTION MENU ITEM TEXT -->
     </a>
-  
+
   </div>
   <!-- /SECTION MENU -->
 

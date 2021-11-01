@@ -30,7 +30,8 @@ Route::get('/kilimofy/Mkulima/Mashine-za-kilimo/shopping-cart', 'MkulimaControll
 Route::get('/kilimofy/Mkulima/Bwana-Shamba', 'MkulimaController@mabwana_shamba')->middleware('auth');
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu', 'MkulimaController@pembejeo_na_viwatilifu')->middleware('auth');
 Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/shopping-cart/{bidhaa_info_id}', 'MkulimaController@pembejeo_na_viwatilifu_shopping_cart')->middleware('auth');
-Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Buy-item', 'MkulimaController@pembejeo_na_viwatilifu_buy_item')->middleware('auth');
+Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Buy-item/{item_id}', 'MkulimaController@pembejeo_na_viwatilifu_buy_item')->middleware('auth');
+Route::get('/kilimofy/Mkulima/Pembejeo-Na-Viwatilifu/Checkout-item/{item_id}', 'MkulimaController@pembejeo_na_viwatilifu_check_out_item')->middleware('auth');
 Route::get('/kilimofy/Usafirisaji/Usafiri', 'MkulimaController@usafiri')->middleware('auth');
 
 //**************************end*************************************************
@@ -119,16 +120,17 @@ Route::post('/kilimofy/Forum/Create-Discussion', 'ForumController@create_discuss
 
 
 //**************************UserAccountController*********************************
-Route::get('/kilimofy/UserAccount/about_user_page', 'UserAccountController@about_user_page');
-Route::get('/kilimofy/UserAccount/user_timeline_page', 'UserAccountController@user_timeline_page');
-Route::get('/kilimofy/UserAccount/user_friends_page', 'UserAccountController@user_friends_page');
-Route::get('/kilimofy/UserAccount/user_groups_page', 'UserAccountController@user_groups_page');
-Route::get('/kilimofy/UserAccount/user_photos_page', 'UserAccountController@user_photos_page');
-Route::get('/kilimofy/UserAccount/user_videos_page', 'UserAccountController@user_videos_page');
-Route::get('/kilimofy/UserAccount/user_blog_page', 'UserAccountController@user_blog_page');
-Route::get('/kilimofy/UserAccount/user_forum_page', 'UserAccountController@user_forum_page');
-Route::get('/kilimofy/UserAccount/user_store_page', 'UserAccountController@user_store_page');
-Route::get('/kilimofy/UserAccount/user_setting_page', 'UserAccountController@user_videos_page');
+Route::get('/kilimofy/UserAccount/about_user_page/{user_id}-{slug}', 'UserAccountController@about_user_page');
+Route::get('/kilimofy/UserAccount/user_timeline_page/{user_id}-{slug}', 'UserAccountController@user_timeline_page');
+Route::get('/kilimofy/UserAccount/user_friends_page/{user_id}-{slug}', 'UserAccountController@user_friends_page');
+Route::get('/kilimofy/UserAccount/user_groups_page/{user_id}-{slug}', 'UserAccountController@user_groups_page');
+Route::get('/kilimofy/UserAccount/user_photos_page/{user_id}-{slug}', 'UserAccountController@user_photos_page');
+Route::get('/kilimofy/UserAccount/user_videos_page/{user_id}-{slug}', 'UserAccountController@user_videos_page');
+Route::get('/kilimofy/UserAccount/user_blog_page/{user_id}-{slug}', 'UserAccountController@user_blog_page');
+Route::get('/kilimofy/UserAccount/user_blog_post_page/{user_id}-{slug}', 'UserAccountController@user_blog_post_page');
+Route::get('/kilimofy/UserAccount/user_forum_page/{user_id}-{slug}', 'UserAccountController@user_forum_page');
+Route::get('/kilimofy/UserAccount/user_store_page/{user_id}-{slug}', 'UserAccountController@user_store_page');
+Route::get('/kilimofy/UserAccount/user_setting_page/{user_id}-{slug}', 'UserAccountController@user_videos_page');
 
 //**************************end*************************************************
 
@@ -137,7 +139,7 @@ Route::get('/kilimofy/UserAccount/user_setting_page', 'UserAccountController@use
 Route::post('/kilimofy/User/status-post', 'PostController@create_status');
 Route::post('/kilimofy/Blog/poll_option', 'PostController@poll_option')->middleware('auth');
 Route::post('/kilimofy/Blog/user_quick_post', 'PostController@user_quick_post');
-Route::get('/kilimofy/Post/read_comments/{post_id}', 'PostController@read_comments');
+Route::get('/kilimofy/Post/read_comments/{post_id}-{slug}', 'PostController@read_comments');
 Route::post('/kilimofy/Blog/send_comments', 'PostController@send_comments');
 Route::get('/kilimofy/Blog/reply_comment/{comment_id}', 'PostController@reply_comment');
 Route::post('/kilimofy/Blog/reply_comment_form', 'PostController@reply_comment_create');

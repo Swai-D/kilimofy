@@ -145,7 +145,7 @@
 
     @if(Auth::user()->user_ocupation == 'Mkulima')
     <!-- USER STATUS AVATAR -->
-    <a href="/kilimofy/UserAccount/about_user_page">
+    <a href="/kilimofy/UserAccount/about_user_page/{{Auth::user()->id}}-about-{{Auth::user()->user_name}}">
       <div class="user-status-avatar" >
         <!-- USER AVATAR -->
         <div class="user-avatar small no-outline online" >
@@ -200,7 +200,7 @@
             <!-- USER STATUS -->
             <div class="user-status">
               <!-- USER STATUS AVATAR -->
-              <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page">
+              <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{Auth::user()->id}}-about-{{Auth::user()->user_name}}-in-Kilimofy-Platform">
                 <!-- USER AVATAR -->
                 <div class="user-avatar small no-border">
                   <!-- USER AVATAR CONTENT -->

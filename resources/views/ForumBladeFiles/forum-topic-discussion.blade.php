@@ -225,10 +225,39 @@
                 </p>
                 <!-- /FORUM POST PARAGRAPH -->
 
-                @if($discussion->Discussion_Image != NULL)
+                @if($discussion->Discussion_Image != NULL && $discussion->Discussion_Video == NULL)
                 <!-- FORUM POST IMAGE -->
                 <img class="forum-post-image" src="/Uploads/ForumDiscussionImages/{{$discussion->Discussion_Image}}" alt="cover-01">
                 <!-- /FORUM POST IMAGE -->
+
+                @elseif($discussion->Discussion_Video != NULL && $discussion->Discussion_Image == NULL)
+                <br>
+                <!-- VIDEO BOX -->
+                <div class="video-box">
+                  <!-- VIDEO BOX COVER -->
+                  <div class="video-box">
+                    <!-- VIDEO BOX COVER IMAGE -->
+                    <video  style="width:100%;"  autoplay muted loop controls>
+                          <source src="/Uploads/ForumDiscussionVideos/{{$discussion->Discussion_Video}}" type="video/mp4" >
+                   </video>
+                    <!-- /VIDEO BOX COVER IMAGE -->
+
+                  </div>
+                  <!-- /VIDEO BOX COVER -->
+
+                  <!-- VIDEO BOX INFO -->
+                  <div class="video-box-info">
+                    <!-- VIDEO BOX TITLE -->
+                    <p class="video-box-title">Mochi's Island Story Mode</p>
+                    <!-- /VIDEO BOX TITLE -->
+
+                    <!-- VIDEO BOX TEXT -->
+                    <p class="video-box-text">1 hour ago</p>
+                    <!-- /VIDEO BOX TEXT -->
+                  </div>
+                  <!-- /VIDEO BOX INFO -->
+                </div>
+                <!-- /VIDEO BOX -->
                 @endif
 
                 <!-- FORUM POST PARAGRAPH -->
@@ -594,7 +623,7 @@
         <!-- /STATS DECORATION ICON WRAP -->
 
         <!-- STATS DECORATION TITLE -->
-        <p class="stats-decoration-title">941</p>
+        <p class="stats-decoration-title">{{$reply_count}}</p>
         <!-- /STATS DECORATION TITLE -->
 
         <!-- STATS DECORATION TEXT -->

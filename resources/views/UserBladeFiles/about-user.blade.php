@@ -1,9 +1,12 @@
 @extends('LayoutBladeFiles.user-account-layout')
+
+@foreach($user as $user)
+
 @section('title')
+About {{$user->user_name}}
+@endsection
 @section('mini-user-profile-active', 'unread')
 @section('about-menu-active', 'active')
-About {{Auth::user()->user_name}}
-@endsection
 @section('user-data')
 <div class="grid grid-3-6-3">
   <!-- GRID COLUMN -->
@@ -37,13 +40,13 @@ About {{Auth::user()->user_name}}
       <!-- /WIDGET BOX SETTINGS -->
 
       <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">Kuhusu Mimi</p>
+      <p class="widget-box-title">About {{$user->user_name}}</p>
       <!-- /WIDGET BOX TITLE -->
 
       <!-- WIDGET BOX CONTENT -->
       <div class="widget-box-content">
         <!-- PARAGRAPH -->
-        <p class="paragraph">@yield('user-bio')</p>
+        <p class="paragraph"></p>
         <!-- /PARAGRAPH -->
 
         <!-- INFORMATION LINE LIST -->
@@ -51,11 +54,11 @@ About {{Auth::user()->user_name}}
           <!-- INFORMATION LINE -->
           <div class="information-line">
             <!-- INFORMATION LINE TITLE -->
-            <p class="information-line-title">Kujiunga</p>
+            <p class="information-line-title">Joined</p>
             <!-- /INFORMATION LINE TITLE -->
 
             <!-- INFORMATION LINE TEXT -->
-            <p class="information-line-text">{{Auth::user()->created_at}}</p>
+            <p class="information-line-text">{{$user->created_at->diffForHumans() }}</p>
             <!-- /INFORMATION LINE TEXT -->
           </div>
           <!-- /INFORMATION LINE -->
@@ -63,11 +66,11 @@ About {{Auth::user()->user_name}}
           <!-- INFORMATION LINE -->
           <div class="information-line">
             <!-- INFORMATION LINE TITLE -->
-            <p class="information-line-title">Wilaya</p>
+            <p class="information-line-title">City</p>
             <!-- /INFORMATION LINE TITLE -->
 
             <!-- INFORMATION LINE TEXT -->
-            <p class="information-line-text">{{$user_district}}</p>
+            <p class="information-line-text">{{$user->user_location }}</p>
             <!-- /INFORMATION LINE TEXT -->
           </div>
           <!-- /INFORMATION LINE -->
@@ -75,11 +78,11 @@ About {{Auth::user()->user_name}}
           <!-- INFORMATION LINE -->
           <div class="information-line">
             <!-- INFORMATION LINE TITLE -->
-            <p class="information-line-title">Mkoa</p>
+            <p class="information-line-title">Country</p>
             <!-- /INFORMATION LINE TITLE -->
 
             <!-- INFORMATION LINE TEXT -->
-            <p class="information-line-text">{{$user_region}}</p>
+            <p class="information-line-text">Tanzania</p>
             <!-- /INFORMATION LINE TEXT -->
           </div>
           <!-- /INFORMATION LINE -->
@@ -87,17 +90,25 @@ About {{Auth::user()->user_name}}
           <!-- INFORMATION LINE -->
           <div class="information-line">
             <!-- INFORMATION LINE TITLE -->
-            <p class="information-line-title">Kazi</p>
+            <p class="information-line-title">Age</p>
             <!-- /INFORMATION LINE TITLE -->
 
             <!-- INFORMATION LINE TEXT -->
-            <p class="information-line-text">Muuzaji wa pembejeo na viwatilifu</p>
+            <p class="information-line-text">NOT SET</p>
             <!-- /INFORMATION LINE TEXT -->
           </div>
           <!-- /INFORMATION LINE -->
 
           <!-- INFORMATION LINE -->
+          <div class="information-line">
+            <!-- INFORMATION LINE TITLE -->
+            <p class="information-line-title">Web</p>
+            <!-- /INFORMATION LINE TITLE -->
 
+            <!-- INFORMATION LINE TEXT -->
+            <p class="information-line-text"><a href="#">NOT SET</a></p>
+            <!-- /INFORMATION LINE TEXT -->
+          </div>
           <!-- /INFORMATION LINE -->
         </div>
         <!-- /INFORMATION LINE LIST -->
@@ -105,7 +116,97 @@ About {{Auth::user()->user_name}}
       <!-- /WIDGET BOX CONTENT -->
     </div>
     <!-- /WIDGET BOX -->
+    <!-- WIDGET BOX -->
+    <div class="widget-box">
+      <!-- WIDGET BOX SETTINGS -->
+      <div class="widget-box-settings">
+        <!-- POST SETTINGS WRAP -->
+        <div class="post-settings-wrap">
+          <!-- POST SETTINGS -->
+          <div class="post-settings widget-box-post-settings-dropdown-trigger">
+            <!-- POST SETTINGS ICON -->
+            <svg class="post-settings-icon icon-more-dots">
+              <use xlink:href="#svg-more-dots"></use>
+            </svg>
+            <!-- /POST SETTINGS ICON -->
+          </div>
+          <!-- /POST SETTINGS -->
 
+          <!-- SIMPLE DROPDOWN -->
+          <div class="simple-dropdown widget-box-post-settings-dropdown">
+            <!-- SIMPLE DROPDOWN LINK -->
+            <p class="simple-dropdown-link">Widget Settings</p>
+            <!-- /SIMPLE DROPDOWN LINK -->
+          </div>
+          <!-- /SIMPLE DROPDOWN -->
+        </div>
+        <!-- /POST SETTINGS WRAP -->
+      </div>
+      <!-- /WIDGET BOX SETTINGS -->
+
+      <!-- WIDGET BOX TITLE -->
+      <p class="widget-box-title">Personal Info</p>
+      <!-- /WIDGET BOX TITLE -->
+
+      <!-- WIDGET BOX CONTENT -->
+      <div class="widget-box-content">
+        <!-- INFORMATION LINE LIST -->
+        <div class="information-line-list">
+          <!-- INFORMATION LINE -->
+          <div class="information-line">
+            <!-- INFORMATION LINE TITLE -->
+            <p class="information-line-title">Email</p>
+            <!-- /INFORMATION LINE TITLE -->
+
+            <!-- INFORMATION LINE TEXT -->
+            <p class="information-line-text"><a href="" class="__cf_email__" data-cfemail="7a1d120f140e081f09093a03150f08171b131654191517">{{$user->email}}</a></p>
+            <!-- /INFORMATION LINE TEXT -->
+          </div>
+          <!-- /INFORMATION LINE -->
+
+          <!-- INFORMATION LINE -->
+          <div class="information-line">
+            <!-- INFORMATION LINE TITLE -->
+            <p class="information-line-title">Birthday</p>
+            <!-- /INFORMATION LINE TITLE -->
+
+            <!-- INFORMATION LINE TEXT -->
+            <p class="information-line-text">{{$user->birthday}}</p>
+            <!-- /INFORMATION LINE TEXT -->
+          </div>
+          <!-- /INFORMATION LINE -->
+
+          <!-- INFORMATION LINE -->
+          <div class="information-line">
+            <!-- INFORMATION LINE TITLE -->
+            <p class="information-line-title">Occupation</p>
+            <!-- /INFORMATION LINE TITLE -->
+
+            <!-- INFORMATION LINE TEXT -->
+            <p class="information-line-text">{{$user->user_ocupation}}</p>
+            <!-- /INFORMATION LINE TEXT -->
+          </div>
+          <!-- /INFORMATION LINE -->
+
+          <!-- INFORMATION LINE -->
+          <div class="information-line">
+            <!-- INFORMATION LINE TITLE -->
+            <p class="information-line-title">Status</p>
+            <!-- /INFORMATION LINE TITLE -->
+
+            <!-- INFORMATION LINE TEXT -->
+            <p class="information-line-text">{{$user->status}}</p>
+            <!-- /INFORMATION LINE TEXT -->
+          </div>
+          <!-- /INFORMATION LINE -->
+
+
+        </div>
+        <!-- /INFORMATION LINE LIST -->
+      </div>
+      <!-- /WIDGET BOX CONTENT -->
+    </div>
+    <!-- /WIDGET BOX -->
 
   </div>
   <!-- /GRID COLUMN -->
@@ -372,5 +473,6 @@ About {{Auth::user()->user_name}}
   </div>
   <!-- /GRID COLUMN -->
 </div>
-
 @endsection
+
+@endforeach

@@ -1,8 +1,11 @@
 @extends('LayoutBladeFiles.user-account-layout')
+@foreach($user as $user)
+
 @section('title')
-@section('videos-menu-active', 'active')
-{{Auth::user()->user_name}}'s Video(s)
+{{$user->user_name}}'s Videos
 @endsection
+@section('videos-menu-active', 'active')
+
 @section('user-data')
 <section class="section">
       <!-- SECTION HEADER -->
@@ -10,11 +13,11 @@
         <!-- SECTION HEADER INFO -->
         <div class="section-header-info">
           <!-- SECTION PRETITLE -->
-          <p class="section-pretitle">Browse Marina's</p>
+          <p class="section-pretitle">{{$user->user_name}}'s</p>
           <!-- /SECTION PRETITLE -->
 
           <!-- SECTION TITLE -->
-          <h2 class="section-title">Videos <span class="highlighted">7</span></h2>
+          <h2 class="section-title">Videos <span class="highlighted">{{$user_latest_video_count}}</span></h2>
           <!-- /SECTION TITLE -->
         </div>
         <!-- /SECTION HEADER INFO -->
@@ -30,26 +33,18 @@
       <!-- /SECTION HEADER -->
 
       <!-- GRID -->
-      <div class="grid grid-3-3-3-3 centered">
+      <div class="grid grid-4-4-4 centered">
+        @foreach($user_latest_video as $user_latest_video)
         <!-- VIDEO BOX -->
         <div class="video-box">
           <!-- VIDEO BOX COVER -->
-          <div class="video-box-cover popup-video-trigger">
+          <div class="video-box">
             <!-- VIDEO BOX COVER IMAGE -->
-            <figure class="video-box-cover-image liquid">
-              <img src="/assets/img/cover/08.jpg" alt="cover-08">
-            </figure>
+            <video  style="width:100%;"  autoplay muted loop controls>
+                  <source src="/Uploads/PostVideos/{{$user_latest_video->Video}}" type="video/mp4" >
+           </video>
             <!-- /VIDEO BOX COVER IMAGE -->
 
-            <!-- PLAY BUTTON -->
-            <div class="play-button">
-              <!-- PLAY BUTTON ICON -->
-              <svg class="play-button-icon icon-play">
-                <use xlink:href="#svg-play"></use>
-              </svg>
-              <!-- /PLAY BUTTON ICON -->
-            </div>
-            <!-- /PLAY BUTTON -->
           </div>
           <!-- /VIDEO BOX COVER -->
 
@@ -66,222 +61,7 @@
           <!-- /VIDEO BOX INFO -->
         </div>
         <!-- /VIDEO BOX -->
-
-        <!-- VIDEO BOX -->
-        <div class="video-box">
-          <!-- VIDEO BOX COVER -->
-          <div class="video-box-cover popup-video-trigger">
-            <!-- VIDEO BOX COVER IMAGE -->
-            <figure class="video-box-cover-image liquid">
-              <img src="/assets/img/cover/09.jpg" alt="cover-09">
-            </figure>
-            <!-- /VIDEO BOX COVER IMAGE -->
-
-            <!-- PLAY BUTTON -->
-            <div class="play-button">
-              <!-- PLAY BUTTON ICON -->
-              <svg class="play-button-icon icon-play">
-                <use xlink:href="#svg-play"></use>
-              </svg>
-              <!-- /PLAY BUTTON ICON -->
-            </div>
-            <!-- /PLAY BUTTON -->
-          </div>
-          <!-- /VIDEO BOX COVER -->
-
-          <!-- VIDEO BOX INFO -->
-          <div class="video-box-info">
-            <!-- VIDEO BOX TITLE -->
-            <p class="video-box-title">Sunset Cowboys Walkthrough</p>
-            <!-- /VIDEO BOX TITLE -->
-
-            <!-- VIDEO BOX TEXT -->
-            <p class="video-box-text">3 days ago</p>
-            <!-- /VIDEO BOX TEXT -->
-          </div>
-          <!-- /VIDEO BOX INFO -->
-        </div>
-        <!-- /VIDEO BOX -->
-
-        <!-- VIDEO BOX -->
-        <div class="video-box">
-          <!-- VIDEO BOX COVER -->
-          <div class="video-box-cover popup-video-trigger">
-            <!-- VIDEO BOX COVER IMAGE -->
-            <figure class="video-box-cover-image liquid">
-              <img src="/assets/img/cover/05.jpg" alt="cover-05">
-            </figure>
-            <!-- /VIDEO BOX COVER IMAGE -->
-
-            <!-- PLAY BUTTON -->
-            <div class="play-button">
-              <!-- PLAY BUTTON ICON -->
-              <svg class="play-button-icon icon-play">
-                <use xlink:href="#svg-play"></use>
-              </svg>
-              <!-- /PLAY BUTTON ICON -->
-            </div>
-            <!-- /PLAY BUTTON -->
-          </div>
-          <!-- /VIDEO BOX COVER -->
-
-          <!-- VIDEO BOX INFO -->
-          <div class="video-box-info">
-            <!-- VIDEO BOX TITLE -->
-            <p class="video-box-title">Quest of the Ogre II: The Revenge USA...</p>
-            <!-- /VIDEO BOX TITLE -->
-
-            <!-- VIDEO BOX TEXT -->
-            <p class="video-box-text">5 days ago</p>
-            <!-- /VIDEO BOX TEXT -->
-          </div>
-          <!-- /VIDEO BOX INFO -->
-        </div>
-        <!-- /VIDEO BOX -->
-
-        <!-- VIDEO BOX -->
-        <div class="video-box">
-          <!-- VIDEO BOX COVER -->
-          <div class="video-box-cover popup-video-trigger">
-            <!-- VIDEO BOX COVER IMAGE -->
-            <figure class="video-box-cover-image liquid">
-              <img src="/assets/img/cover/22.jpg" alt="cover-22">
-            </figure>
-            <!-- /VIDEO BOX COVER IMAGE -->
-
-            <!-- PLAY BUTTON -->
-            <div class="play-button">
-              <!-- PLAY BUTTON ICON -->
-              <svg class="play-button-icon icon-play">
-                <use xlink:href="#svg-play"></use>
-              </svg>
-              <!-- /PLAY BUTTON ICON -->
-            </div>
-            <!-- /PLAY BUTTON -->
-          </div>
-          <!-- /VIDEO BOX COVER -->
-
-          <!-- VIDEO BOX INFO -->
-          <div class="video-box-info">
-            <!-- VIDEO BOX TITLE -->
-            <p class="video-box-title">GameCon 2019 Arcade Palace!</p>
-            <!-- /VIDEO BOX TITLE -->
-
-            <!-- VIDEO BOX TEXT -->
-            <p class="video-box-text">5 days ago</p>
-            <!-- /VIDEO BOX TEXT -->
-          </div>
-          <!-- /VIDEO BOX INFO -->
-        </div>
-        <!-- /VIDEO BOX -->
-
-        <!-- VIDEO BOX -->
-        <div class="video-box">
-          <!-- VIDEO BOX COVER -->
-          <div class="video-box-cover popup-video-trigger">
-            <!-- VIDEO BOX COVER IMAGE -->
-            <figure class="video-box-cover-image liquid">
-              <img src="/assets/img/cover/02.jpg" alt="cover-02">
-            </figure>
-            <!-- /VIDEO BOX COVER IMAGE -->
-
-            <!-- PLAY BUTTON -->
-            <div class="play-button">
-              <!-- PLAY BUTTON ICON -->
-              <svg class="play-button-icon icon-play">
-                <use xlink:href="#svg-play"></use>
-              </svg>
-              <!-- /PLAY BUTTON ICON -->
-            </div>
-            <!-- /PLAY BUTTON -->
-          </div>
-          <!-- /VIDEO BOX COVER -->
-
-          <!-- VIDEO BOX INFO -->
-          <div class="video-box-info">
-            <!-- VIDEO BOX TITLE -->
-            <p class="video-box-title">Xenowatch New Character: Dinna...</p>
-            <!-- /VIDEO BOX TITLE -->
-
-            <!-- VIDEO BOX TEXT -->
-            <p class="video-box-text">1 week ago</p>
-            <!-- /VIDEO BOX TEXT -->
-          </div>
-          <!-- /VIDEO BOX INFO -->
-        </div>
-        <!-- /VIDEO BOX -->
-
-        <!-- VIDEO BOX -->
-        <div class="video-box">
-          <!-- VIDEO BOX COVER -->
-          <div class="video-box-cover popup-video-trigger">
-            <!-- VIDEO BOX COVER IMAGE -->
-            <figure class="video-box-cover-image liquid">
-              <img src="/assets/img/cover/21.jpg" alt="cover-21">
-            </figure>
-            <!-- /VIDEO BOX COVER IMAGE -->
-
-            <!-- PLAY BUTTON -->
-            <div class="play-button">
-              <!-- PLAY BUTTON ICON -->
-              <svg class="play-button-icon icon-play">
-                <use xlink:href="#svg-play"></use>
-              </svg>
-              <!-- /PLAY BUTTON ICON -->
-            </div>
-            <!-- /PLAY BUTTON -->
-          </div>
-          <!-- /VIDEO BOX COVER -->
-
-          <!-- VIDEO BOX INFO -->
-          <div class="video-box-info">
-            <!-- VIDEO BOX TITLE -->
-            <p class="video-box-title">We Try the New Soccer 2019 Game</p>
-            <!-- /VIDEO BOX TITLE -->
-
-            <!-- VIDEO BOX TEXT -->
-            <p class="video-box-text">1 week ago</p>
-            <!-- /VIDEO BOX TEXT -->
-          </div>
-          <!-- /VIDEO BOX INFO -->
-        </div>
-        <!-- /VIDEO BOX -->
-
-        <!-- VIDEO BOX -->
-        <div class="video-box">
-          <!-- VIDEO BOX COVER -->
-          <div class="video-box-cover popup-video-trigger">
-            <!-- VIDEO BOX COVER IMAGE -->
-            <figure class="video-box-cover-image liquid">
-              <img src="/assets/img/cover/23.jpg" alt="cover-23">
-            </figure>
-            <!-- /VIDEO BOX COVER IMAGE -->
-
-            <!-- PLAY BUTTON -->
-            <div class="play-button">
-              <!-- PLAY BUTTON ICON -->
-              <svg class="play-button-icon icon-play">
-                <use xlink:href="#svg-play"></use>
-              </svg>
-              <!-- /PLAY BUTTON ICON -->
-            </div>
-            <!-- /PLAY BUTTON -->
-          </div>
-          <!-- /VIDEO BOX COVER -->
-
-          <!-- VIDEO BOX INFO -->
-          <div class="video-box-info">
-            <!-- VIDEO BOX TITLE -->
-            <p class="video-box-title">Necromancers VS Alchemists: League...</p>
-            <!-- /VIDEO BOX TITLE -->
-
-            <!-- VIDEO BOX TEXT -->
-            <p class="video-box-text">3 weeks ago</p>
-            <!-- /VIDEO BOX TEXT -->
-          </div>
-          <!-- /VIDEO BOX INFO -->
-        </div>
-        <!-- /VIDEO BOX -->
+        @endforeach
       </div>
       <!-- /GRID -->
     </section>
@@ -289,7 +69,9 @@
   </div>
   <!-- /CONTENT GRID -->
 
-@include('LayoutBladeFiles.page-bar')
+  @if($user_latest_video_count != 0)
+    @include('LayoutBladeFiles.page-bar')
+  @endif
   <!-- POPUP VIDEO -->
   <div class="popup-video">
     <!-- POPUP CLOSE BUTTON -->
@@ -311,3 +93,4 @@
   <!-- /POPUP VIDEO -->
 
 @endsection
+@endforeach

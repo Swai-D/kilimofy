@@ -42,11 +42,25 @@ class MkulimaController extends Controller
     public function pembejeo_na_viwatilifu(Request $request)
     {
       $user_location = Auth::user()->user_location;
-      $pembejeo_na_viwatilifu_list = User::where([['user_ocupation', '=', 'Muuzaji_Wa_pembejeo_Na_Viwatilifu'],['user_location', '=', $user_location]])->get();
-      $pembejeo_na_viwatilifu_count = User::where([['user_ocupation', '=', 'Muuzaji_Wa_pembejeo_Na_Viwatilifu'],['user_location', '=', $user_location]])->count();
+      //Get all the sellers accross user location
+      $user_location_pembejeo_na_viwatilifu_list = User::where([['user_ocupation', '=', 'Muuzaji_Wa_pembejeo_Na_Viwatilifu'],['user_location', '=', $user_location]])->get('id');
+
+      //find the seller in item model
+      if (isset($user_location_pembejeo_na_viwatilifu_list)) {
+
+        foreach ($user_location_pembejeo_na_viwatilifu_list as $user_location_pembejeo_na_viwatilifu_seller) {
+          //Get Item Details
+          $user_location_pembejeo_na_viwatilifu_sellers = Item::where('seller_id', '=', $user_location_pembejeo_na_viwatilifu_seller['id'])->get();
+          //Get Item Count
+          $user_location_pembejeo_na_viwatilifu_sellers_count = Item::where('seller_id', '=', $user_location_pembejeo_na_viwatilifu_seller['id'])->count();
+        }
+
+      }
+      // dd($user_location_pembejeo_na_viwatilifu_sellers_count);
+
       $places =  Place::select('Region','District')->get();
 
-      return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu', compact('user_location', 'bidhaa', 'idadi_ya_bidhaa', 'pembejeo_na_viwatilifu_list','pembejeo_na_viwatilifu_count', 'places'));
+      return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu', compact('user_location', 'bidhaa', 'idadi_ya_bidhaa', 'user_location_pembejeo_na_viwatilifu_sellers','user_location_pembejeo_na_viwatilifu_sellers_count', 'places'));
     }
 
 
@@ -62,9 +76,23 @@ class MkulimaController extends Controller
 
 
 
-    public function pembejeo_na_viwatilifu_buy_item()
+    public function pembejeo_na_viwatilifu_buy_item(Item $item_id)
     {
-      return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-buy-item');
+      $item_bought = Item::where('id', '=', $item_id->id)->get();
+      if (isset($item_bought)) {
+        foreach ($item_bought as $item_price) {
+          $item_total_price = $item_price['item_price'];
+        }
+      }
+      $item_vat_amount = $item_total_price * 0.18;
+      $item_net_price = $item_total_price - $item_vat_amount;
+      // dd($item_net_price);
+      return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-buy-item', compact('item_bought', 'item_vat_amount', 'item_net_price', 'item_total_price'));
+    }
+
+    public function pembejeo_na_viwatilifu_check_out_item(Item $item_id)
+    {
+      return view('UserAccountBladeFiles.Mkulima.pembejeo-na-viwatilifu-check-out-item');
     }
 
     public function usafiri()
@@ -168,7 +196,10 @@ class MkulimaController extends Controller
       //   $ufugaji_topics_count = $ufugaji_topics_count_collection['Topics'];
       // }
 
-      return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'kilimo_topics_count'));
+      $users = User::paginate(5);
+      $users_count = User::count();
+
+      return view('UserAccountBladeFiles.Mkulima.mkulima-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'kilimo_topics_count', 'users', 'users_count'));
 
     }
 

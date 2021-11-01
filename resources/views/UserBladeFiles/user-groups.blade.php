@@ -1,8 +1,11 @@
 @extends('LayoutBladeFiles.user-account-layout')
+@foreach($user as $user)
+
 @section('title')
-@section('group-menu-active', 'active')
-{{Auth::user()->user_name}}'s Group(s)
+{{$user->user_name}}'s Groups
 @endsection
+@section('group-menu-active', 'active')
+
 @section('user-data')
 <section class="section">
      <!-- SECTION HEADER -->
@@ -10,11 +13,11 @@
        <!-- SECTION HEADER INFO -->
        <div class="section-header-info">
          <!-- SECTION PRETITLE -->
-         <p class="section-pretitle">Browse Marina's</p>
+         <p class="section-pretitle">{{$user->user_name}}'s</p>
          <!-- /SECTION PRETITLE -->
 
          <!-- SECTION TITLE -->
-         <h2 class="section-title">Groups <span class="highlighted">7</span></h2>
+         <h2 class="section-title">Groups <span class="highlighted">{{$group_lists_count}}</span></h2>
          <!-- /SECTION TITLE -->
        </div>
        <!-- /SECTION HEADER INFO -->
@@ -91,58 +94,24 @@
        </div>
        <!-- /SECTION FILTERS BAR ACTIONS -->
 
-       <!-- SECTION FILTERS BAR ACTIONS -->
-       <div class="section-filters-bar-actions">
-         <!-- VIEW ACTIONS -->
-         <div class="view-actions">
-           <!-- VIEW ACTION -->
-           <a class="view-action text-tooltip-tft-medium active" href="profile-groups.html" data-title="Big Grid">
-             <!-- VIEW ACTION ICON -->
-             <svg class="view-action-icon icon-big-grid-view">
-               <use xlink:href="#svg-big-grid-view"></use>
-             </svg>
-             <!-- /VIEW ACTION ICON -->
-           </a>
-           <!-- /VIEW ACTION -->
 
-           <!-- VIEW ACTION -->
-           <a class="view-action text-tooltip-tft-medium" href="profile-groups-small-grid.html" data-title="Small Grid">
-             <!-- VIEW ACTION ICON -->
-             <svg class="view-action-icon icon-small-grid-view">
-               <use xlink:href="#svg-small-grid-view"></use>
-             </svg>
-             <!-- /VIEW ACTION ICON -->
-           </a>
-           <!-- /VIEW ACTION -->
-
-           <!-- VIEW ACTION -->
-           <a class="view-action text-tooltip-tft-medium" href="profile-groups-list.html" data-title="List">
-             <!-- VIEW ACTION ICON -->
-             <svg class="view-action-icon icon-list-grid-view">
-               <use xlink:href="#svg-list-grid-view"></use>
-             </svg>
-             <!-- /VIEW ACTION ICON -->
-           </a>
-           <!-- /VIEW ACTION -->
-         </div>
-         <!-- /VIEW ACTIONS -->
-       </div>
-       <!-- /SECTION FILTERS BAR ACTIONS -->
      </div>
      <!-- /SECTION FILTERS BAR -->
 
      <!-- GRID -->
-     <div class="grid grid-4-4-4 centered">
+     <div class="grid grid-3-3-3-3 centered">
+       @forelse($group_lists as $group)
        <!-- USER PREVIEW -->
        <div class="user-preview">
          <!-- USER PREVIEW COVER -->
          <figure class="user-preview-cover liquid">
-           <img src="/assets/img/cover/29.jpg" alt="cover-29">
+           <img src="/Uploads/GroupProfile/{{$group->Group_Image}}" alt="cover-29">
          </figure>
          <!-- /USER PREVIEW COVER -->
 
          <!-- USER PREVIEW INFO -->
          <div class="user-preview-info">
+           @if($group->Status == "Public")
            <!-- TAG STICKER -->
            <div class="tag-sticker">
              <!-- TAG STICKER ICON -->
@@ -152,7 +121,18 @@
              <!-- /TAG STICKER ICON -->
            </div>
            <!-- /TAG STICKER -->
+           @else
 
+           <!-- TAG STICKER -->
+           <div class="tag-sticker">
+             <!-- TAG STICKER ICON -->
+             <svg class="tag-sticker-icon icon-private">
+               <use xlink:href="#svg-private"></use>
+             </svg>
+             <!-- /TAG STICKER ICON -->
+           </div>
+           <!-- /TAG STICKER -->
+           @endif
            <!-- USER SHORT DESCRIPTION -->
            <div class="user-short-description">
              <!-- USER SHORT DESCRIPTION AVATAR -->
@@ -168,7 +148,7 @@
                <!-- USER AVATAR CONTENT -->
                <div class="user-avatar-content">
                  <!-- HEXAGON -->
-                 <div class="hexagon-image-100-110" data-src="/assets/img/avatar/24.jpg"></div>
+                 <div class="hexagon-image-100-110" data-src="/Uploads/avatars/{{$group->Creator_Image_Path}}"></div>
                  <!-- /HEXAGON -->
                </div>
                <!-- /USER AVATAR CONTENT -->
@@ -176,11 +156,11 @@
              <!-- /USER SHORT DESCRIPTION AVATAR -->
 
              <!-- USER SHORT DESCRIPTION TITLE -->
-             <p class="user-short-description-title"><a href="group-timeline.html">Cosplayers of the World</a></p>
+             <p class="user-short-description-title"><a href="group-timeline.html">{{$group->Tagline}}</a></p>
              <!-- /USER SHORT DESCRIPTION TITLE -->
 
              <!-- USER SHORT DESCRIPTION TEXT -->
-             <p class="user-short-description-text">All cosplayers welcome!</p>
+             <p class="user-short-description-text">{{$group->Description}}</p>
              <!-- /USER SHORT DESCRIPTION TEXT -->
            </div>
            <!-- /USER SHORT DESCRIPTION -->
@@ -190,7 +170,7 @@
              <!-- USER STAT -->
              <div class="user-stat">
                <!-- USER STAT TITLE -->
-               <p class="user-stat-title">139</p>
+               <p class="user-stat-title">{{$group->Members}}</p>
                <!-- /USER STAT TITLE -->
 
                <!-- USER STAT TEXT -->
@@ -202,7 +182,7 @@
              <!-- USER STAT -->
              <div class="user-stat">
                <!-- USER STAT TITLE -->
-               <p class="user-stat-title">105</p>
+               <p class="user-stat-title">{{$group->Post}}</p>
                <!-- /USER STAT TITLE -->
 
                <!-- USER STAT TEXT -->
@@ -214,7 +194,7 @@
              <!-- USER STAT -->
              <div class="user-stat">
                <!-- USER STAT TITLE -->
-               <p class="user-stat-title">7.3k</p>
+               <p class="user-stat-title">{{$group->Vistors}}</p>
                <!-- /USER STAT TITLE -->
 
                <!-- USER STAT TEXT -->
@@ -383,11 +363,16 @@
          <!-- /USER PREVIEW INFO -->
        </div>
        <!-- /USER PREVIEW -->
-
+       @empty
+       <p class="progress-arc-summary-subtitle text-center text-danger"> Hakuna Group kwa sasa ! <a href="#">Tengeneza ?</a>  </p>
+     @endforelse
      </div>
      <!-- /GRID -->
 
+    @if($group_lists_count != 0)
      @include('LayoutBladeFiles.page-bar')
+    @endif
    </section>
    <!-- /SECTION -->
 @endsection
+@endforeach

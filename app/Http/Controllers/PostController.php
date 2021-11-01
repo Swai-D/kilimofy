@@ -109,9 +109,18 @@ class PostController extends Controller
       // dd($request->comment);
        $data = new Comment();
        $data->comment =  $request->comment;
+       $data->user_name =  $request->user_name;
+       $data->user_id =  $request->user_id;
+       $data->user_avatar =  $request->user_avatar;
        $data->post_id =  $request->post_id;
 
-       $original_comment = Post::where('id', '=', $request->post_id)->get('Comments');
+       $original_comment = Post::where('id', '=', $request->post_id)->get();
+       if (isset($original_comment)) {
+         foreach ($original_comment as $comment) {
+          $original_comment = $comment['Comments'];
+         }
+       }
+       // dd($original_comment);
        $updated_comment = $original_comment + 1;
        Post::where('id', '=', $request->post_id)->update([
          'Comments' => $updated_comment,

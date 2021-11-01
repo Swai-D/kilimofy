@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="/assets/css/vendor/simplebar.css">
   <!-- tiny-slider styles -->
   <link rel="stylesheet" href="/assets/css/vendor/tiny-slider.css">
+  <!-- code editors -->
+  <link rel="stylesheet" href="/admin-assets/plugins/summernote/summernote-bs4.min.css">
   <!-- favicon -->
   <link rel="icon" href="/assets/img/favicon.ico">
   <title>Kilimofy | @yield('title')</title>

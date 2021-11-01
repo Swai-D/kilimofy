@@ -1,4 +1,6 @@
 @extends('LayoutBladeFiles.app-layout')
+
+
 <!-- CONTENT GRID -->
 <div class="content-grid">
   <!-- PROFILE HEADER -->

@@ -139,7 +139,22 @@ class PembejeoNaViwatilifuController extends Controller
 
       //Weather API call for tomorrow
       $future_weather_forecast = $weather->getForecastWeatherByCityName($user_region);
-      //dd($future_weather_forecast);
+      // dd($future_weather_forecast['forecast'][4]);
+
+      //Temp in Celsus
+      $tomorrow_fahrenheit = $future_weather_forecast['forecast'][4]['forecast']['temp'];
+      $tomorrow_fahrenheit_min = $future_weather_forecast['forecast'][4]['forecast']['temp_min'];
+      $tomorrow_fahrenheit_max = $future_weather_forecast['forecast'][4]['forecast']['temp_max'];
+
+      //Get icon pathinfo for tomorrow
+      $tomorrow_icon_path = $future_weather_forecast['forecast'][4]['condition']['icon'];
+      //dd($icon_path);
+
+      //Converting
+      $tomorrow_celsius=round(((5/9)*($tomorrow_fahrenheit-32)),0);
+      $tomorrow_celsius_min=round(((5/9)*($tomorrow_fahrenheit_min-32)),0);
+      $tomorrow_celsius_max=round(((5/9)*($tomorrow_fahrenheit_max-32)),0);
+      // dd($celsius);
 
 
       //Groups LIST
@@ -155,6 +170,10 @@ class PembejeoNaViwatilifuController extends Controller
       // dd($kilimo_topics_count_collection);
 
       //Get Topics
+      $ufugaji_topics_count_collection = Forum::where('Category', 'Ufugaji')->get();
+      // dd($kilimo_topics_count_collection);
+
+      //Get Topics
       $usafirishaji_topics_count_collection = Forum::where('Category', 'Usafirisaji')->get();
       // dd($kilimo_topics_count_collection);
 
@@ -163,7 +182,14 @@ class PembejeoNaViwatilifuController extends Controller
         $kilimo_topics_count = $kilimo_topics_count_collection['Topics'];
       }
 
-      return view('UserAccountBladeFiles.MuuzajiWaPembejeoNaViwatilifu.muuzaji-wa-pembejeo-na-viwatilifu-home-page', compact('posts', 'user_location', 'celsius_min', 'celsius_max', 'celsius', 'icon_path', 'group_lists', 'user_location_details', 'kilimo_topics_count'));
+      //Get $ufugaji_topics_count out of an array
+      // foreach ($ufugaji_topics_count_collection as $ufugaji_topics_count_collection) {
+      //   $ufugaji_topics_count = $ufugaji_topics_count_collection['Topics'];
+      // }
+
+      $users = User::paginate(5);
+      $users_count = User::count();
+      return view('UserAccountBladeFiles.MuuzajiWaPembejeoNaViwatilifu.muuzaji-wa-pembejeo-na-viwatilifu-home-page', compact('posts','user_location', 'celsius_min', 'celsius_max', 'celsius', 'tomorrow_celsius_min', 'tomorrow_celsius_max', 'tomorrow_celsius', 'icon_path', 'tomorrow_icon_path', 'group_lists', 'user_location_details', 'kilimo_topics_count', 'users', 'users_count'));
 
 
 

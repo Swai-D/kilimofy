@@ -17,7 +17,7 @@
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
-      <h2 class="section-title">Wauzaji wa Viwatilifu na Pembejeo <span class="highlighted">({{$pembejeo_na_viwatilifu_count}})</span></h2>
+      <h2 class="section-title">Wauzaji wa Viwatilifu na Pembejeo <span class="highlighted">({{$user_location_pembejeo_na_viwatilifu_sellers_count}})</span></h2>
       <!-- /SECTION TITLE -->
     </div>
     <!-- /SECTION HEADER INFO -->
@@ -96,7 +96,7 @@
   <!-- GRID -->
   <div class="grid grid-3-3-3-3 centered">
 
-    @forelse($pembejeo_na_viwatilifu_list as $bidhaa_info)
+    @forelse($user_location_pembejeo_na_viwatilifu_sellers as $bidhaa_info)
       <!-- PRODUCT PREVIEW -->
       <div class="product-preview">
         <!-- PRODUCT PREVIEW IMAGE -->
@@ -216,7 +216,7 @@
   </div>
   <!-- /GRID -->
 
-  @if($pembejeo_na_viwatilifu_count != 0)
+  @if($user_location_pembejeo_na_viwatilifu_sellers_count != 0)
   <!-- SECTION PAGER BAR -->
   <div class="section-pager-bar">
     <!-- SECTION PAGER -->

@@ -1,8 +1,11 @@
 @extends('LayoutBladeFiles.user-account-layout')
+@foreach($user as $user)
+
 @section('title')
-@section('friends-menu-active', 'active')
-{{Auth::user()->user_name}}'s Friends
+{{$user->user_name}}'s Friends
 @endsection
+@section('friends-menu-active', 'active')
+
 @section('user-data')
 <section class="section">
       <!-- SECTION HEADER -->
@@ -10,11 +13,11 @@
         <!-- SECTION HEADER INFO -->
         <div class="section-header-info">
           <!-- SECTION PRETITLE -->
-          <p class="section-pretitle">Browse Marina's</p>
+          <p class="section-pretitle">{{$user->user_name}}'s Friends</p>
           <!-- /SECTION PRETITLE -->
 
           <!-- SECTION TITLE -->
-          <h2 class="section-title">Friends <span class="highlighted">82</span></h2>
+          <h2 class="section-title">Friends <span class="highlighted">{{$users_count}}</span></h2>
           <!-- /SECTION TITLE -->
         </div>
         <!-- /SECTION HEADER INFO -->
@@ -91,66 +94,31 @@
         </div>
         <!-- /SECTION FILTERS BAR ACTIONS -->
 
-        <!-- SECTION FILTERS BAR ACTIONS -->
-        <div class="section-filters-bar-actions">
-          <!-- VIEW ACTIONS -->
-          <div class="view-actions">
-            <!-- VIEW ACTION -->
-            <a class="view-action text-tooltip-tft-medium active" href="profile-friends.html" data-title="Big Grid">
-              <!-- VIEW ACTION ICON -->
-              <svg class="view-action-icon icon-big-grid-view">
-                <use xlink:href="#svg-big-grid-view"></use>
-              </svg>
-              <!-- /VIEW ACTION ICON -->
-            </a>
-            <!-- /VIEW ACTION -->
 
-            <!-- VIEW ACTION -->
-            <a class="view-action text-tooltip-tft-medium" href="profile-friends-small-grid.html" data-title="Small Grid">
-              <!-- VIEW ACTION ICON -->
-              <svg class="view-action-icon icon-small-grid-view">
-                <use xlink:href="#svg-small-grid-view"></use>
-              </svg>
-              <!-- /VIEW ACTION ICON -->
-            </a>
-            <!-- /VIEW ACTION -->
-
-            <!-- VIEW ACTION -->
-            <a class="view-action text-tooltip-tft-medium" href="profile-friends-list.html" data-title="List">
-              <!-- VIEW ACTION ICON -->
-              <svg class="view-action-icon icon-list-grid-view">
-                <use xlink:href="#svg-list-grid-view"></use>
-              </svg>
-              <!-- /VIEW ACTION ICON -->
-            </a>
-            <!-- /VIEW ACTION -->
-          </div>
-          <!-- /VIEW ACTIONS -->
-        </div>
-        <!-- /SECTION FILTERS BAR ACTIONS -->
       </div>
       <!-- /SECTION FILTERS BAR -->
 
       <!-- GRID -->
-      <div class="grid grid-4-4-4 centered">
+      <div class="grid grid-3-3-3-3 centered">
+        @forelse($users as $user_friendlist)
         <!-- USER PREVIEW -->
-        <div class="user-preview">
+        <div class="user-preview small">
           <!-- USER PREVIEW COVER -->
           <figure class="user-preview-cover liquid">
-            <img src="/assets/img/cover/04.jpg" alt="cover-04">
+            <img src="/assets/img/landing/landing-background.jpg" alt="cover-04">
           </figure>
           <!-- /USER PREVIEW COVER -->
 
           <!-- USER PREVIEW INFO -->
           <div class="user-preview-info">
             <!-- USER SHORT DESCRIPTION -->
-            <div class="user-short-description">
+            <div class="user-short-description small">
               <!-- USER SHORT DESCRIPTION AVATAR -->
-              <a class="user-short-description-avatar user-avatar medium" href="profile-timeline.html">
+              <a class="user-short-description-avatar user-avatar" href="">
                 <!-- USER AVATAR BORDER -->
                 <div class="user-avatar-border">
                   <!-- HEXAGON -->
-                  <div class="hexagon-120-132"></div>
+                  <div class="hexagon-100-110"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR BORDER -->
@@ -158,7 +126,7 @@
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-82-90" data-src="/assets/img/avatar/05.jpg"></div>
+                  <div class="hexagon-image-68-74" data-src="/Uploads/avatars/{{$user_friendlist->avatar}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -166,7 +134,7 @@
                 <!-- USER AVATAR PROGRESS -->
                 <div class="user-avatar-progress">
                   <!-- HEXAGON -->
-                  <div class="hexagon-progress-100-110"></div>
+                  <div class="hexagon-progress-84-92"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR PROGRESS -->
@@ -174,151 +142,62 @@
                 <!-- USER AVATAR PROGRESS BORDER -->
                 <div class="user-avatar-progress-border">
                   <!-- HEXAGON -->
-                  <div class="hexagon-border-100-110"></div>
+                  <div class="hexagon-border-84-92"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR PROGRESS BORDER -->
-
-                <!-- USER AVATAR BADGE -->
-                <div class="user-avatar-badge">
-                  <!-- USER AVATAR BADGE BORDER -->
-                  <div class="user-avatar-badge-border">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-32-36"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR BADGE BORDER -->
-
-                  <!-- USER AVATAR BADGE CONTENT -->
-                  <div class="user-avatar-badge-content">
-                    <!-- HEXAGON -->
-                    <div class="hexagon-dark-26-28"></div>
-                    <!-- /HEXAGON -->
-                  </div>
-                  <!-- /USER AVATAR BADGE CONTENT -->
-
-                  <!-- USER AVATAR BADGE TEXT -->
-                  <p class="user-avatar-badge-text">12</p>
-                  <!-- /USER AVATAR BADGE TEXT -->
-                </div>
-                <!-- /USER AVATAR BADGE -->
               </a>
               <!-- /USER SHORT DESCRIPTION AVATAR -->
 
               <!-- USER SHORT DESCRIPTION TITLE -->
-              <p class="user-short-description-title"><a href="profile-timeline.html">NekoBebop</a></p>
+              <p class="user-short-description-title"><a href="profile-timeline.html">{{$user_friendlist->user_name}}</a></p>
               <!-- /USER SHORT DESCRIPTION TITLE -->
 
               <!-- USER SHORT DESCRIPTION TEXT -->
-              <p class="user-short-description-text"><a href="#">www.store.com/nekoprints</a></p>
+              <p class="user-short-description-text"><a href="#">@ {{strtolower($user_friendlist->user_name)}}</a></p>
               <!-- /USER SHORT DESCRIPTION TEXT -->
             </div>
             <!-- /USER SHORT DESCRIPTION -->
 
-            <!-- BADGE LIST -->
-            <div class="badge-list small">
-              <!-- BADGE ITEM -->
-              <div class="badge-item">
-                <img src="/assets/img/badge/silver-s.png" alt="badge-silver-s">
-              </div>
-              <!-- /BADGE ITEM -->
+            <!-- USER STATS -->
+            <div class="user-stats">
+              <!-- USER STAT -->
+              <div class="user-stat">
+                <!-- USER STAT TITLE -->
+                <p class="user-stat-title">874</p>
+                <!-- /USER STAT TITLE -->
 
-              <!-- BADGE ITEM -->
-              <div class="badge-item">
-                <img src="/assets/img/badge/fcultivator-s.png" alt="badge-fcultivator-s">
+                <!-- USER STAT TEXT -->
+                <p class="user-stat-text">posts</p>
+                <!-- /USER STAT TEXT -->
               </div>
-              <!-- /BADGE ITEM -->
+              <!-- /USER STAT -->
 
-              <!-- BADGE ITEM -->
-              <div class="badge-item">
-                <img src="/assets/img/badge/scientist-s.png" alt="badge-scientist-s">
+              <!-- USER STAT -->
+              <div class="user-stat">
+                <!-- USER STAT TITLE -->
+                <p class="user-stat-title">60</p>
+                <!-- /USER STAT TITLE -->
+
+                <!-- USER STAT TEXT -->
+                <p class="user-stat-text">friends</p>
+                <!-- /USER STAT TEXT -->
               </div>
-              <!-- /BADGE ITEM -->
+              <!-- /USER STAT -->
 
-              <!-- BADGE ITEM -->
-              <div class="badge-item">
-                <img src="/assets/img/badge/rmachine-s.png" alt="badge-rmachine-s">
+              <!-- USER STAT -->
+              <div class="user-stat">
+                <!-- USER STAT TITLE -->
+                <p class="user-stat-title">3.9k</p>
+                <!-- /USER STAT TITLE -->
+
+                <!-- USER STAT TEXT -->
+                <p class="user-stat-text">visits</p>
+                <!-- /USER STAT TEXT -->
               </div>
-              <!-- /BADGE ITEM -->
-
-              <!-- BADGE ITEM -->
-              <a class="badge-item" href="profile-badges.html">
-                <img src="/assets/img/badge/blank-s.png" alt="badge-blank-s">
-                <!-- BADGE ITEM TEXT -->
-                <p class="badge-item-text">+29</p>
-                <!-- /BADGE ITEM TEXT -->
-              </a>
-              <!-- /BADGE ITEM -->
+              <!-- /USER STAT -->
             </div>
-            <!-- /BADGE LIST -->
-
-            <!-- USER PREVIEW STATS SLIDES -->
-            <div id="user-preview-stats-slides-01" class="user-preview-stats-slides">
-              <!-- USER PREVIEW STATS SLIDE -->
-              <div class="user-preview-stats-slide">
-                <!-- USER STATS -->
-                <div class="user-stats">
-                  <!-- USER STAT -->
-                  <div class="user-stat">
-                    <!-- USER STAT TITLE -->
-                    <p class="user-stat-title">874</p>
-                    <!-- /USER STAT TITLE -->
-
-                    <!-- USER STAT TEXT -->
-                    <p class="user-stat-text">posts</p>
-                    <!-- /USER STAT TEXT -->
-                  </div>
-                  <!-- /USER STAT -->
-
-                  <!-- USER STAT -->
-                  <div class="user-stat">
-                    <!-- USER STAT TITLE -->
-                    <p class="user-stat-title">60</p>
-                    <!-- /USER STAT TITLE -->
-
-                    <!-- USER STAT TEXT -->
-                    <p class="user-stat-text">friends</p>
-                    <!-- /USER STAT TEXT -->
-                  </div>
-                  <!-- /USER STAT -->
-
-                  <!-- USER STAT -->
-                  <div class="user-stat">
-                    <!-- USER STAT TITLE -->
-                    <p class="user-stat-title">3.9k</p>
-                    <!-- /USER STAT TITLE -->
-
-                    <!-- USER STAT TEXT -->
-                    <p class="user-stat-text">visits</p>
-                    <!-- /USER STAT TEXT -->
-                  </div>
-                  <!-- /USER STAT -->
-                </div>
-                <!-- /USER STATS -->
-              </div>
-              <!-- /USER PREVIEW STATS SLIDE -->
-
-              <!-- USER PREVIEW STATS SLIDE -->
-              <div class="user-preview-stats-slide">
-                <!-- USER PREVIEW TEXT -->
-                <p class="user-preview-text">Hello! I'm James Hart, but I go by the name of Destroy Dex on my stream channel. Come to check out the latest gaming news!</p>
-                <!-- /USER PREVIEW TEXT -->
-              </div>
-              <!-- /USER PREVIEW STATS SLIDE -->
-            </div>
-            <!-- /USER PREVIEW STATS SLIDES -->
-
-            <!-- USER PREVIEW STATS ROSTER -->
-            <div id="user-preview-stats-roster-01" class="user-preview-stats-roster slider-roster">
-              <!-- SLIDER ROSTER ITEM -->
-              <div class="slider-roster-item"></div>
-              <!-- /SLIDER ROSTER ITEM -->
-
-              <!-- SLIDER ROSTER ITEM -->
-              <div class="slider-roster-item"></div>
-              <!-- /SLIDER ROSTER ITEM -->
-            </div>
-            <!-- /USER PREVIEW STATS ROSTER -->
+            <!-- /USER STATS -->
 
             <!-- SOCIAL LINKS -->
             <div class="social-links small">
@@ -343,42 +222,76 @@
               <!-- /SOCIAL LINK -->
 
               <!-- SOCIAL LINK -->
-              <a class="social-link small twitch" href="#">
+              <a class="social-link small youtube" href="#">
                 <!-- SOCIAL LINK ICON -->
-                <svg class="social-link-icon icon-twitch">
-                  <use xlink:href="#svg-twitch"></use>
+                <svg class="social-link-icon icon-youtube">
+                  <use xlink:href="#svg-youtube"></use>
                 </svg>
                 <!-- /SOCIAL LINK ICON -->
               </a>
               <!-- /SOCIAL LINK -->
 
               <!-- SOCIAL LINK -->
-              <a class="social-link small discord" href="#">
+              <a class="social-link small facebook" href="#">
                 <!-- SOCIAL LINK ICON -->
-                <svg class="social-link-icon icon-discord">
-                  <use xlink:href="#svg-discord"></use>
+                <svg class="social-link-icon icon-facebook">
+                  <use xlink:href="#svg-facebook"></use>
                 </svg>
                 <!-- /SOCIAL LINK ICON -->
               </a>
               <!-- /SOCIAL LINK -->
             </div>
             <!-- /SOCIAL LINKS -->
+            <!-- SOCIAL LINKS -->
+            <div class="social-links small">
+              <!-- SOCIAL LINK -->
+              <p style="font-size:16px;">
+                <!-- SOCIAL LINK ICON -->
+                 {{$user->user_phone_number}}
+                <!-- /SOCIAL LINK ICON -->
+              </p>
 
-            <!-- USER PREVIEW ACTIONS -->
-            <div class="user-preview-actions">
-              <!-- BUTTON -->
-              <p class="button secondary">Add Friend +</p>
-              <!-- /BUTTON -->
-
-              <!-- BUTTON -->
-              <p class="button primary">Send Message</p>
-              <!-- /BUTTON -->
             </div>
-            <!-- /USER PREVIEW ACTIONS -->
+            <!-- /SOCIAL LINKS -->
           </div>
           <!-- /USER PREVIEW INFO -->
+
+          <!-- USER PREVIEW FOOTER -->
+          <div class="user-preview-footer">
+            <!-- USER PREVIEW FOOTER ACTION -->
+            <div class="user-preview-footer-action">
+              <!-- BUTTON -->
+              <p class="button void void-secondary">
+                <!-- BUTTON ICON -->
+                <svg class="button-icon icon-add-friend">
+                  <use xlink:href="#svg-add-friend"></use>
+                </svg>
+                <!-- /BUTTON ICON -->
+              </p>
+              <!-- /BUTTON -->
+            </div>
+            <!-- /USER PREVIEW FOOTER ACTION -->
+
+            <!-- USER PREVIEW FOOTER ACTION -->
+            <div class="user-preview-footer-action">
+              <!-- BUTTON -->
+              <p class="button void void-primary">
+                <!-- BUTTON ICON -->
+                <svg class="button-icon icon-comment">
+                  <use xlink:href="#svg-comment"></use>
+                </svg>
+                <!-- /BUTTON ICON -->
+              </p>
+              <!-- /BUTTON -->
+            </div>
+            <!-- /USER PREVIEW FOOTER ACTION -->
+          </div>
+          <!-- /USER PREVIEW FOOTER -->
         </div>
         <!-- /USER PREVIEW -->
+        @empty
+        <p class="progress-arc-summary-subtitle text-center text-danger"> Hakuna rafiki wa kushabiana nae kwa sasa!</p>
+      @endforelse
       </div>
       <!-- /GRID -->
 
@@ -386,3 +299,5 @@
     </section>
     <!-- /SECTION -->
 @endsection
+
+@endforeach

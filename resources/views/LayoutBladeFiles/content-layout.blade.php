@@ -277,6 +277,114 @@
           <!-- /WIDGET BOX BUTTON -->
         </div>
         <!-- /WIDGET BOX -->
+
+        <!-- WIDGET BOX -->
+        <div class="widget-box">
+          <!-- WIDGET BOX SETTINGS -->
+          <div class="widget-box-settings">
+            <!-- POST SETTINGS WRAP -->
+            <div class="post-settings-wrap">
+              <!-- POST SETTINGS -->
+              <div class="post-settings widget-box-post-settings-dropdown-trigger">
+                <!-- POST SETTINGS ICON -->
+                <svg class="post-settings-icon icon-more-dots">
+                  <use xlink:href="#svg-more-dots"></use>
+                </svg>
+                <!-- /POST SETTINGS ICON -->
+              </div>
+              <!-- /POST SETTINGS -->
+
+              <!-- SIMPLE DROPDOWN -->
+              <div class="simple-dropdown widget-box-post-settings-dropdown">
+                <!-- SIMPLE DROPDOWN LINK -->
+                <p class="simple-dropdown-link">Widget Settings</p>
+                <!-- /SIMPLE DROPDOWN LINK -->
+              </div>
+              <!-- /SIMPLE DROPDOWN -->
+            </div>
+            <!-- /POST SETTINGS WRAP -->
+          </div>
+          <!-- /WIDGET BOX SETTINGS -->
+
+          <!-- WIDGET BOX TITLE -->
+          <p class="widget-box-title">Friends <span class="highlighted">{{$users_count}}</span></p>
+          <!-- /WIDGET BOX TITLE -->
+
+          <!-- WIDGET BOX CONTENT -->
+          <div class="widget-box-content">
+            <!-- USER STATUS LIST -->
+            <div class="user-status-list">
+              @foreach($users as $user)
+              <!-- USER STATUS -->
+              <div class="user-status request-small">
+                <!-- USER STATUS AVATAR -->
+                <a class="user-status-avatar" href="profile-timeline.html">
+                  <!-- USER AVATAR -->
+                  <div class="user-avatar small no-outline">
+                    <!-- USER AVATAR CONTENT -->
+                    <div class="user-avatar-content">
+                      <!-- HEXAGON -->
+                      <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$user->avatar}}"></div>
+                      <!-- /HEXAGON -->
+                    </div>
+                    <!-- /USER AVATAR CONTENT -->
+
+                    <!-- USER AVATAR PROGRESS -->
+                    <div class="user-avatar-progress">
+                      <!-- HEXAGON -->
+                      <div class="hexagon-progress-40-44"></div>
+                      <!-- /HEXAGON -->
+                    </div>
+                    <!-- /USER AVATAR PROGRESS -->
+
+                    <!-- USER AVATAR PROGRESS BORDER -->
+                    <div class="user-avatar-progress-border">
+                      <!-- HEXAGON -->
+                      <div class="hexagon-border-40-44"></div>
+                      <!-- /HEXAGON -->
+                    </div>
+                    <!-- /USER AVATAR PROGRESS BORDER -->
+
+
+                  </div>
+                  <!-- /USER AVATAR -->
+                </a>
+                <!-- /USER STATUS AVATAR -->
+
+                <!-- USER STATUS TITLE -->
+                <p class="user-status-title"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$user->id}}-about-{{$user->user_name}}">{{$user->user_name}}</a></p>
+                <!-- /USER STATUS TITLE -->
+
+                <!-- USER STATUS TEXT -->
+                <p class="user-status-text small">2 friends in common</p>
+                <!-- /USER STATUS TEXT -->
+
+                <!-- ACTION REQUEST LIST -->
+                <div class="action-request-list">
+                  <!-- ACTION REQUEST -->
+                  <div class="action-request accept">
+                    <!-- ACTION REQUEST ICON -->
+                    <svg class="action-request-icon icon-add-friend">
+                      <use xlink:href="#svg-add-friend"></use>
+                    </svg>
+                    <!-- /ACTION REQUEST ICON -->
+                  </div>
+                  <!-- /ACTION REQUEST -->
+                </div>
+                <!-- ACTION REQUEST LIST -->
+              </div>
+              <!-- /USER STATUS -->
+              @endforeach
+            </div>
+            <!-- /USER STATUS LIST -->
+          </div>
+          <!-- WIDGET BOX CONTENT -->
+
+          <!-- WIDGET BOX BUTTON -->
+          <a class="widget-box-button button small secondary" href="/kilimofy/UserAccount/user_friends_page">See all Friends</a>
+          <!-- /WIDGET BOX BUTTON -->
+        </div>
+        <!-- /WIDGET BOX -->
       </div>
       <!-- /GRID COLUMN -->
 
@@ -510,7 +618,7 @@
                 <!-- USER STATUS -->
                 <div class="user-status">
                   <!-- USER STATUS AVATAR -->
-                  <a class="user-status-avatar" href="group-timeline.html">
+                  <a class="user-status-avatar" href="/kilimofy/UserAccount/about_user_page/{{$post->User_id}}-about-{{$post->User_Name}}-in-Kilimofy-Platform">
                     <!-- USER AVATAR -->
                     <div class="user-avatar small no-border">
                       <!-- USER AVATAR CONTENT -->
@@ -526,7 +634,7 @@
                   <!-- /USER STATUS AVATAR -->
 
                   <!-- USER STATUS TITLE -->
-                  <p class="user-status-title medium"><a class="bold" href="profile-timeline.html">{{$post->User_Name}}</a> shared a <span class="bold">post</span></p>
+                  <p class="user-status-title medium"><a class="bold" href="/kilimofy/UserAccount/about_user_page/{{$post->User_id}}-about-{{$post->User_Name}}-in-Kilimofy-Platform">{{$post->User_Name}}</a> shared a <span class="bold">post</span></p>
                   <!-- /USER STATUS TITLE -->
 
                   <!-- USER STATUS TEXT -->
@@ -553,7 +661,7 @@
 
                  @elseif($post->Photo != NULL && $post->Video == NULL)
                  <!-- VIDEO STATUS -->
-                 <a class="video-status" href="/Uploads/PostPhotos/{{$post->Photo}}" >
+                 <a class="video-status" href="/kilimofy/Post/read_comments/{{$post->id}}-about-{{$post->Caption}}" >
                    <!-- VIDEO STATUS IMAGE -->
                    <img class="video-status-image" src="/Uploads/PostPhotos/{{$post->Photo}}" alt="cover-51">
                    <!-- /VIDEO STATUS IMAGE -->
@@ -570,9 +678,11 @@
                    <!-- VIDEO BOX COVER -->
                    <div class="video-box">
                      <!-- VIDEO BOX COVER IMAGE -->
-                     <video  style="width:100%;"  autoplay muted loop controls>
-                           <source src="/Uploads/PostVideos/{{$post->Video}}" type="video/mp4" >
-                    </video>
+                    <a href="/kilimofy/Post/read_comments/{{$post->id}}-about-{{$post->Caption}}">
+                      <video  style="width:100%;"  autoplay muted loop controls>
+                            <source src="/Uploads/PostVideos/{{$post->Video}}" type="video/mp4" >
+                     </video>
+                    </a>
                      <!-- /VIDEO BOX COVER IMAGE -->
 
 
@@ -761,11 +871,13 @@
                           <!-- /USER AVATAR BORDER -->
 
                           <!-- USER AVATAR CONTENT -->
-                          <div class="user-avatar-content">
-                            <!-- HEXAGON -->
-                            <div class="hexagon-image-18-20" data-src="/assets/img/avatar/22.jpg"></div>
-                            <!-- /HEXAGON -->
-                          </div>
+                        @foreach($post->comments as $post_comment)
+                        <div class="user-avatar-content">
+                          <!-- HEXAGON -->
+                          <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{$post_comment->user_avatar}}"></div>
+                          <!-- /HEXAGON -->
+                        </div>
+                        @endforeach
                           <!-- /USER AVATAR CONTENT -->
                         </div>
                         <!-- /USER AVATAR -->
@@ -813,15 +925,17 @@
                       <!-- /META LINE LIST -->
 
                       <!-- META LINE TEXT -->
-                      <p class="meta-line-text">19 Participants</p>
+
+                      <p class="meta-line-text">{{$post->comments->count()  }} Participants</p>
                       <!-- /META LINE TEXT -->
+
                     </div>
                     <!-- /META LINE -->
                   </div>
                   <!-- /CONTENT ACTION -->
 
                   <!-- CONTENT ACTION -->
-                <a href="/kilimofy/Post/read_comments/{{$post->id}}">
+                <a href="/kilimofy/Post/read_comments/{{$post->id}}-about-{{$post->Caption}}">
 
                   <div class="content-action">
                     <!-- META LINE -->
@@ -932,6 +1046,8 @@
               <!-- /POST OPTION WRAP -->
 
               <!-- POST OPTION -->
+
+            <a href="/kilimofy/Post/read_comments/{{$post->id}}-about-{{$post->Caption}}">
               <div class="post-option">
                 <!-- POST OPTION ICON -->
                 <svg class="post-option-icon icon-comment">
@@ -943,6 +1059,7 @@
                 <p class="post-option-text">Comment</p>
                 <!-- /POST OPTION TEXT -->
               </div>
+            </a>
               <!-- /POST OPTION -->
 
               <!-- POST OPTION -->

@@ -96,7 +96,7 @@
 @elseif(Auth::user()->user_ocupation == 'Muuzaji_Wa_pembejeo_Na_Viwatilifu')
 <nav id="navigation-widget-small" class="navigation-widget navigation-widget-desktop closed sidebar left delayed">
   <!-- USER AVATAR -->
-  <a class="user-avatar small no-outline online" href="/kilimofy/UserAccount/about_user_page">
+  <a class="user-avatar small no-outline online" href="/kilimofy/UserAccount/about_user_page/{{Auth::user()->id}}-About-{{Auth::user()->user_name}}-in-Kilimofy-Platform">
     <!-- USER AVATAR CONTENT -->
     <div class="user-avatar-content">
       <!-- HEXAGON -->

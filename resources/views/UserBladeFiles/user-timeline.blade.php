@@ -1,8 +1,12 @@
 @extends('LayoutBladeFiles.user-account-layout')
+@foreach($user as $user)
+
 @section('title')
-@section('timeline-menu-active', 'active')
-{{Auth::user()->user_name}} Timeline
+{{$user->user_name}}'s Timelines
 @endsection
+
+@section('timeline-menu-active', 'active')
+
 @section('user-data')
 <div class="grid grid-3-6-3 mobile-prefer-content">
   <!-- GRID COLUMN -->
@@ -36,7 +40,7 @@
       <!-- /WIDGET BOX SETTINGS -->
 
       <!-- WIDGET BOX TITLE -->
-      <p class="widget-box-title">About Me</p>
+      <p class="widget-box-title">About {{$user->user_name}}</p>
       <!-- /WIDGET BOX TITLE -->
 
       <!-- WIDGET BOX CONTENT -->
@@ -1079,7 +1083,7 @@
           </div>
           <!-- /PICTURE ITEM -->
 
-    
+
 
           <!-- PICTURE ITEM -->
           <a class="picture-item" href="profile-photos.html">
@@ -2676,3 +2680,5 @@
 <!-- /POPUP PICTURE -->
 
 @endsection
+
+@endforeach

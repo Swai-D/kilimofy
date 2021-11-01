@@ -1,8 +1,12 @@
 @extends('LayoutBladeFiles.user-account-layout')
+@foreach($user as $user)
+
 @section('title')
-@section('store-menu-active', 'active')
-{{Auth::user()->user_name}}'s Store
+{{$user->user_name}}'s Store
 @endsection
+@section('store-menu-active', 'active')
+
+
 @section('user-data')
 <!-- SECTION -->
 <section class="section">
@@ -11,7 +15,7 @@
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      <p class="section-pretitle">Browse Marina's</p>
+      <p class="section-pretitle">{{$user->user_name}}'s</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
@@ -438,6 +442,9 @@
 
   </div>
   <!-- /GRID -->
+  @include('LayoutBladeFiles.page-bar')
 </section>
 <!-- /SECTION -->
 @endsection
+
+@endforeach

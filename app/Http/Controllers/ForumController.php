@@ -105,14 +105,16 @@ class ForumController extends Controller
       // dd($discussion_id);
       // $discussion_id = Session::get('discussion_id');
       $last_participant_created_at = Paticipant::where('discussion_id', '=', $discussion_id->id)->orderBy('created_at', 'desc')->limit(1)->get();
-      // dd($last_participant_created_at);
-
+      $reply_count = Paticipant::where('discussion_id', '=', $discussion_id->id)->count();
+      $voices_count = Paticipant::where('discussion_id', '=', $discussion_id->id)->distinct('Author_ID')->get();
+      // dd($voices_count);
+    
       $discussions_topic_page = Discussion::where('id', '=', $discussion_id->id)->get();
       $paticipant_comments = Paticipant::where('discussion_id', '=', $discussion_id->id)->get();
       // dd($last_discussions_created_at);
 
       // dd($discussions_topic_page);
-      return view('ForumBladeFiles.forum-topic-discussion', compact('discussions_topic_page', 'last_discussions_created_at', 'paticipant_comments', 'last_participant_created_at'));
+      return view('ForumBladeFiles.forum-topic-discussion', compact('discussions_topic_page', 'last_discussions_created_at', 'paticipant_comments', 'last_participant_created_at', 'reply_count'));
     }
 
 

@@ -1,8 +1,11 @@
 @extends('LayoutBladeFiles.user-account-layout')
+@foreach($user as $user)
+
 @section('title')
-@section('forum-menu-active', 'active')
-{{Auth::user()->user_name}}'s Forum(s)
+{{$user->user_name}}'s Forum
 @endsection
+@section('forum-menu-active', 'active')
+
 @section('user-data')
 <!-- SECTION -->
 <section class="section">
@@ -11,7 +14,7 @@
     <!-- SECTION HEADER INFO -->
     <div class="section-header-info">
       <!-- SECTION PRETITLE -->
-      <p class="section-pretitle">Browse Marina's</p>
+      <p class="section-pretitle">{{$user->user_name}}'s</p>
       <!-- /SECTION PRETITLE -->
 
       <!-- SECTION TITLE -->
@@ -149,6 +152,7 @@
 
     <!-- TABLE BODY -->
     <div class="table-body">
+     @forelse($user_discussions as $discussions)
       <!-- TABLE ROW -->
       <div class="table-row medium">
         <!-- TABLE COLUMN -->
@@ -156,7 +160,7 @@
           <!-- DISCUSSION PREVIEW -->
           <div class="discussion-preview">
             <!-- DISCUSSION PREVIEW TITLE -->
-            <a class="discussion-preview-title" href="forums-discussion.html">The recent issue of "Darkman" features a new masked hero</a>
+            <a class="discussion-preview-title" href="/kilimofy/Forum/Forum-Discussion/{{$discussions->id}}">{{$discussions->Topic}}</a>
             <!-- /DISCUSSION PREVIEW TITLE -->
 
             <!-- DISCUSSION PREVIEW META -->
@@ -170,7 +174,7 @@
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-18-20" data-src="img/avatar/01.jpg"></div>
+                  <div class="hexagon-image-18-20" data-src="/Uploads/avatars/{{$discussions->Author_Image_Name}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -178,7 +182,7 @@
               <!-- /USER AVATAR -->
 
               <!-- DISCUSSION PREVIEW META TEXT -->
-              <p class="discussion-preview-meta-text"><a href="profile-timeline.html">Marina Valentine</a> 22 minutes ago<span class="separator">-</span><a class="highlighted" href="forums-category.html">Comics</a></p>
+              <p class="discussion-preview-meta-text"><a href="profile-timeline.html">{{$discussions->Author_Name}}</a> {{$discussions->created_at->diffForHumans()}}</p>
               <!-- /DISCUSSION PREVIEW META TEXT -->
             </div>
             <!-- /DISCUSSION PREVIEW META -->
@@ -190,7 +194,7 @@
         <!-- TABLE COLUMN -->
         <div class="table-column centered padded-medium">
           <!-- TABLE TITLE -->
-          <p class="table-title">4</p>
+          <p class="table-title">19</p>
           <!-- /TABLE TITLE -->
         </div>
         <!-- /TABLE COLUMN -->
@@ -198,7 +202,7 @@
         <!-- TABLE COLUMN -->
         <div class="table-column centered padded-medium">
           <!-- TABLE TITLE -->
-          <p class="table-title">12</p>
+          <p class="table-title">24</p>
           <!-- /TABLE TITLE -->
         </div>
         <!-- /TABLE COLUMN -->
@@ -214,7 +218,7 @@
                 <!-- USER AVATAR CONTENT -->
                 <div class="user-avatar-content">
                   <!-- HEXAGON -->
-                  <div class="hexagon-image-30-32" data-src="img/avatar/04.jpg"></div>
+                  <div class="hexagon-image-30-32" data-src="/Uploads/avatars/{{$discussions->Author_Image_Name}}"></div>
                   <!-- /HEXAGON -->
                 </div>
                 <!-- /USER AVATAR CONTENT -->
@@ -254,7 +258,7 @@
                   <!-- /USER AVATAR BADGE CONTENT -->
 
                   <!-- USER AVATAR BADGE TEXT -->
-                  <p class="user-avatar-badge-text">6</p>
+                  <p class="user-avatar-badge-text">16</p>
                   <!-- /USER AVATAR BADGE TEXT -->
                 </div>
                 <!-- /USER AVATAR BADGE -->
@@ -264,11 +268,11 @@
             <!-- /USER STATUS AVATAR -->
 
             <!-- USER STATUS TITLE -->
-            <p class="user-status-title"><a class="bold" href="profile-timeline.html">Bearded Wonder</a></p>
+            <p class="user-status-title"><a class="bold" href="profile-timeline.html">{{$discussions->Author_Name}}</a></p>
             <!-- /USER STATUS TITLE -->
 
             <!-- USER STATUS TEXT -->
-            <p class="user-status-text small">3 hours, 22 minutes ago</p>
+            <p class="user-status-text small">{{$discussions->created_at->diffForHumans()}}</p>
             <!-- /USER STATUS TEXT -->
           </div>
           <!-- /USER STATUS -->
@@ -276,11 +280,16 @@
         <!-- /TABLE COLUMN -->
       </div>
       <!-- /TABLE ROW -->
-
+      @empty
+      <p class="progress-arc-summary-subtitle text-center text-danger"> Huna Forum yoyote kwa sasa !</p>
+    @endforelse
     </div>
     <!-- /TABLE BODY -->
+
   </div>
   <!-- /TABLE -->
 </section>
 <!-- /SECTION -->
 @endsection
+
+@endforeach
